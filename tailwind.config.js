@@ -13,10 +13,13 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                // sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                sans: ["Poppins", "sans-serif"],
             },
-            backgroundImage: {
-                ppif: "",
+            colors: {
+                "ppif-orange": "#FF6600",
+                "ppif-pink": "#FF00D8",
+                "ppif-blue": "#003CFF",
             },
         },
     },
