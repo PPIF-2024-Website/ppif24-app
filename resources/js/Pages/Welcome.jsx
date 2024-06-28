@@ -14,7 +14,7 @@ export default function Welcome() {
                     alt=""
                 />
             </div>
-            {/* content */}s
+            {/* content */}
             <div className="z-1 relative flex h-screen w-screen flex-col items-center justify-center gap-5 overflow-hidden text-white lg:flex-row lg:gap-10">
                 <img
                     ref={glitch.ref}
