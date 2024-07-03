@@ -24,4 +24,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Route::get('/games', function() {
+//     return Inertia::render('Test');
+// });
+
+Route::get('/gameLanding', function() {
+    return Inertia::render('GameLanding');
+});
+
 require __DIR__.'/auth.php';
