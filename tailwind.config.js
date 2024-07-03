@@ -17,9 +17,9 @@ export default {
                 sans: ["Plus Jakarta Sans", "Poppins", "Inter", "sans-serif"],
             },
             colors: {
-                "ppif-orange": "#FF6600",
-                "ppif-pink": "#FF00D8",
-                "ppif-blue": "#003CFF",
+                "ppif-orange": "var(--ppif-orange)",
+                "ppif-pink": "var(--ppif-pink)",
+                "ppif-blue": "var(--ppif-blue)",
             },
         },
     },
