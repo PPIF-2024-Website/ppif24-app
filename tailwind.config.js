@@ -14,7 +14,7 @@ export default {
         extend: {
             fontFamily: {
                 // sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                sans: ["Poppins", "sans-serif"],
+                sans: ["Plus Jakarta Sans", "Poppins", "Inter", "sans-serif"],
             },
             colors: {
                 "ppif-orange": "#FF6600",
