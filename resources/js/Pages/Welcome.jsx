@@ -1,6 +1,7 @@
 import { Link, Head } from "@inertiajs/react";
 import { useGlitch } from "react-powerglitch";
 
+
 export default function Welcome() {
     const glitch = useGlitch();
     return (
@@ -15,6 +16,7 @@ export default function Welcome() {
                 />
             </div>
             {/* content */}
+
             <div className="z-1 relative flex h-screen w-screen flex-col items-center justify-center gap-5 overflow-hidden text-white lg:flex-row lg:gap-10">
                 <img
                     ref={glitch.ref}
