@@ -8,5 +8,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/auth/{secret_code}', [GroupNameController::class, 'getAuth']);
+Route::get('/auth', [GroupNameController::class, 'getAuth']);
 Route::get('/group', [GroupNameController::class, 'getGroupName']);

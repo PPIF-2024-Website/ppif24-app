@@ -10,12 +10,13 @@ use Illuminate\Http\Request;
 
 class GroupNameController extends Controller
 {
-    public function getAuth($secret_code)
+    public function getAuth(Request $request)
     {
         try{
+            $secret_code = $request->input('secret_code');
             $group = GroupName::where('secret_code', $secret_code)->first();
             if ($group) {
-                return response()->json(['message' =>  $group->token]);
+                return response()->json($group->token);
             } else {
                 return response()->json(['message' => 'Invalid Secret Code'], 404);
             }
@@ -36,7 +37,7 @@ class GroupNameController extends Controller
             ->first();
             
             if ($group) {
-                return response()->json(['group_name' => $group->group_name]);
+                return response()->json($group->group_name);
             } else {
                 return response()->json(['message' => 'Pesan Salah'], 404);
             }
