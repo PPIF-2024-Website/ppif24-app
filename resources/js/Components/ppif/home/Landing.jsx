@@ -17,7 +17,7 @@ export default function Landing({ id }) {
             </div>
             <a
                 href="#AboutIF"
-                className="absolute mb-12 flex cursor-pointer flex-col items-center space-y-4 text-white"
+                className="absolute mb-12 flex cursor-pointer flex-col items-center space-y-6 text-white"
             >
                 <p className="hidden xl:block">click to scroll down</p>
                 <p className="xl:hidden">touch to scroll down</p>
