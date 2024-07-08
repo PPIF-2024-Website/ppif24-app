@@ -2,28 +2,30 @@ import React from "react";
 
 function Contact() {
     return (
-        <div className="container mx-auto h-auto bg-[url('/ppif/images/bg.png')] w-screen min-h-screen text-white">
+        <div className="container mx-auto h-auto min-h-screen w-screen bg-[url('/ppif/images/bg.png')] bg-cover pb-24 text-white lg:pb-16">
             <div className="pt-16 text-center">
-                <span className="text-4xl sm:text-5xl font-black italic text-ppif-blue">
+                <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
                     CONTACT
                 </span>
-                <span className="text-4xl sm:text-5xl font-bold"> Us</span>
+                <span className="text-4xl font-bold sm:text-5xl"> Us</span>
             </div>
 
-            <div className="bg-white bg-opacity-15 mx-4 lg:mx-20 p-4 lg:p-12 mt-8 rounded-lg grid grid-cols-1 gap-6 lg:grid-cols-3">
-                <div className="flex flex-col lg:flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 lg:pb-12 lg:pt-12 p-2 shadow-lg">
-                    <div className="lg:grid-cols-1 grid grid-cols-2 items-center w-full">
-                        <div className="h-24 flex items-center justify-center">
+            <div className="mx-4 mt-8 grid grid-cols-1 gap-6 rounded-lg bg-white bg-opacity-15 p-4 lg:mx-20 lg:grid-cols-3 lg:p-12">
+                <div className="flex flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 pb-6 pt-6 shadow-lg lg:flex-col lg:pb-12 lg:pt-12">
+                    <div className="grid w-full grid-cols-2 items-center lg:grid-cols-1">
+                        <div className="flex h-24 items-center justify-center">
                             <img
                                 src="/ppif/images/instagram.png"
                                 alt="instagram_logo"
-                                className="lg:h-24 w-full h-full object-contain"
+                                className="h-full w-full object-contain lg:h-24"
                             />
                         </div>
-                        <div className="flex flex-col items-start lg:items-center justify-center">
-                            <h2 className="text-[3.5vw] lg:text-2xl lg:mt-[3vw]">PPIF UMN</h2>
+                        <div className="flex flex-col items-start justify-center lg:items-center">
+                            <h2 className="text-[3.5vw] lg:mt-[3vw] lg:text-2xl">
+                                PPIF UMN
+                            </h2>
                             <button
-                                className="mt-2 lg:mt-4 bg-white bg-opacity-10 hover:bg-black hover:bg-opacity-35 hover:shadow-white hover:shadow-md transition-opacity duration-300 rounded-lg text-base text-[1.8vw] lg:text-lg px-4 py-1 shadow-lg"
+                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[1.8vw] text-base shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
                                 onClick={() =>
                                     (window.location.href =
                                         "https://www.instagram.com/ppif.umn/")
@@ -35,19 +37,21 @@ function Contact() {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 lg:p-6 p-2 shadow-lg">
-                    <div className="lg:grid-cols-1 grid grid-cols-2 items-center w-full">
-                        <div className="h-24 flex items-center justify-center">
+                <div className="flex flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 pb-6 pt-6 shadow-lg lg:flex-col lg:p-6">
+                    <div className="grid w-full grid-cols-2 items-center lg:grid-cols-1">
+                        <div className="flex h-24 items-center justify-center">
                             <img
                                 src="/ppif/images/line.png"
                                 alt="line_logo"
-                                className="lg:h-24 w-full h-full object-contain"
+                                className="h-full w-full object-contain lg:h-24"
                             />
                         </div>
-                        <div className="flex flex-col items-start lg:items-center justify-center">
-                            <h2 className="text-[3.5vw] lg:text-2xl lg:mt-[3vw]">PPIF UMN 2024</h2>
+                        <div className="flex flex-col items-start justify-center lg:items-center">
+                            <h2 className="text-[3.5vw] lg:mt-[3vw] lg:text-2xl">
+                                PPIF UMN 2024
+                            </h2>
                             <button
-                                className="mt-2 lg:mt-4 bg-white bg-opacity-10 hover:bg-black hover:bg-opacity-35 hover:shadow-white hover:shadow-md transition-opacity duration-300 rounded-lg text-base text-[1.8vw] lg:text-lg px-4 py-1 shadow-lg"
+                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[1.8vw] text-base shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
                                 onClick={() =>
                                     (window.location.href =
                                         "https://line.me/ti/g2/...")
@@ -59,19 +63,21 @@ function Contact() {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 lg:p-6 shadow-lg">
-                    <div className="lg:grid-cols-1 grid grid-cols-2 items-center w-full">
-                        <div className="h-24 flex items-center justify-center">
+                <div className="flex flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 pb-6 pt-6 shadow-lg lg:flex-col lg:p-6">
+                    <div className="grid w-full grid-cols-2 items-center lg:grid-cols-1">
+                        <div className="flex h-24 items-center justify-center">
                             <img
                                 src="/ppif/images/discord.png"
                                 alt="discord_logo"
-                                className="lg:h-24 w-full h-full object-contain"
+                                className="h-full w-full object-contain lg:h-24"
                             />
                         </div>
-                        <div className="flex flex-col items-start lg:items-center justify-center">
-                            <h2 className="text-[3.5vw] lg:text-xl lg:mt-[3vw]">Informatika UMN</h2>
+                        <div className="flex flex-col items-start justify-center lg:items-center">
+                            <h2 className="text-[3.5vw] lg:mt-[3vw] lg:text-xl">
+                                Informatika UMN
+                            </h2>
                             <button
-                                className="mt-2 lg:mt-4 bg-white bg-opacity-10 hover:bg-black hover:bg-opacity-35 hover:shadow-white hover:shadow-md transition-opacity duration-300 rounded-lg text-base text-[1.8vw] lg:text-lg px-4 py-1 shadow-lg"
+                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[1.8vw] text-base shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
                                 onClick={() =>
                                     (window.location.href =
                                         "https://discord.gg/......")
