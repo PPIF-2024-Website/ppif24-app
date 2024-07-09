@@ -1,3 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --ppif-orange-rgb: 255, 102, 0;
+    --ppif-pink-rgb: 255, 0, 216;
+    --ppif-blue-rgb: 0, 60, 255;
+    --ppif-orange: rgb(var(--ppif-orange-rgb));
+    --ppif-pink: rgb(var(--ppif-pink-rgb));
+    --ppif-blue: rgb(var(--ppif-blue-rgb));
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .glow-white {
+        @apply drop-shadow-[0_10px_10px_rgba(255,255,255,0.75)];
+    }
+
+    .glow-orange {
+        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-orange-rgb),0.75)];
+    }
+
+    .glow-pink {
+        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-pink-rgb),0.75)];
+    }
+
+    .glow-blue {
+        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-blue-rgb),0.75)];
+    }
+}
