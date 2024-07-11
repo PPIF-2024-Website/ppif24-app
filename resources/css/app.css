@@ -14,6 +14,24 @@
 @tailwind utilities;
 
 @layer utilities {
+    /* TEXT */
+    .text-heading {
+        @apply text-xl;
+    }
+
+    .text-subheading {
+        @apply text-lg;
+    }
+
+    .text-body {
+        @apply text-base;
+    }
+
+    .text-footer {
+        @apply text-sm;
+    }
+
+    /* GLOW */
     .glow-white {
         @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
     }
