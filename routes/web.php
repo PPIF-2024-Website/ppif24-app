@@ -32,4 +32,8 @@ Route::get('/gameLanding', function() {
     return Inertia::render('GameLanding');
 });
 
+Route::get('/background', function(){
+    return Inertia::render('BackgroundTest');
+});
+
 require __DIR__.'/auth.php';
