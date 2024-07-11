@@ -15,18 +15,18 @@
 
 @layer utilities {
     .glow-white {
-        @apply drop-shadow-[0_10px_10px_rgba(255,255,255,0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
     }
 
     .glow-orange {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-orange-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-orange-rgb),0.75)];
     }
 
     .glow-pink {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-pink-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-pink-rgb),0.75)];
     }
 
     .glow-blue {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-blue-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-blue-rgb),0.75)];
     }
 }
