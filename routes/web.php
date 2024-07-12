@@ -36,4 +36,8 @@ Route::get('/background', function(){
     return Inertia::render('BackgroundTest');
 });
 
+Route::get('/TesGamePage', function() {
+    return Inertia::render('TesGamePage');
+});
+
 require __DIR__.'/auth.php';
