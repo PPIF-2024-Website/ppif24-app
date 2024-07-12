@@ -1,7 +1,9 @@
-import React, { Children, useMemo } from "react";
+import React, { Children, useMemo, useLayoutEffect, useState } from "react";
 import Items from "./Items";
 
 export const Carousel = ({ children }) => {
+    const [currSlide, setCurrSlide] = useState(1);
+    const [translateX, setTranslateX] = useState(0);
     const slides = useMemo(() => {
         if (children.length > 1) {
             let items = Children.map(children, (child, index) => (
@@ -23,9 +25,14 @@ export const Carousel = ({ children }) => {
 
         return <Items className="">{children[0]}</Items>;
     }, [children]);
+
+    useLayoutEffect(() => {
+        setTranslateX(currSlide * 100);
+    })
+
     return (
-        <section className="h-full max-h-[442px] min-h-[221px] w-full min-w-[331px] max-w-[1133px] border-2 border-red-600">
-            <ul className="flex border-2 border-blue-600">{slides}</ul>
+        <section className="relative h-full max-h-[442px] min-h-[221px] w-full min-w-[331px] max-w-[1133px] overflow-hidden border-2 border-red-600">
+            <ul className="flex border-2 border-blue-600 h-full list-none space-x-2">{slides}</ul>
         </section>
     );
 };
