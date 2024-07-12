@@ -4,10 +4,7 @@ function Background() {
     return (
         <div className="main-background absolute w-full overflow-x-hidden">
             <div className="h-screen">
-                {/* <img
-                    className="h-screen w-full min-w-[1000px] object-fill"
-                    src="/ppif/images/background/section1.png"
-                /> */}
+                <img src="/ppif/images/background/Vector.svg" alt="" />
             </div>
             <div className="h-screen">
                 {/* <img

@@ -1,12 +1,17 @@
-<svg width="1525" height="1479" viewBox="0 0 1525 1479" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_572_64)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M697.722 481.754C767.928 452.537 849.234 491.641 910.083 538.081C971.573 585.009 1027.48 653.286 1024.51 731.153C1021.74 803.6 952.531 849.928 896.471 894.648C856.696 926.377 807.815 931.722 758.489 943.36C699.514 957.273 638.649 997.624 585.402 968.038C528.9 936.644 496.876 865.253 500.677 800.112C504.11 741.291 572.202 715.68 603.035 665.863C640.747 604.934 632.104 509.062 697.722 481.754Z" fill="#FF00D8"/>
+<svg width="1268" height="1312" viewBox="0 0 1268 1312" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_572_77)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M695.573 2.114C895.231 10.8328 1114.17 52.484 1225.98 188.511C1328.83 313.639 1205.84 472.861 1206.6 623.797C1207.36 776.025 1326.9 932.688 1230.35 1062.67C1119.44 1211.99 908.54 1317.54 695.573 1311.78C486.428 1306.12 326.765 1168.02 194.916 1034.67C78.789 917.213 30.4187 774.546 15.367 623.797C-1.52426 454.625 -32.6403 265.88 105.546 139.583C247.544 9.80203 483.336 -7.15411 695.573 2.114Z" fill="url(#paint0_angular_572_77)" fill-opacity="0.6"/>
 </g>
 <defs>
-<filter id="filter0_f_572_64" x="0.373047" y="-28.3196" width="1524.25" height="1506.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_b_572_77" x="-500" y="-500" width="2268" height="2312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_572_64"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="250"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_572_77"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_572_77" result="shape"/>
 </filter>
+<radialGradient id="paint0_angular_572_77" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(634 656) rotate(90) scale(656 634)">
+<stop offset="0.349767" stop-color="#FF6600"/>
+<stop offset="1" stop-color="#003CFF" stop-opacity="0.35"/>
+</radialGradient>
 </defs>
 </svg>
