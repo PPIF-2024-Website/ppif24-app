@@ -16,11 +16,11 @@
 @layer utilities {
     /* TEXT */
     .text-heading {
-        @apply text-xl;
+        @apply text-5xl;
     }
 
     .text-subheading {
-        @apply text-lg;
+        @apply text-2xl;
     }
 
     .text-body {
