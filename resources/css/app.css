@@ -13,7 +13,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    *::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 @layer utilities {
+    /* GENERAL */
+    .smooth {
+        @apply transition-all duration-150 ease-out;
+    }
+
     /* TEXT */
     .text-heading {
         @apply text-5xl;
