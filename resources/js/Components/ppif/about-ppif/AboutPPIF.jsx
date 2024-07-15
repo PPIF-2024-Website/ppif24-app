@@ -13,9 +13,9 @@ export default function AboutPPIF() {
     `;
 
     return (
-        <section className="flex h-screen w-full flex-col items-center justify-center space-y-8 bg-black p-8 text-white md:p-12">
+        <section className="flex h-screen w-full flex-col items-center justify-center p-8 text-white md:p-12">
             {/* TEXT CONTENT */}
-            <div className="flex flex-col items-center justify-center text-center">
+            <div className="mb-14 flex flex-col items-center justify-center text-center">
                 {/* TITLE */}
                 <h1 className="text-heading mb-6">
                     <span className="glow-white">ABOUT</span>{" "}
@@ -25,13 +25,20 @@ export default function AboutPPIF() {
                 </h1>
 
                 {/* BODY */}
-                <div className="text-body w-[60%] leading-loose">
+                <div className="text-body w-[70%] !leading-relaxed">
                     {textContent}
                 </div>
             </div>
 
             {/* CAROUSEL */}
-            <ImageCarousel />
+            <ImageCarousel imageUrls={[]} />
+
+            {/* DUMMY BACKGROUND */}
+            <div className="-z-10">
+                <div className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full bg-black"></div>
+                <div className="pointer-events-none absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-[var(--ppif-pink)] opacity-50 blur-[150px]"></div>
+                <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[var(--ppif-pink)] opacity-50 blur-[150px]"></div>
+            </div>
         </section>
     );
 }
