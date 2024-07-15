@@ -27,7 +27,7 @@ export default function ImageCarousel({ imageUrls }) {
         if (carouselRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } =
                 carouselRef.current;
-            setShowLeftControl(scrollLeft > 0);
+            setShowLeftControl(scrollLeft > 10);
             setShowRightControl(scrollLeft < scrollWidth - clientWidth);
         }
     };
