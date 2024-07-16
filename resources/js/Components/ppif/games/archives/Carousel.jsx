@@ -1,18 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 
-export default function InfiniteCarousel({ children: slides }) {
-    const [currSlide, setCurrSlide] = useState(2);
+export default function Carousel({ children: slides }) {
+    const [currentSlide, setCurrentSlide] = useState(2);
     const length = slides.length;
 
     const prev = () => {
-        setCurrSlide((currSlide) =>
-            (currSlide - 1 + length) % length
+        setCurrentSlide((currentSlide) =>
+            (currentSlide - 1 + length) % length
         );
     };
 
     const next = () => {
-        setCurrSlide((currSlide) =>
-            (currSlide + 1) % length
+        setCurrentSlide((currentSlide) =>
+            (currentSlide + 1) % length
         );
     };
 
@@ -20,7 +20,7 @@ export default function InfiniteCarousel({ children: slides }) {
         <div className="carousel-container overflow-hidden relative rounded-xl w-full max-w-[1133px]">
             <div
                 className="flex transition-transform ease-in-out duration-300 max-w-[662px] max-h-[445px] space-x-8 justify-start"
-                style={{ transform: `translateX(-${currSlide * 100}%)` }}
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
                 {slides}
             </div>
@@ -39,7 +39,7 @@ export default function InfiniteCarousel({ children: slides }) {
                             key={i}
                             className={`
                                 transition-all w-full max-w-5 min-w-3 aspect-square rounded-full ${
-                                    currSlide === i ? "bg-white/100" : "bg-white/30 backdrop-blur-sm"
+                                    currentSlide === i ? "bg-white/100" : "bg-white/30 backdrop-blur-sm"
                                 }`}
                         ></div>
                     ))}

@@ -1,3 +1,5 @@
+import axios from "axios";
+import ArchivesBackground from "../background/archives-background/ArchivesBackground";
 import Modal from "../Modal";
 import Carousel from "./archives/Carousel";
 import { useState } from "react";
@@ -11,35 +13,48 @@ export default function Archives() {
         "/ppif/images/carousel-slides/Glaar_dragon_figthing_a_dwarf_dragon_breath_castle_ruins_in_bac_5e566439",
     ];
 
+    const placeHolder = "Input Your Group's Secret Code";
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [inputValue, setInputValue] = useState(
-        "Input Your Group's Secret Code",
-    );
-    const [isFocused, setIsFocused] = useState(false);
+    const [inputValue, setInputValue] = useState(placeHolder);
+    const [response, setResponse] = useState("");
 
     const noInputCheck = () => {
         if (inputValue === "") {
-            setInputValue("Input Your Group's Secret Code");
+            setInputValue(placeHolder);
         }
     };
 
     const inputCheck = () => {
-        if (inputValue === "Input Your Group's Secret Code") {
+        if (inputValue === placeHolder) {
             setInputValue("");
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setInputValue("Input Your Group's Secret Code");
-        console.log(inputValue);
-        setModalIsOpen(false);
+        setInputValue(placeHolder);
+
+        if(inputValue != placeHolder) {
+            try {
+                const res = await axios.get('/api/auth', {
+                    params: {
+                        "secret_code": inputValue,
+                    }
+                });
+                setResponse(res.data);
+                console.log(res.data);
+                setModalIsOpen(false);
+            } catch(error) {
+                setResponse("Group Invalid");
+            }
+        }
     };
 
     return (
         <>
+            <ArchivesBackground />
             <Modal title={"SECRET CODE"} isOpen={modalIsOpen}>
-                <form className="relative flex h-full justify-center">
+                <form onSubmit={handleSubmit}  className="relative flex h-full justify-center">
                     <div className="absolute top-32 w-full max-w-[616px] border-b-2">
                         <input
                             type="text"
@@ -53,7 +68,6 @@ export default function Archives() {
                         />
                     </div>
                     <button
-                        onClick={handleSubmit}
                         type="submit"
                         className="absolute bottom-16 rounded-xl bg-[#3d3c3c] px-20 py-6 text-2xl shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95"
                     >
@@ -62,7 +76,7 @@ export default function Archives() {
                 </form>
             </Modal>
             <div className="archives flex h-screen w-screen flex-col items-center justify-center">
-                <h1 className="title mb-3 text-5xl font-bold italic text-white antialiased sm:text-7xl">
+                <h1 className="title mb-3 text-5xl font-bold italic text-white antialiased drop-shadow-[0px_0px_5px_rgba(255,255,255,0.5)] sm:text-7xl">
                     ARCHIVES
                 </h1>
                 <div className="flex h-full max-h-[505px] min-h-[400px] w-full min-w-[320px] max-w-[1186px] items-center justify-center bg-white/20 px-3 drop-shadow-[0_0_20px_rgba(255,255,255,0.75)] backdrop-blur-sm md:rounded-3xl lg:px-0">
