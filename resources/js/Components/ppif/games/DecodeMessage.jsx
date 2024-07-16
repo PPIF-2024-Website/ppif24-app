@@ -2,11 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from '@inertiajs/react';
+import Modal from '../Modal';
 
 function DecodeMessage(props) {
 
     const [decrypted_message, set_decrypted_message] = useState('');
     const [response, set_response] = useState(null);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const token = props.token;
 
@@ -20,15 +22,23 @@ function DecodeMessage(props) {
                     decode_message: decrypted_message
                 }
             });
-            set_response(res.data);
+            set_response('Your Group Name is ' + res.data);
+            setModalIsOpen(true);
             console.log('Response from /api/group: ', res.data);
         } catch(error) {
+            setModalIsOpen(true);
             set_response("Message Salah");
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
         }
     };
 
-
   return (
+    <>
+    <Modal isOpen={modalIsOpen}>
+        <h1 className="tracking-wide text-center text-6xl font-semibold text-white flex items-center justify-center">{response}</h1>
+    </Modal>
     <div className='flex flex-wrap gap-4 justify-between py-4'>
         <form className="flex gap-4 md:w-[600px] w-full md:pt-2" onSubmit={handle_submit}>
             <div className="relative z-0 mb-5 group md:w-1/2 w-full">
@@ -41,12 +51,8 @@ function DecodeMessage(props) {
                 <img src={props.folder_image} className='w-[43px] flex justify-center object-contain md:pt-2'/>
             </Link>
         </div>
-        {/* {response && (
-            <div>
-                <h1 className='text-white'>{response}</h1>
-            </div>
-        )} */}
     </div>
+    </>
   )
 }
 
