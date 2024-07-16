@@ -1,4 +1,5 @@
 import Archives from "@/Components/ppif/games/Archives";
+import Modal from "@/Components/ppif/Modal";
 import { Link, Head } from "@inertiajs/react";
 import { useGlitch } from "react-powerglitch";
 
@@ -7,6 +8,7 @@ export default function Welcome() {
     return (
         <>
             <Head title="Home" />
+            
             {/* background */}
             <div className="absolute h-screen w-screen bg-black">
                 <img

@@ -1,40 +1,50 @@
-import React, { Children, useMemo, useLayoutEffect, useState } from "react";
-import Items from "./Items";
+import React, { useState, useRef, useEffect } from "react";
 
-export const Carousel = ({ children }) => {
-    const [currSlide, setCurrSlide] = useState(1);
-    const [translateX, setTranslateX] = useState(0);
-    const slides = useMemo(() => {
-        if (children.length > 1) {
-            let items = Children.map(children, (child, index) => (
-                <Items key={index} className="">
-                    {child}
-                </Items>
-            ));
+export default function InfiniteCarousel({ children: slides }) {
+    const [currSlide, setCurrSlide] = useState(2);
+    const length = slides.length;
 
-            return [
-                <Items key={children.length + 1} className="">
-                    {children[children.length - 1]}
-                </Items>,
-                ...items,
-                <Items key={children.length + 2} className="">
-                    {children[0]}
-                </Items>,
-            ];
-        }
+    const prev = () => {
+        setCurrSlide((currSlide) =>
+            (currSlide - 1 + length) % length
+        );
+    };
 
-        return <Items className="">{children[0]}</Items>;
-    }, [children]);
-
-    useLayoutEffect(() => {
-        setTranslateX(currSlide * 100);
-    })
+    const next = () => {
+        setCurrSlide((currSlide) =>
+            (currSlide + 1) % length
+        );
+    };
 
     return (
-        <section className="relative h-full max-h-[442px] min-h-[221px] w-full min-w-[331px] max-w-[1133px] overflow-hidden border-2 border-red-600">
-            <ul className="flex border-2 border-blue-600 h-full list-none space-x-2">{slides}</ul>
-        </section>
+        <div className="carousel-container overflow-hidden relative rounded-xl w-full max-w-[1133px]">
+            <div
+                className="flex transition-transform ease-in-out duration-300 max-w-[662px] max-h-[445px] space-x-8 justify-start"
+                style={{ transform: `translateX(-${currSlide * 100}%)` }}
+            >
+                {slides}
+            </div>
+            <div className="absolute inset-0 flex items-center justify-between p-4 text-white">
+                <button onClick={prev}>
+                    <img src="/ppif/icons/Arrow.svg" width={30} alt="Previous" />
+                </button>
+                <button onClick={next}>
+                    <img className="rotate-180" src="/ppif/icons/Arrow.svg" width={30} alt="Next" />
+                </button>
+            </div>
+            <div className="absolute bottom-4 left-0 right-0">
+                <div className="flex items-center justify-center gap-3">
+                    {slides.map((_, i) => (
+                        <div
+                            key={i}
+                            className={`
+                                transition-all w-full max-w-5 min-w-3 aspect-square rounded-full ${
+                                    currSlide === i ? "bg-white/100" : "bg-white/30 backdrop-blur-sm"
+                                }`}
+                        ></div>
+                    ))}
+                </div>
+            </div>
+        </div>
     );
-};
-
-export default Carousel;
+}
