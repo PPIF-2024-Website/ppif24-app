@@ -52,3 +52,17 @@ html {
         @apply drop-shadow-[0_0_10px_rgba(var(--ppif-blue-rgb),0.75)];
     }
 }
+
+/* ini style untuk main background, karena tailwindnya somehow ga bisa -tio */
+.main-background {
+    background: linear-gradient(
+        to bottom,
+        #14000b 0%,
+        #14000b 60%,
+        #0e0600 65%,
+        #0e0600 70%,
+        #0e0600 80%,
+        #00000e 85%,
+        #00000e 100%
+    );
+}
