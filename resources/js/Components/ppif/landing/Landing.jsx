@@ -1,7 +1,4 @@
-import { useGlitch } from "react-powerglitch";
-
 export default function Landing({ id }) {
-    const glitch = useGlitch();
     return (
         <div
             id={id}
@@ -9,7 +6,6 @@ export default function Landing({ id }) {
         >
             <div className="absolute flex h-screen w-full items-center justify-center">
                 <img
-                    ref={glitch.ref}
                     className="max-w-32 lg:w-full"
                     src="/ppif/images/logo-ppif.png"
                     alt="ppif"
