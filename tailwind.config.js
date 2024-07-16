@@ -22,8 +22,8 @@ export default {
                 "ppif-pink": "var(--ppif-pink)",
                 "ppif-blue": "var(--ppif-blue)",
             },
-        },
     },
 
     plugins: [forms],
+}
 };

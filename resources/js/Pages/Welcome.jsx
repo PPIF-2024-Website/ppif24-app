@@ -4,7 +4,6 @@ import { Link, Head } from "@inertiajs/react";
 import { useGlitch } from "react-powerglitch";
 
 export default function Welcome() {
-    const glitch = useGlitch();
     return (
         <>
             <Head title="Home" />

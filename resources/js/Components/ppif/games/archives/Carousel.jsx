@@ -34,12 +34,12 @@ export default function Carousel({ children: slides }) {
             </div>
             <div className="absolute bottom-4 left-0 right-0">
                 <div className="flex items-center justify-center gap-3">
-                    {slides.map((_, i) => (
+                    {slides.map((_, index) => (
                         <div
-                            key={i}
+                            key={index}
                             className={`
                                 transition-all w-full max-w-5 min-w-3 aspect-square rounded-full ${
-                                    currentSlide === i ? "bg-white/100" : "bg-white/30 backdrop-blur-sm"
+                                    currentSlide === index ? "bg-white/100" : "bg-white/30 backdrop-blur-sm"
                                 }`}
                         ></div>
                     ))}
