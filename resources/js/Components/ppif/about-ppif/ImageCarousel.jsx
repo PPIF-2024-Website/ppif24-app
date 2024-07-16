@@ -65,11 +65,11 @@ export default function ImageCarousel({ imageUrls }) {
             <div className="absolute left-0 top-1/2 flex w-full justify-between [transform:translate(0,-50%)]">
                 <ChevronLeftIcon
                     onClick={() => handleScrollCarousel("left")}
-                    className={`smooth glow-white w-10 hover:scale-125 [&>path]:stroke-[2] ${showLeftControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
+                    className={`smooth glow-white w-10 cursor-pointer hover:scale-125 [&>path]:stroke-[2] ${showLeftControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
                 />
                 <ChevronRightIcon
                     onClick={() => handleScrollCarousel("right")}
-                    className={`smooth glow-white w-10 hover:scale-125 [&>path]:stroke-[2] ${showRightControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
+                    className={`smooth glow-white w-10 cursor-pointer hover:scale-125 [&>path]:stroke-[2] ${showRightControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
                 />
             </div>
 
