@@ -1,6 +1,6 @@
 import axios from "axios";
 import ArchivesBackground from "../background/archives-background/ArchivesBackground";
-import Modal from "../Modal";
+import Modal from "../CustomModal";
 import Carousel from "./archives/Carousel";
 import { useState } from "react";
 
