@@ -1,7 +1,6 @@
 import { Link, Head } from "@inertiajs/react";
 import { useGlitch } from "react-powerglitch";
 import Contact from "@/Components/ppif/contact/Contact";
-import Footer from "@/Components/ppif/navbar-footer/Footer";
 import React from "react";
 
 export default function Welcome() {
@@ -42,8 +41,6 @@ export default function Welcome() {
             <div className="flex flex-col min-h-screen">
                 <Head title="Contact" />
                 <Contact />
-                <Head title="Footer" />
-                <Footer />
             </div>
         </>
     );
