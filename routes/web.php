@@ -48,4 +48,8 @@ Route::get('/TesGamePage', function() {
     return Inertia::render('TesGamePage');
 });
 
+Route::get('/Game', function() {
+    return Inertia::render('GamePage');
+});
+
 require __DIR__.'/auth.php';
