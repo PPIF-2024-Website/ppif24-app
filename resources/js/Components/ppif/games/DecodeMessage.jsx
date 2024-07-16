@@ -23,7 +23,7 @@ function DecodeMessage(props) {
             set_response(res.data);
             console.log('Response from /api/group: ', res.data);
         } catch(error) {
-            console.error('Terjadi Kesalahan ', error);
+            set_response("Message Salah");
         }
     };
 
