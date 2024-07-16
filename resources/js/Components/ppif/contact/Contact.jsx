@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact() {
     return (
-        <div className="container mx-auto h-auto min-h-screen w-screen bg-[url('/ppif/images/bg.png')] bg-cover pb-24 text-white lg:pb-16">
+        <div className="mx-auto h-auto min-h-screen w-screen bg-[url('/ppif/images/bg.png')] bg-cover pb-24 text-white lg:pb-16">
             <div className="pt-16 text-center">
                 <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
                     CONTACT
@@ -17,15 +17,15 @@ function Contact() {
                             <img
                                 src="/ppif/images/instagram.png"
                                 alt="instagram_logo"
-                                className="h-full w-full object-contain lg:h-24"
+                                className="h-full w-full object-contain lg:h-24 drop-shadow-[0_10px_10px_rgba(255,255,255,0.5)]"
                             />
                         </div>
                         <div className="flex flex-col items-start justify-center lg:items-center">
-                            <h2 className="text-[3.5vw] lg:mt-[3vw] lg:text-2xl">
+                            <h2 className="lg:text-[22px] text-[18px] lg:mt-[3vw] lg:text-2xl">
                                 PPIF UMN
                             </h2>
                             <button
-                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[1.8vw] text-base shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
+                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[12px] lg:text-[15px] shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
                                 onClick={() =>
                                     (window.location.href =
                                         "https://www.instagram.com/ppif.umn/")
@@ -43,15 +43,15 @@ function Contact() {
                             <img
                                 src="/ppif/images/line.png"
                                 alt="line_logo"
-                                className="h-full w-full object-contain lg:h-24"
+                                className="h-full w-full object-contain lg:h-24 drop-shadow-[0_10px_10px_rgba(255,255,255,0.5)]"
                             />
                         </div>
                         <div className="flex flex-col items-start justify-center lg:items-center">
-                            <h2 className="text-[3.5vw] lg:mt-[3vw] lg:text-2xl">
+                            <h2 className="lg:text-[22px] text-[18px] lg:mt-[3vw] lg:text-2xl">
                                 PPIF UMN 2024
                             </h2>
                             <button
-                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[1.8vw] text-base shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
+                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[12px] lg:text-[15px] shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
                                 onClick={() =>
                                     (window.location.href =
                                         "https://line.me/ti/g2/...")
@@ -69,15 +69,15 @@ function Contact() {
                             <img
                                 src="/ppif/images/discord.png"
                                 alt="discord_logo"
-                                className="h-full w-full object-contain lg:h-24"
+                                className="h-full w-full object-contain lg:h-24 drop-shadow-[0_10px_10px_rgba(255,255,255,0.5)]"
                             />
                         </div>
                         <div className="flex flex-col items-start justify-center lg:items-center">
-                            <h2 className="text-[3.5vw] lg:mt-[3vw] lg:text-xl">
+                            <h2 className="lg:text-[22px] text-[18px] lg:mt-[3vw] lg:text-xl">
                                 Informatika UMN
                             </h2>
                             <button
-                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[1.8vw] text-base shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
+                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[12px] lg:text-[15px] shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
                                 onClick={() =>
                                     (window.location.href =
                                         "https://discord.gg/......")

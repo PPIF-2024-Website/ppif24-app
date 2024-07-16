@@ -1,6 +1,8 @@
 import { Link, Head } from "@inertiajs/react";
 import { useGlitch } from "react-powerglitch";
-
+import Contact from "@/Components/ppif/contact/Contact";
+import Footer from "@/Components/ppif/navbar-footer/Footer";
+import React from "react";
 
 export default function Welcome() {
     const glitch = useGlitch();
@@ -17,6 +19,9 @@ export default function Welcome() {
             </div>
             {/* content */}
 
+
+
+
             <div className="z-1 relative flex h-screen w-screen flex-col items-center justify-center gap-5 overflow-hidden text-white lg:flex-row lg:gap-10">
                 <img
                     ref={glitch.ref}
@@ -32,6 +37,13 @@ export default function Welcome() {
                     <span className="font-italic font-bold italic"> PPIF </span>
                     2024
                 </p>
+            </div>
+
+            <div className="flex flex-col min-h-screen">
+                <Head title="Contact" />
+                <Contact />
+                <Head title="Footer" />
+                <Footer />
             </div>
         </>
     );
