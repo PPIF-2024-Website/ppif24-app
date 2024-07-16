@@ -2,6 +2,7 @@ import { Link, Head } from "@inertiajs/react";
 import { useGlitch } from "react-powerglitch";
 import Contact from "@/Components/ppif/contact/Contact";
 import React from "react";
+import ContactNew from "@/Components/ppif/contact/ContactNew";
 
 export default function Welcome() {
     const glitch = useGlitch();
@@ -40,7 +41,7 @@ export default function Welcome() {
 
             <div className="flex flex-col min-h-screen">
                 <Head title="Contact" />
-                <Contact />
+                <ContactNew/>
             </div>
         </>
     );
