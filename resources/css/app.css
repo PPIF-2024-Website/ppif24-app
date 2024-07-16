@@ -17,6 +17,10 @@
     *::-webkit-scrollbar {
         display: none;
     }
+
+    * {
+        @apply selection:bg-white selection:text-black;
+    }
 }
 
 @layer utilities {
@@ -35,7 +39,7 @@
     }
 
     .text-body {
-        @apply text-base;
+        @apply text-sm sm:text-base;
     }
 
     .text-footer {
