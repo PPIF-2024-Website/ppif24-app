@@ -1,12 +1,11 @@
 import React from "react";
+import { Link } from "@inertiajs/react";
 
 function Contact() {
-    const toGamePage = () => {
-        window.location.href = "/gameLanding";
-    };
 
     return (
-        <div className="flex flex-col min-h-screen w-screen bg-[url('/ppif/images/bg.png')] bg-cover text-white">
+
+        <div className="flex min-h-screen w-screen flex-col bg-[url('/ppif/images/bg.png')] bg-cover text-white">
             <div className="pt-16 text-center">
                 <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
                     CONTACT
@@ -14,7 +13,7 @@ function Contact() {
                 <span className="text-4xl font-bold sm:text-5xl"> Us</span>
             </div>
 
-            <div className="flex-grow mx-4 mt-8 mb-40 grid grid-cols-1 gap-6 rounded-lg bg-white bg-opacity-15 p-4 lg:mx-20 lg:grid-cols-3 lg:p-12">
+            <div className="mx-4 mb-40 mt-8 grid flex-grow grid-cols-1 gap-6 rounded-lg bg-white bg-opacity-15 p-4 lg:mx-20 lg:grid-cols-3 lg:p-12">
                 <div className="flex flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 pb-6 pt-6 shadow-lg lg:flex-col lg:pb-12 lg:pt-12">
                     <div className="grid w-full grid-cols-2 items-center lg:grid-cols-1">
                         <div className="flex h-24 items-center justify-center">
@@ -105,12 +104,13 @@ function Contact() {
                             © 2024 Perkenalan Prodi Informatika UMN
                         </h2>
                     </div>
-                    <img
-                        src="/ppif/icons/Game_icon.png"
-                        alt="Navigate to Game Page"
-                        onClick={toGamePage}
-                        className="w-14 cursor-pointer lg:mr-8 lg:w-auto"
-                    />
+                    <Link href="/game/story">
+                        <img
+                            src="/ppif/icons/Game_icon.png"
+                            alt="Navigate to Game Page"
+                            className="w-14 cursor-pointer lg:mr-8 lg:w-auto"
+                        />
+                    </Link>
                 </div>
             </footer>
         </div>

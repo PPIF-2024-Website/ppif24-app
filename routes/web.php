@@ -22,6 +22,10 @@ Route::get('/contact', function () {
     return Inertia::render('ContactPage');
 });
 
+Route::get('/game/story', function () {
+    return Inertia::render('FooterPage');
+});
+
 Route::get('/footer', function () {
     return Inertia::render('FooterPage');
 });
