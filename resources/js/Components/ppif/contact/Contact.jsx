@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact() {
     return (
-        <div className="mx-auto h-auto min-h-screen w-screen bg-[url('/ppif/images/bg.png')] bg-cover pb-24 text-white lg:pb-16">
+        <div className="mx-auto min-h-screen w-screen bg-[url('/ppif/images/bg.png')] bg-cover pb-24 text-white lg:pb-16">
             <div className="pt-16 text-center">
                 <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
                     CONTACT
