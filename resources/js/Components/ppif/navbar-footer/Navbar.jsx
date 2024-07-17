@@ -42,7 +42,7 @@ export default function Navbar() {
                 ></img>
             </div>
             <nav
-                className={`${isScrollUp ? "md:top-0" : "md:-top-40"} ${isBurgerActive ? "bg-black bg-opacity-75" : "backdrop-blur-0"} fixed z-10 mx-auto flex h-full w-screen flex-col px-12 py-20 text-2xl text-white backdrop-blur-md transition-all duration-700 ease-in-out md:mt-8 md:flex md:h-auto md:w-auto md:flex-row md:gap-16 md:rounded-xl md:bg-white md:bg-opacity-10 md:px-12 md:py-5 md:text-base md:shadow-[0px_0px_50px_20px_rgba(255,255,255,0.1)] md:duration-200`}
+                className={`${isScrollUp ? "md:top-0" : "md:-top-40"} ${isBurgerActive ? "bg-black bg-opacity-75" : "backdrop-blur-none"} fixed z-10 mx-auto flex h-full w-screen flex-col px-12 py-20 text-2xl text-white backdrop-blur-md transition-all duration-700 ease-in-out md:mt-8 md:flex md:h-auto md:w-auto md:flex-row md:gap-16 md:rounded-xl md:bg-white md:bg-opacity-10 md:px-12 md:py-5 md:text-base md:shadow-[0px_0px_50px_20px_rgba(255,255,255,0.1)] md:duration-200`}
             >
                 <Link
                     className={`${isBurgerActive ? "translate-y-0 delay-0" : "-translate-y-10 opacity-0 delay-[250ms]"} py-4 font-bold transition-all ease-in-out hover:drop-shadow-[0px_0px_5px_rgba(255,255,255,1)] md:translate-y-0 md:p-0 md:font-normal md:opacity-100 md:delay-0`}
