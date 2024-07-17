@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./scrollbar.css";
 
 
 function Timeline() {
@@ -45,7 +45,7 @@ function Timeline() {
                             Lecture Theater, Gedung D, UMN
                         </span>
 
-                        <span className="text-[10px] lg:text-base mt-5 h-40">
+                        <span className="text-[10px] lg:text-base mt-5 h-36">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </span>
 
@@ -53,17 +53,17 @@ function Timeline() {
                     <span className="font-black text-4xl">
                         Necessities
                     </span>
-                    <ul className="h-[190px] flex overflow-x-scroll w-full whitespace-nowrap">
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                    <ul className="necessities h-[190px] flex overflow-x-auto w-full whitespace-nowrap gap-[36px]">
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
                     </ul>
@@ -87,7 +87,7 @@ function Timeline() {
                             Lecture Theater, Gedung D, UMN
                         </span>
 
-                        <span className="text-[10px] lg:text-base mt-5 h-40">
+                        <span className="text-[10px] lg:text-base mt-5 h-36">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </span>
 
@@ -95,25 +95,25 @@ function Timeline() {
                     <span className="font-black text-4xl">
                         Necessities
                     </span>
-                    <ul className="h-[190px] flex overflow-x-scroll w-full whitespace-nowrap">
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                    <ul className="necessities h-[190px] flex overflow-x-auto w-full whitespace-nowrap gap-[36px]">
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
                         
@@ -138,7 +138,7 @@ function Timeline() {
                             Lecture Theater, Gedung D, UMN
                         </span>
 
-                        <span className="text-[10px] lg:text-base mt-5 h-40">
+                        <span className="text-[10px] lg:text-base mt-5 h-36">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </span>
 
@@ -146,37 +146,37 @@ function Timeline() {
                     <span className="font-black text-4xl">
                         Necessities
                     </span>
-                    <ul className="h-[190px] flex overflow-x-scroll w-full whitespace-nowrap">
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                    <ul className="necessities h-[180px] mt-4 flex overflow-x-auto w-full whitespace-nowrap gap-[40px]">
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
-                        <li className="listItem p-4 pb-0 text-center w-auto min-w-[152px]">
-                            <img className="bg-gray-800 size-[128px]"/>
+                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                            <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
                     </ul>
