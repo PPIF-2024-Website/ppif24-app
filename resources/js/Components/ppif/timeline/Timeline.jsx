@@ -53,8 +53,7 @@ function Timeline() {
                     <span className="font-black text-4xl">
                         Necessities
                     </span>
-                    <ul className="necessities h-[190px] flex overflow-x-auto w-full whitespace-nowrap gap-[36px]">
-                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                    <ul className="necessities h-[180px] mt-4 flex overflow-x-auto w-full whitespace-nowrap gap-[47px]">                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
                             <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
@@ -95,8 +94,7 @@ function Timeline() {
                     <span className="font-black text-4xl">
                         Necessities
                     </span>
-                    <ul className="necessities h-[190px] flex overflow-x-auto w-full whitespace-nowrap gap-[36px]">
-                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
+                    <ul className="necessities h-[180px] mt-4 flex overflow-x-auto w-full whitespace-nowrap gap-[47px]">                        <li className="listItem pb-0 text-center w-auto min-w-[128px]">
                             <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
                         </li>
@@ -146,7 +144,7 @@ function Timeline() {
                     <span className="font-black text-4xl">
                         Necessities
                     </span>
-                    <ul className="necessities h-[180px] mt-4 flex overflow-x-auto w-full whitespace-nowrap gap-[40px]">
+                    <ul className="necessities h-[180px] mt-4 flex overflow-x-auto w-full whitespace-nowrap gap-[47px]">
                         <li className="listItem pb-0 text-center w-auto min-w-[128px]">
                             <img className="bg-white size-[128px]"/>
                             <span className="mt-4">Item</span>
