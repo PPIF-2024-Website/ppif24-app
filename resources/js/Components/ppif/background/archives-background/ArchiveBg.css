@@ -24,36 +24,55 @@
 .bg-container2 div {
     position: absolute;
     border-radius: 100%;
-    animation: rotate 15s linear infinite;
+    animation:
+        rotate 15s linear infinite,
+        pulse 5s linear infinite;
 }
 
 .bg-color1 {
-    background-color: #FF00D8;
+    background-color: #ff00d8;
     width: 50rem;
     height: 65rem;
     left: -25rem;
     bottom: -10rem;
+    animation-delay: 2s;
 }
 
 .bg-color2 {
-    background-color: #FF6600;
+    background-color: #ff6600;
     width: 50rem;
     height: 60rem;
     top: -25rem;
     right: 20rem;
+    animation-delay: 4s;
 }
 
 .bg-color3 {
-    background-color: #003CFF;
+    background-color: #003cff;
     width: 50rem;
     height: 60rem;
     right: -5rem;
     bottom: -30rem;
+    animation-delay: 500ms;
 }
 
 @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-
+@keyframes pulse {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 60%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

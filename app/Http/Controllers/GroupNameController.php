@@ -16,7 +16,10 @@ class GroupNameController extends Controller
             $secret_code = $request->input('secret_code');
             $group = GroupName::where('secret_code', $secret_code)->first();
             if ($group) {
-                return response()->json($group->token);
+                return response()->json([
+                    'token' => $group->token,
+                    'riddle' => $group->riddle,
+                ]);
             } else {
                 return response()->json(['message' => 'Invalid Secret Code'], 404);
             }

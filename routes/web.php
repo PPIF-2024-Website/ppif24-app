@@ -32,6 +32,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::prefix('game')->group(function () {
+    Route::get('/story', function () {
+        return Inertia::render('GameStoryPage');
+    });
+    Route::get('/archive', function () {
+        return Inertia::render('GameArchivesPage');
+    
+    });
+});
 
 Route::get('/background', function(){
     return Inertia::render('BackgroundTest');

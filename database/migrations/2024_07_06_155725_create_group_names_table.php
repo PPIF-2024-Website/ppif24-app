@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('token');
             $table->string('decode_message');
             $table->string('group_name');
+            $table->text('riddle');
             $table->timestamps();
         });
     }
