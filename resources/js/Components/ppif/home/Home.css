@@ -1,0 +1,46 @@
+body {
+    background-color: purple;
+    padding: 60px;
+}
+
+#orangebackground {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 420px;
+    height: 100px;
+}
+
+#informatika {
+    position: absolute;
+    left: 50px;
+    font-size: 40px;
+    padding-top: 16px;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 1280px) {
+    #orangebackground {
+        width: 350px;
+        height: 90px;
+    }
+    #informatika {
+        left: 35px;
+        font-size: 35px;
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 1023px) {
+    #polygon {
+        margin: 0px;
+        height: 100%;
+    }
+    #text {
+        text-align: justify;
+    }
+    #images {
+        width: 100%;
+        margin-top: 80px;
+    }
+}
