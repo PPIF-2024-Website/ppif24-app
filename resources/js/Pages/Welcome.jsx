@@ -3,12 +3,13 @@ import Navbar from "@/Components/ppif/navbar-footer/Navbar";
 import Landing from "@/Components/ppif/landing/Landing";
 import Background from "@/Components/ppif/background/Background";
 import AboutPPIF from "@/Components/ppif/about-ppif/AboutPPIF";
+import AnimatedBackground from "@/Components/ppif/background/AnimatedBackground";
 
 export default function Welcome() {
     return (
         <>
             <Head title="Home" />
-            <Background />
+            <AnimatedBackground />
             <Navbar />
             <Landing id={"Home"} />
             <Landing id={"AboutIF"} />
