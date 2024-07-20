@@ -27,7 +27,9 @@ export default function Navbar() {
     }, []);
 
     const handleBurger = () => {
-        setIsBurgerActive(!isBurgerActive);
+        if (window.innerWidth <= 768) {
+            setIsBurgerActive(!isBurgerActive);
+        }
     };
 
     return (
