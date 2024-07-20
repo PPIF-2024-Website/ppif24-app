@@ -25,7 +25,7 @@ export default function AboutPPIF() {
                 </h1>
 
                 {/* BODY */}
-                <div className="text-body !leading-relaxed sm:w-[70%]">
+                <div className="text-body z-[1] !leading-relaxed sm:w-[70%]">
                     {textContent}
                 </div>
             </div>
@@ -33,12 +33,12 @@ export default function AboutPPIF() {
             {/* CAROUSEL */}
             <ImageCarousel imageUrls={[]} />
 
-            {/* DUMMY BACKGROUND */}
+            {/* DUMMY BACKGROUND
             <div className="-z-10">
                 <div className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full bg-black"></div>
                 <div className="pointer-events-none absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-[var(--ppif-pink)] opacity-50 blur-[150px]"></div>
                 <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[var(--ppif-pink)] opacity-50 blur-[150px]"></div>
-            </div>
+            </div> */}
         </section>
     );
 }
