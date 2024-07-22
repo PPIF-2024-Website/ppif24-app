@@ -16,9 +16,9 @@ export default function AnimatedBackground() {
                 /> */}
             </div>
             <div className="relative h-screen">
-                <div className="bg-ball left-[70%] top-0 z-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
+                <div className="bg-ball left-[70%] top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
                 <img
-                    className="mask-bg absolute left-0 object-cover opacity-80 xl:object-fill"
+                    className="mask-bg absolute left-0 h-full w-full object-cover opacity-80 xl:object-fill"
                     src="/ppif/images/background/umn-bg.png"
                     alt="Gedung UMN"
                 />
