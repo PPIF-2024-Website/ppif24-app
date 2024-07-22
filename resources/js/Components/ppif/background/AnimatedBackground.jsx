@@ -28,17 +28,17 @@ export default function AnimatedBackground() {
                 /> */}
             </div>
             <div className="relative h-screen">
-                <div className="bg-ball -top-[10%] right-0 z-0 bg-[var(--ppif-pink)]"></div>
-                <div className="bg-ball -bottom-[10%] left-0 z-0 origin-bottom bg-[var(--ppif-pink)]"></div>
+                <div className="bg-ball -top-[10%] right-0 bg-[var(--ppif-pink)]"></div>
+                <div className="bg-ball -bottom-[10%] left-0 origin-bottom bg-[var(--ppif-pink)]"></div>
                 {/* <img
                     className="h-screen object-cover xl:w-full xl:object-fill"
                     src="/ppif/images/background/section3.png"
                 /> */}
             </div>
             <div className="relative h-screen">
-                <div className="bg-ball -left-[20%] -top-[10%] z-0 origin-right bg-[var(--ppif-orange)] opacity-60"></div>
-                <div className="bg-ball -top-[20%] right-[10%] z-0 origin-left bg-[var(--ppif-orange)]"></div>
-                {/* <div className="bg-ball bottom-0 right-0 z-0 origin-top-left bg-[var(--ppif-blue)] opacity-40"></div> */}
+                <div className="bg-ball -left-[20%] -top-[10%] origin-right bg-[var(--ppif-orange)] opacity-60"></div>
+                <div className="bg-ball -top-[20%] right-[10%] origin-left bg-[var(--ppif-orange)]"></div>
+                <div className="bg-ball bottom-0 right-0 origin-top-left bg-[var(--ppif-blue)] opacity-40"></div>
                 {/* <img
                     className="h-screen object-cover xl:w-full xl:object-fill"
                     src="/ppif/images/background/section4.png"
