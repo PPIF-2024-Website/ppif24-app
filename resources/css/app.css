@@ -92,7 +92,7 @@ html {
 
 @layer components {
     .bg-ball {
-        @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_30s_linear_infinite] rounded-full blur-[150px] md:h-[500px] md:w-[500px] md:blur-[200px];
+        @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_20s_linear_infinite] rounded-full blur-[150px] md:h-[500px] md:w-[500px] md:blur-[200px];
     }
 }
 

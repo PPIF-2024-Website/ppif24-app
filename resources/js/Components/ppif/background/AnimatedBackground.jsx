@@ -46,7 +46,7 @@ export default function AnimatedBackground() {
             </div>
             {/* section 5 */}
             <div className="relative h-screen">
-                <div className="bg-ball -bottom-[70%] left-1/2 h-[900px] w-[900px] bg-[var(--ppif-blue)] opacity-90 [transform:translate(-50%,0)] md:h-[1000px] md:w-[1000px]"></div>
+                <div className="bg-ball -bottom-[70%] left-1/2 h-[900px] w-[900px] animate-none bg-[var(--ppif-blue)] opacity-90 [transform:translate(-50%,0)] md:h-[1000px] md:w-[1000px]"></div>
                 {/* <img
                     className="h-screen object-cover xl:w-full xl:object-fill"
                     src="/ppif/images/background/section5.png"
