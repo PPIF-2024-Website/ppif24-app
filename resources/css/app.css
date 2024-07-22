@@ -17,21 +17,54 @@ html {
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    *::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        @apply selection:bg-white selection:text-black;
+    }
+}
+
 @layer utilities {
+    /* GENERAL */
+    .smooth {
+        @apply transition-all duration-150 ease-out;
+    }
+
+    /* TEXT */
+    .text-heading {
+        @apply text-5xl;
+    }
+
+    .text-subheading {
+        @apply text-2xl;
+    }
+
+    .text-body {
+        @apply text-sm sm:text-base;
+    }
+
+    .text-footer {
+        @apply text-sm;
+    }
+
+    /* GLOW */
     .glow-white {
-        @apply drop-shadow-[0_10px_10px_rgba(255,255,255,0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
     }
 
     .glow-orange {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-orange-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-orange-rgb),0.75)];
     }
 
     .glow-pink {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-pink-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-pink-rgb),0.75)];
     }
 
     .glow-blue {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-blue-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-blue-rgb),0.75)];
     }
 }
 
