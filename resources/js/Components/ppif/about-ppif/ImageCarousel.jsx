@@ -12,6 +12,20 @@ const DummyImage = ({ i }) => (
     </div>
 );
 
+const ImageContainer = ({ src, index }) => (
+    <div
+        key={index}
+        className="smooth h-[200px] w-[300px] flex-shrink-0 snap-center overflow-hidden rounded-md bg-white/20 hover:scale-[1.1]"
+    >
+        <img
+            src={src}
+            alt={`Foto Dokumentasi PPIF ${index}`}
+            className="h-full w-full select-none object-cover"
+            loading={index <= 5 ? "eager" : "lazy"}
+        />
+    </div>
+);
+
 export default function ImageCarousel({ imageUrls }) {
     const [showLeftControl, setShowLeftControl] = useState(false);
     const [showRightControl, setShowRightControl] = useState(true);
@@ -50,14 +64,14 @@ export default function ImageCarousel({ imageUrls }) {
     }, []);
 
     return (
-        <div className="relative h-[250px] w-full">
+        <div className="relative h-[275px] w-full">
             <div
                 ref={carouselRef}
                 className="mask-ends flex h-full w-full snap-x snap-mandatory items-center space-x-8 overflow-x-scroll rounded-lg bg-white/10 px-10 shadow-[0_0_25px_rgba(255,255,255,0.2)] backdrop-blur-md"
             >
                 {/* CAROUSEL */}
-                {Array.from({ length: 10 }, (_, i) => (
-                    <DummyImage i={i} />
+                {imageUrls.map((src, index) => (
+                    <ImageContainer key={index} src={src} index={index} />
                 ))}
             </div>
 
@@ -77,24 +91,5 @@ export default function ImageCarousel({ imageUrls }) {
             <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-[200px] rounded-lg bg-gradient-to-r from-white/[0.15] to-transparent blur-lg"></div>
             <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-[200px] rounded-lg bg-gradient-to-r from-transparent to-white/[0.15] blur-lg"></div>
         </div>
-
-        // <div className="relative flex h-[250px] w-full items-center rounded-lg bg-white/10 px-10 shadow-[0_0_25px_rgba(255,255,255,0.2)] backdrop-blur-md">
-        //     {/* CAROUSEL */}
-        //     <div className="flex w-full items-center space-x-8 overflow-x-scroll">
-        //         {Array.from({ length: 10 }, (_, i) => (
-        //             <DummyImage i={i} />
-        //         ))}
-        //     </div>
-
-        //     {/* CONTROL BUTTONS */}
-        //     <div className="absolute left-0 top-1/2 flex w-full justify-between [transform:translate(0,-50%)]">
-        //         <ChevronLeftIcon className="w-10 [&>path]:stroke-[2]" />
-        //         <ChevronRightIcon className="w-10 [&>path]:stroke-[2]" />
-        //     </div>
-
-        //     {/* EDGE BLURS */}
-        //     <div className="pointer-events-none absolute left-0 h-full w-[200px] rounded-lg bg-gradient-to-r from-white/20 to-transparent blur-lg"></div>
-        //     <div className="pointer-events-none absolute right-0 h-full w-[200px] rounded-lg bg-gradient-to-r from-transparent to-white/20 blur-lg"></div>
-        // </div>
     );
 }

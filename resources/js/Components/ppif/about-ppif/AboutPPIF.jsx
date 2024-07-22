@@ -31,14 +31,12 @@ export default function AboutPPIF() {
             </div>
 
             {/* CAROUSEL */}
-            <ImageCarousel imageUrls={[]} />
-
-            {/* DUMMY BACKGROUND
-            <div className="-z-10">
-                <div className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full bg-black"></div>
-                <div className="pointer-events-none absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-[var(--ppif-pink)] opacity-50 blur-[150px]"></div>
-                <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[var(--ppif-pink)] opacity-50 blur-[150px]"></div>
-            </div> */}
+            <ImageCarousel
+                imageUrls={Array.from(
+                    { length: 10 },
+                    (_, i) => `/ppif/images/about-ppif/${i + 1}.JPG`,
+                )}
+            />
         </section>
     );
 }
