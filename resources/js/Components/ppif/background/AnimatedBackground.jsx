@@ -21,6 +21,8 @@ export default function AnimatedBackground() {
                     className="mask-bg absolute left-0 h-full w-full object-cover opacity-80 xl:object-fill"
                     src="/ppif/images/background/umn-bg.png"
                     role="presentation"
+                    fetchPriority="low"
+                    loading="lazy"
                 />
                 {/* <img
                     className="min-w h-screen object-cover xl:w-full xl:object-fill"
