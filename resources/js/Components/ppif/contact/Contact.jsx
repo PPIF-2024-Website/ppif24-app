@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "@inertiajs/react";
+import ContactCard from "./ContactCard";
 
 function Contact() {
     return (
-        <div className="mx-auto min-h-screen w-screen bg-[url('/ppif/images/bg.png')] bg-cover pb-24 text-white lg:pb-16">
+        <div className="z-1 relative flex min-h-screen w-screen flex-col bg-cover text-white">
             <div className="pt-16 text-center">
                 <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
                     CONTACT
@@ -10,85 +12,52 @@ function Contact() {
                 <span className="text-4xl font-bold sm:text-5xl"> Us</span>
             </div>
 
-            <div className="mx-4 mt-8 grid grid-cols-1 gap-6 rounded-lg bg-white bg-opacity-15 p-4 lg:mx-20 lg:grid-cols-3 lg:p-12">
-                <div className="flex flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 pb-6 pt-6 shadow-lg lg:flex-col lg:pb-12 lg:pt-12">
-                    <div className="grid w-full grid-cols-2 items-center lg:grid-cols-1">
-                        <div className="flex h-24 items-center justify-center">
-                            <img
-                                src="/ppif/images/instagram.png"
-                                alt="instagram_logo"
-                                className="h-full w-full object-contain lg:h-24 drop-shadow-[0_10px_10px_rgba(255,255,255,0.5)]"
-                            />
-                        </div>
-                        <div className="flex flex-col items-start justify-center lg:items-center">
-                            <h2 className="lg:text-[22px] text-[18px] lg:mt-[3vw] lg:text-2xl">
-                                PPIF UMN
-                            </h2>
-                            <button
-                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[12px] lg:text-[15px] shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
-                                onClick={() =>
-                                    (window.location.href =
-                                        "https://www.instagram.com/ppif.umn/")
-                                }
-                            >
-                                Follow Our Instagram
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div className="mx-4 mb-40 mt-8 grid flex-grow grid-cols-1 gap-6 rounded-lg bg-white bg-opacity-15 p-4 lg:mx-20 lg:grid-cols-3 lg:p-12">
+                <ContactCard
+                    imageSrc="/ppif/images/ig.svg"
+                    altText="instagram_logo"
+                    title="PPIF UMN"
+                    buttonText="Follow Our Instagram"
+                    buttonLink="https://www.instagram.com/ppif.umn/"
+                />
 
-                <div className="flex flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 pb-6 pt-6 shadow-lg lg:flex-col lg:p-6">
-                    <div className="grid w-full grid-cols-2 items-center lg:grid-cols-1">
-                        <div className="flex h-24 items-center justify-center">
-                            <img
-                                src="/ppif/images/line.png"
-                                alt="line_logo"
-                                className="h-full w-full object-contain lg:h-24 drop-shadow-[0_10px_10px_rgba(255,255,255,0.5)]"
-                            />
-                        </div>
-                        <div className="flex flex-col items-start justify-center lg:items-center">
-                            <h2 className="lg:text-[22px] text-[18px] lg:mt-[3vw] lg:text-2xl">
-                                PPIF UMN 2024
-                            </h2>
-                            <button
-                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[12px] lg:text-[15px] shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
-                                onClick={() =>
-                                    (window.location.href =
-                                        "https://line.me/ti/g2/...")
-                                }
-                            >
-                                Join LINE GROUP
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <ContactCard
+                    imageSrc="/ppif/images/line.svg"
+                    altText="line_logo"
+                    title="PPIF UMN 2024"
+                    buttonText="Join LINE GROUP"
+                    buttonLink="https://line.me/ti/g2/..."
+                />
 
-                <div className="flex flex-col items-center justify-center rounded-lg bg-white bg-opacity-10 p-2 pb-6 pt-6 shadow-lg lg:flex-col lg:p-6">
-                    <div className="grid w-full grid-cols-2 items-center lg:grid-cols-1">
-                        <div className="flex h-24 items-center justify-center">
-                            <img
-                                src="/ppif/images/discord.png"
-                                alt="discord_logo"
-                                className="h-full w-full object-contain lg:h-24 drop-shadow-[0_10px_10px_rgba(255,255,255,0.5)]"
-                            />
-                        </div>
-                        <div className="flex flex-col items-start justify-center lg:items-center">
-                            <h2 className="lg:text-[22px] text-[18px] lg:mt-[3vw] lg:text-xl">
-                                Informatika UMN
-                            </h2>
-                            <button
-                                className="mt-2 rounded-lg bg-white bg-opacity-10 px-4 py-1 text-[12px] lg:text-[15px] shadow-lg transition-opacity duration-300 hover:bg-black hover:bg-opacity-35 hover:shadow-md hover:shadow-white lg:mt-4 lg:text-lg"
-                                onClick={() =>
-                                    (window.location.href =
-                                        "https://discord.gg/......")
-                                }
-                            >
-                                Join Discord Server
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <ContactCard
+                    imageSrc="/ppif/images/discord.svg"
+                    altText="discord_logo"
+                    title="Informatika UMN"
+                    buttonText="Join Discord Server"
+                    buttonLink="https://discord.gg/......"
+                />
             </div>
+            <footer className="w-full rounded-t-2xl bg-white/25 py-5 backdrop-blur-md">
+                <div className="z-10 mx-auto flex flex-col items-center justify-between lg:flex-row">
+                    <div className="mb-2 flex flex-col items-center justify-center lg:mb-0 lg:ml-6">
+                        <img
+                            src="/ppif/images/Logo_UMN_PPIF.svg"
+                            alt="logo UMN X PPIF"
+                            className="lg:w-4/4 mb-5 mt-4 w-3/4 px-7 lg:scale-125 lg:transform lg:pb-4"
+                        />
+                        <h2 className="text-center text-[3.3vw] font-bold text-[#ffffff] lg:ml-6 lg:text-base">
+                            © 2024 Perkenalan Prodi Informatika UMN
+                        </h2>
+                    </div>
+                    <Link href="/game/story">
+                        <img
+                            src="/ppif/icons/Game_icon.svg"
+                            alt="Navigate to Game Page"
+                            className="w-14 cursor-pointer lg:mr-8 lg:w-auto"
+                        />
+                    </Link>
+                </div>
+            </footer>
         </div>
     );
 }

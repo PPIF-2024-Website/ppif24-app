@@ -5,6 +5,7 @@ import Background from "@/Components/ppif/background/Background";
 import AboutPPIF from "@/Components/ppif/about-ppif/AboutPPIF";
 import AnimatedBackground from "@/Components/ppif/background/AnimatedBackground";
 import Timeline from "@/Components/ppif/timeline/Timeline";
+import Contact from "@/Components/ppif/contact/Contact";
 
 export default function Welcome() {
     return (
@@ -16,7 +17,7 @@ export default function Welcome() {
             <Landing id={"AboutIF"} />
             <AboutPPIF id={"AboutPPIF"} />
             <Timeline id={"Timeline"} />
-            <Landing id={"Contact"} />
+            <Contact id={"Contact"} />
         </>
     );
 }
