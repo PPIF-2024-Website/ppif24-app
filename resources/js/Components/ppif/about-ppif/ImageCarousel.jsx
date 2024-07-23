@@ -17,7 +17,7 @@ const DummyImage = ({ i }) => (
 const ImageContainer = ({ src, index }) => (
     <div
         key={index}
-        className="smooth h-[200px] w-[300px] flex-shrink-0 snap-center overflow-hidden rounded-md bg-white/20 hover:scale-[1.1]"
+        className="smooth h-[200px] w-[300px] flex-shrink-0 snap-center overflow-hidden rounded-md bg-white/10 hover:scale-[1.1]"
     >
         <LazyLoadImage
             src={src}
