@@ -21,7 +21,8 @@ const ImageContainer = ({ src, index }) => (
             src={src}
             alt={`Foto Dokumentasi PPIF ${index}`}
             className="h-full w-full select-none object-cover"
-            loading={index <= 5 ? "eager" : "lazy"}
+            loading="lazy"
+            fetchPriority="low"
         />
     </div>
 );
