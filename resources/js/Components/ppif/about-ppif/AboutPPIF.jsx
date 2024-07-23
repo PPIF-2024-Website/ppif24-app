@@ -34,7 +34,7 @@ export default function AboutPPIF() {
             <ImageCarousel
                 imageUrls={Array.from(
                     { length: 10 },
-                    (_, i) => `/ppif/images/about-ppif/${i + 1}.JPG`,
+                    (_, i) => `/ppif/images/about-ppif/${i + 1}.webp`,
                 )}
             />
         </section>
