@@ -4,7 +4,7 @@ import ContactCard from "./ContactCard";
 
 function ContactNew() {
     return (
-        <div className="flex min-h-screen w-screen flex-col bg-[url('/ppif/images/bg.png')] bg-cover text-white">
+        <div className="flex min-h-screen w-screen flex-col bg-cover text-white">
             <div className="pt-16 text-center">
                 <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
                     CONTACT
