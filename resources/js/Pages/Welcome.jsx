@@ -5,7 +5,6 @@ import React from "react";
 import ContactNew from "@/Components/ppif/contact/ContactNew";
 
 export default function Welcome() {
-    const glitch = useGlitch();
     return (
         <>
             <Head title="Home" />

@@ -36,4 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::get('/background', function(){
+    return Inertia::render('BackgroundTest');
+});
+
 require __DIR__.'/auth.php';

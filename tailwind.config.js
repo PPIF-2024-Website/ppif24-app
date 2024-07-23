@@ -14,12 +14,12 @@ export default {
         extend: {
             fontFamily: {
                 // sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                sans: ["Poppins", "sans-serif"],
+                sans: ["Plus Jakarta Sans", "Poppins", "Inter", "sans-serif"],
             },
             colors: {
-                "ppif-orange": "#FF6600",
-                "ppif-pink": "#FF00D8",
-                "ppif-blue": "#003CFF",
+                "ppif-orange": "var(--ppif-orange)",
+                "ppif-pink": "var(--ppif-pink)",
+                "ppif-blue": "var(--ppif-blue)",
             },
     },
 
