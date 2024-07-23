@@ -17,18 +17,33 @@ html {
 }
 
 
+@layer base {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        @apply selection:bg-white selection:text-black;
+    }
+}
+
 @layer utilities {
+    /* GENERAL */
+    .smooth {
+        @apply transition-all duration-150 ease-out;
+    }
+
     /* TEXT */
     .text-heading {
-        @apply text-xl;
+        @apply text-5xl;
     }
 
     .text-subheading {
-        @apply text-lg;
+        @apply text-2xl;
     }
 
     .text-body {
-        @apply text-base;
+        @apply text-sm sm:text-base;
     }
 
     .text-footer {
@@ -51,6 +66,34 @@ html {
     .glow-blue {
         @apply drop-shadow-[0_0_10px_rgba(var(--ppif-blue-rgb),0.75)];
     }
+
+    /* BACKGROUND */
+    .mask-bg {
+        mask-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0) 80%
+        );
+    }
+
+    /* ABOUT PPIF */
+    .mask-ends {
+        mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0)
+        );
+    }
+}
+
+@layer components {
+    .bg-ball {
+        @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_20s_linear_infinite] rounded-full blur-[150px] md:h-[500px] md:w-[500px] md:blur-[200px];
+    }
 }
 
 /* ini style untuk main background, karena tailwindnya somehow ga bisa -tio */
@@ -65,4 +108,14 @@ html {
         #00000e 85%,
         #00000e 100%
     );
+}
+
+@keyframes ball-movement {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
