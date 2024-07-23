@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const DummyImage = ({ i }) => (
     <div
@@ -17,12 +18,17 @@ const ImageContainer = ({ src, index }) => (
         key={index}
         className="smooth h-[200px] w-[300px] flex-shrink-0 snap-center overflow-hidden rounded-md bg-white/20 hover:scale-[1.1]"
     >
-        <img
+        <LazyLoadImage
             src={src}
             alt={`Foto Dokumentasi PPIF ${index}`}
             className="h-full w-full select-none object-cover"
-            loading="lazy"
+            delayTime="100"
             fetchPriority="low"
+            // effect="blur"
+            // wrapperProps={{
+            //     // If you need to, you can tweak the effect transition using the wrapper style.
+            //     style: { transitionDelay: "1s" },
+            // }}
         />
     </div>
 );
@@ -34,7 +40,7 @@ export default function ImageCarousel({ imageUrls }) {
 
     const handleScrollCarousel = (direction) =>
         carouselRef.current?.scrollBy({
-            left: direction === "right" ? 290 : -290,
+            left: direction === "right" ? 340 : -340,
             behavior: "smooth",
         });
 
