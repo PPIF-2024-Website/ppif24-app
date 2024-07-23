@@ -1,5 +1,5 @@
 import React from "react";
-import "./scrollbar.css";
+// import "./scrollbar.css";
 
 function Timeline({ id }) {
     const [open, setOpen] = React.useState(false);
