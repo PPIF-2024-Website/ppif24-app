@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 const DummyImage = ({ i }) => (
     <div
@@ -24,11 +25,10 @@ const ImageContainer = ({ src, index }) => (
             className="h-full w-full select-none object-cover"
             delayTime="100"
             fetchPriority="low"
-            // effect="blur"
-            // wrapperProps={{
-            //     // If you need to, you can tweak the effect transition using the wrapper style.
-            //     style: { transitionDelay: "1s" },
-            // }}
+            effect="opacity"
+            wrapperProps={{
+                style: { transitionDelay: "1s" },
+            }}
         />
     </div>
 );
