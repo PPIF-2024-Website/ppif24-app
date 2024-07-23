@@ -5,23 +5,93 @@ function Home() {
     return (
         <>
             <div class="relative mx-auto sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]">
-                <img
-                    className=""
-                    id="orangebackground"
-                    src="/ppif/images/orangebackground.png"
-                    alt="ppif"
-                />
-                <h1
-                    className="font-poppins font-bold italic text-white"
-                    id="informatika"
-                >
-                    INFORMATIKA
-                </h1>
+                <div className="absolute z-10 w-11/12 lg:w-2/5">
+                    <img
+                        class="w-full"
+                        src="/ppif/images/orangebackground.png"
+                        alt="ppif"
+                    />
 
-                <div
-                    className="container mx-auto h-[550px] rounded-bl-[10px] rounded-br-[10px] rounded-tl-[10px] rounded-tr-[10px] bg-white bg-opacity-20 p-8"
-                    id="polygon"
-                >
+                    <div className="absolute inset-0 flex w-11/12 items-center justify-center">
+                        <h1 className="text-center text-4xl font-bold text-white md:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
+                            INFORMATIKA
+                        </h1>
+                    </div>
+                </div>
+
+                <div className="container mx-auto h-[550px] p-8">
+                    <svg
+                        className="absolute inset-0 -z-10 hidden lg:flex"
+                        viewBox="0 0 1500 1000"
+                        preserveAspectRatio="none"
+                    >
+                        <defs>
+                            <mask
+                                id="mask"
+                                x="0"
+                                y="0"
+                                width="100%"
+                                height="100%"
+                            >
+                                <rect
+                                    x="0"
+                                    y="0"
+                                    width="100%"
+                                    height="100%"
+                                    fill="white"
+                                />
+                                <path
+                                    d="M 0 0 V 130 Q 0 115 15 115 H 510 q 10 0 25 -15 l 85 -85 q 15 -15 30 -15 Z"
+                                    fill="black"
+                                />
+                            </mask>
+                        </defs>
+
+                        <rect
+                            x="0"
+                            y="0"
+                            width="100%"
+                            height="100%"
+                            mask="url(#mask)"
+                            fill="rgba(255, 255, 255, 0.2)"
+                        />
+                    </svg>
+                    <svg
+                        className="absolute inset-0 -z-10 flex lg:hidden"
+                        viewBox="0 0 650 1000"
+                        preserveAspectRatio="none"
+                    >
+                        <defs>
+                            <mask
+                                id="mask2"
+                                x="0"
+                                y="0"
+                                width="100%"
+                                height="100%"
+                            >
+                                <rect
+                                    x="0"
+                                    y="0"
+                                    width="100%"
+                                    height="100%"
+                                    fill="white"
+                                />
+                                <path
+                                    d="M 0 0 V 130 Q 0 115 15 115 H 510 q 10 0 25 -15 l 85 -85 q 15 -15 30 -15 Z"
+                                    fill="black"
+                                />
+                            </mask>
+                        </defs>
+
+                        <rect
+                            x="0"
+                            y="0"
+                            width="100%"
+                            height="100%"
+                            mask="url(#mask2)"
+                            fill="rgba(255, 255, 255, 0.2)"
+                        />
+                    </svg>
                     <div className="flex flex-col lg:flex-row">
                         <div className="p-4 lg:w-2/5">
                             <p
