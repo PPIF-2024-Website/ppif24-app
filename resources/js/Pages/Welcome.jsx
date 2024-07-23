@@ -13,10 +13,7 @@ export default function Welcome() {
             <Navbar />
             <Landing id={"Home"} />
             <Landing id={"AboutIF"} />
-            <div id="AboutPPIF">
-                <AboutPPIF />
-            </div>
-            {/* <Landing id={"AboutPPIF"} /> */}
+            <AboutPPIF id={"AboutPPIF"} />
             <Landing id={"Timeline"} />
             <Landing id={"Contact"} />
         </>

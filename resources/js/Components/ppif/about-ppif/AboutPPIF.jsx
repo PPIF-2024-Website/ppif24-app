@@ -1,7 +1,7 @@
 import React from "react";
 import ImageCarousel from "./ImageCarousel";
 
-export default function AboutPPIF() {
+export default function AboutPPIF({ id }) {
     const textContent = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna 
@@ -13,7 +13,10 @@ export default function AboutPPIF() {
     `;
 
     return (
-        <section className="flex h-screen w-full flex-col items-center justify-center p-8 text-white md:p-12">
+        <section
+            id={id}
+            className="flex h-screen w-full flex-col items-center justify-center p-8 text-white md:p-12"
+        >
             {/* TEXT CONTENT */}
             <div className="mb-14 flex flex-col items-center justify-center text-center">
                 {/* TITLE */}
