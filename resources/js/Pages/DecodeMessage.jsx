@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function DecodeMessage() {
-  return (
-    <div>DecodeMessage</div>
-  )
+    return <div>DecodeMessage</div>;
 }
 
-export default DecodeMessage
+export default DecodeMessage;

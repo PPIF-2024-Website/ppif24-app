@@ -32,24 +32,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Route::get('/games', function() {
-//     return Inertia::render('Test');
-// });
-
-Route::get('/gameLanding', function() {
-    return Inertia::render('GameLanding');
+Route::prefix('game')->group(function () {
+    Route::get('/story', function () {
+        return Inertia::render('GameStoryPage');
+    });
+    Route::get('/archive', function () {
+        return Inertia::render('GameArchivesPage');
+    
+    });
 });
 
 Route::get('/background', function(){
     return Inertia::render('BackgroundTest');
-});
-
-Route::get('/TesGamePage', function() {
-    return Inertia::render('TesGamePage');
-});
-
-Route::get('/Game', function() {
-    return Inertia::render('GamePage');
 });
 
 require __DIR__.'/auth.php';
