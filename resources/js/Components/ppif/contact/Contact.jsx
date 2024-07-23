@@ -2,9 +2,12 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 import ContactCard from "./ContactCard";
 
-function Contact() {
+function Contact({ id }) {
     return (
-        <div className="z-1 relative flex min-h-screen w-screen flex-col bg-cover text-white">
+        <div
+            id={id}
+            className="z-1 relative flex min-h-screen w-screen flex-col bg-cover text-white"
+        >
             <div className="pt-16 text-center">
                 <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
                     CONTACT
