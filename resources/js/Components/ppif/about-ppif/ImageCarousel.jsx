@@ -83,16 +83,14 @@ export default function ImageCarousel({ imageUrls }) {
             </div>
 
             {/* CONTROL BUTTONS */}
-            <div className="absolute left-0 top-1/2 flex w-full justify-between [transform:translate(0,-50%)]">
-                <ChevronLeftIcon
-                    onClick={() => handleScrollCarousel("left")}
-                    className={`smooth glow-white w-10 cursor-pointer hover:scale-125 [&>path]:stroke-[2] ${showLeftControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
-                />
-                <ChevronRightIcon
-                    onClick={() => handleScrollCarousel("right")}
-                    className={`smooth glow-white w-10 cursor-pointer hover:scale-125 [&>path]:stroke-[2] ${showRightControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
-                />
-            </div>
+            <ChevronLeftIcon
+                onClick={() => handleScrollCarousel("left")}
+                className={`smooth glow-white absolute left-0 top-[42.5%] w-10 origin-center cursor-pointer hover:scale-125 [&>path]:stroke-[2] ${showLeftControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
+            />
+            <ChevronRightIcon
+                onClick={() => handleScrollCarousel("right")}
+                className={`smooth glow-white absolute right-0 top-[42.5%] w-10 origin-center cursor-pointer hover:scale-125 [&>path]:stroke-[2] ${showRightControl ? "opacity-60 hover:opacity-100" : "pointer-events-none opacity-0"}`}
+            />
 
             {/* EDGE BLURS */}
             <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-[200px] rounded-lg bg-gradient-to-r from-white/[0.15] to-transparent blur-lg"></div>
