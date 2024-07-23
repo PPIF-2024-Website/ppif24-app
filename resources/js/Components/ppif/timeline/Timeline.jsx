@@ -1,5 +1,5 @@
 import React from "react";
-// import "./scrollbar.css";
+import "./scrollbar.css";
 
 function Timeline({ id }) {
     const [open, setOpen] = React.useState(false);
@@ -213,7 +213,7 @@ function Timeline({ id }) {
     return (
         <div
             id={id}
-            className="flex h-screen w-screen justify-center bg-[url('/ppif/images/timeline_bg.png')] bg-cover"
+            className="flex h-screen w-full justify-center bg-[url('/ppif/images/timeline_bg.png')] bg-cover"
         >
             <div className="w-100 container min-h-screen font-[Poppins] text-white">
                 <div className="select-none whitespace-nowrap pt-4 text-center text-[36px] drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] lg:pt-32 lg:text-[68px]">
