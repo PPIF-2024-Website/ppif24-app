@@ -1,7 +1,11 @@
-import { Head } from "@inertiajs/react";
 import Navbar from "@/Components/ppif/navbar-footer/Navbar";
 import Landing from "@/Components/ppif/landing/Landing";
 import Background from "@/Components/ppif/background/Background";
+import { Link, Head } from "@inertiajs/react";
+import { useGlitch } from "react-powerglitch";
+import Contact from "@/Components/ppif/contact/Contact";
+import React from "react";
+import ContactNew from "@/Components/ppif/contact/ContactNew";
 
 export default function Welcome() {
     return (
@@ -13,7 +17,7 @@ export default function Welcome() {
             <Landing id={"AboutIF"} />
             <Landing id={"AboutPPIF"} />
             <Landing id={"Timeline"} />
-            <Landing id={"Contact"} />
+            <ContactNew id={"Contact"} />
         </>
     );
 }
