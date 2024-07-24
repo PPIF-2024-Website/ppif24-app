@@ -49,7 +49,7 @@ function DecodeMessage({ groupToken, children: button }) {
         <>
             <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
                 <h1
-                    className="flex h-3/4 items-center justify-center text-center text-6xl font-semibold tracking-wide text-white"
+                    className="flex h-3/4 items-center justify-center text-center text-6xl font-semibold tracking-wide text-white leading-normal"
                     dangerouslySetInnerHTML={{ __html: response }}
                 />
                 {response != "Message Salah" ? (

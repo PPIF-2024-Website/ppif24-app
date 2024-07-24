@@ -1,6 +1,11 @@
 import React from "react";
 
-const Modal = ({ title, children: content, isOpen, setIsOpen }) => {
+const Modal = ({ title, children: content, isOpen, setIsOpen, setResponse }) => {
+    const handleClick = () => {
+        setIsOpen(false);
+        setResponse(false);
+    }
+
     return (
         <div
             id="modal-container"
@@ -8,7 +13,7 @@ const Modal = ({ title, children: content, isOpen, setIsOpen }) => {
         >
             <button
                 className="absolute right-10 top-10"
-                onClick={() => setIsOpen(false)}
+                onClick={handleClick}
             >
                 <div className="relative h-12 w-12 rounded-full border-2 border-white/75 drop-shadow-[0px_0px_4px_rgba(255,255,255,0.75)] transition-all duration-500 hover:rotate-180">
                     <div className="absolute left-3 top-[21px] w-5 rotate-45 border"></div>

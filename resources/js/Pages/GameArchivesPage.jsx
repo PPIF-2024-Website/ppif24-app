@@ -106,6 +106,7 @@ export default function GameArchives() {
                         title={"SECRET CODE"}
                         isOpen={modalIsOpen}
                         setIsOpen={setModalIsOpen}
+                        setResponse={setResponse}
                     >
                         <form
                             onSubmit={handleSubmit}
