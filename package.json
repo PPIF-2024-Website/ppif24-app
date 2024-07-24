@@ -22,6 +22,8 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@heroicons/react": "^2.1.5",
+        "react-lazy-load-image-component": "^1.6.2",
         "react-powerglitch": "^1.0.3"
     }
 }

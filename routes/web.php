@@ -26,6 +26,10 @@ Route::get('/footer', function () {
     return Inertia::render('FooterPage');
 });
 
+Route::get('/timeline', function () {
+    return Inertia::render('TimelinePage');
+});
+    
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
