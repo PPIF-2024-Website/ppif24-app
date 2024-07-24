@@ -43,7 +43,7 @@ export default function Navbar() {
                 ></img>
             </div>
             <nav
-                className={`${isScrollUp ? "md:top-0" : "md:-top-40"} ${isBurgerActive ? "bg-black bg-opacity-75" : "pointer-events-none backdrop-blur-none"} fixed z-10 mx-auto flex h-full w-screen flex-col px-12 py-20 text-2xl text-white transition-all duration-700 ease-in-out md:pointer-events-auto md:mt-8 md:flex md:h-auto md:w-auto md:flex-row md:gap-16 md:rounded-xl md:bg-white md:bg-opacity-10 md:px-12 md:py-5 md:text-base md:shadow-[0px_0px_50px_20px_rgba(255,255,255,0.1)] md:backdrop-blur-md md:duration-200`}
+                className={`${isScrollUp ? "md:top-0" : "md:-top-40"} ${isBurgerActive ? "bg-black bg-opacity-75 backdrop-blur-md" : "pointer-events-none backdrop-blur-none"} fixed z-10 mx-auto flex h-full w-screen flex-col px-12 py-20 text-2xl text-white transition-all duration-700 ease-in-out md:pointer-events-auto md:mt-8 md:flex md:h-auto md:w-auto md:flex-row md:gap-16 md:rounded-xl md:bg-white md:bg-opacity-10 md:px-12 md:py-5 md:text-base md:shadow-[0px_0px_50px_20px_rgba(255,255,255,0.1)] md:backdrop-blur-md md:duration-200`}
             >
                 <a
                     onClick={handleBurger}

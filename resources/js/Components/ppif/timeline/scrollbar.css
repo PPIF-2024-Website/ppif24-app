@@ -1,0 +1,18 @@
+.necessities::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.necessities::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.necessities::-webkit-scrollbar-thumb {
+    background: rgba(66, 66, 66, 1);
+    border-radius: 10px;
+}
+
+.necessities::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 56, 56, 1); 
+}
