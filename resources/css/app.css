@@ -18,8 +18,8 @@ html {
 @tailwind utilities;
 
 @layer base {
-    *::-webkit-scrollbar {
-        display: none;
+    .carousel::-webkit-scrollbar {
+        @apply hidden;
     }
 
     * {
