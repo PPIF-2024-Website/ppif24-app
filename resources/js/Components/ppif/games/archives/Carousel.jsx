@@ -1,50 +1,127 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-export default function Carousel({ children: slides }) {
-    const [currentSlide, setCurrentSlide] = useState(2);
-    const length = slides.length;
+const Carousel = ({ slides }) => {
+    const [slideWidth, setSlideWidth] = useState(0);
+    const [translateX, setTranslateX] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [items, setItems] = useState(slides);
+    const carouselRef = useRef(null);
+    const touchStartX = useRef(null);
 
-    const prev = () => {
-        setCurrentSlide((currentSlide) =>
-            (currentSlide - 1 + length) % length
-        );
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+    useEffect(() => {
+        if (carouselRef.current) {
+            setSlideWidth(
+                carouselRef.current.firstElementChild?.clientWidth || 0,
+            );
+        }
+    }, []);
+
+    useEffect(() => {
+        setItems([...slides.slice(-2), ...slides.slice(0, -2)]);
+        setTranslateX((prevPosition) => (prevPosition - slideWidth) * 2);
+    }, [slideWidth]);
+
+    const handleNext = () => {
+        if (isButtonDisabled) return;
+
+        setIsButtonDisabled(true);
+        setIsTransitioning(true);
+        setTranslateX((prevPosition) => prevPosition - slideWidth);
+
+        setTimeout(() => {
+            setIsTransitioning(false);
+            setItems((prev) => prev.slice(1).concat(prev[0]));
+            setTranslateX((prevPosition) => prevPosition + slideWidth);
+            setIsButtonDisabled(false);
+        }, 300);
     };
 
-    const next = () => {
-        setCurrentSlide((currentSlide) =>
-            (currentSlide + 1) % length
-        );
+    const handlePrevious = () => {
+        if (isButtonDisabled) return;
+
+        setIsButtonDisabled(true);
+        setIsTransitioning(true);
+        setTranslateX((prevPosition) => prevPosition + slideWidth);
+
+        setTimeout(() => {
+            setIsTransitioning(false);
+            setItems((prev) => [
+                prev[prev.length - 1],
+                ...prev.slice(0, prev.length - 1),
+            ]);
+            setTranslateX((prevPosition) => prevPosition - slideWidth);
+            setIsButtonDisabled(false);
+        }, 300);
+    };
+
+    const handleTouchStart = (event) => {
+        touchStartX.current = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event) => {
+        if (touchStartX.current !== null) {
+            const deltaX = event.touches[0].clientX - touchStartX.current;
+
+            if (deltaX > 50) {
+                handlePrevious();
+                touchStartX.current = null;
+            } else if (deltaX < -50) {
+                handleNext();
+                touchStartX.current = null;
+            }
+        }
     };
 
     return (
-        <div className="carousel-container overflow-hidden relative rounded-xl w-full max-w-[1133px]">
+        <div
+            className="items relative flex h-full max-h-[442.4px] w-full max-w-[1133px] items-center overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+        >
+            <div className="absolute z-[2] flex w-full cursor-pointer justify-between text-white">
+                <ChevronLeftIcon
+                    className="controlPrev hover:glow-white w-full max-w-20 transition-all duration-150 hover:scale-110"
+                    onClick={handlePrevious}
+                >
+                    Previous
+                </ChevronLeftIcon>
+                <ChevronRightIcon
+                    className="controlNext hover:glow-white w-full max-w-20 transition-all duration-150 hover:scale-110"
+                    onClick={handleNext}
+                >
+                    Next
+                </ChevronRightIcon>
+            </div>
             <div
-                className="flex transition-transform ease-in-out duration-300 max-w-[662px] max-h-[445px] space-x-8 justify-start"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                ref={carouselRef}
+                className={`carousel m-auto flex h-[443px] flex-nowrap md:w-[65%] ${isTransitioning ? "transition-all duration-300" : ""}`}
+                style={{ transform: `translateX(${translateX}px)` }}
             >
-                {slides}
+                {items.map((slides) => (
+                    <div
+                        className="flex h-full w-full shrink-0 px-8"
+                        key={slides}
+                    >
+                        <div className="relative h-full max-h-[442px] w-full max-w-[663px]">
+                            <LazyLoadImage
+                                src={slides}
+                                className="h-full w-full rounded-2xl object-fill"
+                            />
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div className="absolute inset-0 flex items-center justify-between p-4 text-white">
-                <button onClick={prev}>
-                    <img src="/ppif/icons/Arrow.svg" width={30} alt="Previous" />
-                </button>
-                <button onClick={next}>
-                    <img className="rotate-180" src="/ppif/icons/Arrow.svg" width={30} alt="Next" />
-                </button>
-            </div>
-            <div className="absolute bottom-4 left-0 right-0">
-                <div className="flex items-center justify-center gap-3">
-                    {slides.map((_, index) => (
-                        <div
-                            key={index}
-                            className={`
-                                transition-all w-full max-w-5 min-w-3 aspect-square rounded-full ${
-                                    currentSlide === index ? "bg-white/100" : "bg-white/30 backdrop-blur-sm"
-                                }`}
-                        ></div>
-                    ))}
-                </div>
-            </div>
+            <div
+                className={`pointer-events-none absolute left-0 top-0 z-[1] h-full w-full max-w-32 rounded-lg bg-gradient-to-r from-black/70 to-black/10 blur-lg transition-all duration-150 ${isButtonDisabled ? "opacity-5" : ""}`}
+            ></div>
+            <div
+                className={`pointer-events-none absolute right-0 top-0 z-[1] h-full w-full max-w-32 rounded-lg bg-gradient-to-l from-black/70 to-black/10 blur-lg transition-all duration-150 ${isButtonDisabled ? "opacity-5" : ""}`}
+            ></div>
         </div>
     );
-}
+};
+export default Carousel;

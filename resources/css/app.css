@@ -16,7 +16,6 @@ html {
     --ppif-blue: rgb(var(--ppif-blue-rgb));
 }
 
-
 @layer base {
     body::-webkit-scrollbar {
         display: none;
@@ -53,6 +52,9 @@ html {
     /* GLOW */
     .glow-white {
         @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
+    }
+    .box-glow-white {
+        @apply shadow-[0_0_20px_rgba(255,255,255,0.5)];
     }
 
     .glow-orange {
