@@ -6,7 +6,7 @@ import Footer from "../contact/Footer";
 
 export default function AnimatedBackground() {
     return (
-        <div className="main-background absolute z-[-1] w-full select-none overflow-hidden">
+        <div className="main-background absolute z-[-10] w-full select-none overflow-hidden">
             {/* HOME */}
             <div className="relative h-screen">
                 <div className="bg-ball left-1/2 top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
