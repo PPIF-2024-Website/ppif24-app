@@ -18,7 +18,7 @@ const ImageContainer = ({ src, placeholderSrc, index }) => (
             alt={`Foto Dokumentasi PPIF ${index}`}
             className="h-full w-full select-none object-cover"
             delayTime="100"
-            fetchPriority="low"
+            fetchpriority="low"
             effect="blur"
             wrapperProps={{
                 style: { transitionDelay: "1s" },
