@@ -1,21 +1,20 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
 import ContactCard from "./ContactCard";
 
 function Contact({ id }) {
     return (
         <div
             id={id}
-            className="flex min-h-screen w-screen flex-col bg-cover text-white"
+            className="flex h-screen w-full flex-col items-center justify-center p-6 text-white md:p-12"
         >
-            <div className="pt-16 text-center">
-                <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
+            <div className="text-heading mb-8 text-center">
+                <span className="glow-blue font-extrabold italic text-ppif-blue">
                     CONTACT
-                </span>
-                <span className="text-4xl font-bold sm:text-5xl"> Us</span>
+                </span>{" "}
+                <span className="glow-white font-light">Us</span>
             </div>
 
-            <div className="mx-4 mb-40 mt-8 grid flex-grow grid-cols-1 gap-6 rounded-lg bg-white bg-opacity-15 p-4 lg:mx-20 lg:grid-cols-3 lg:p-12">
+            <div className="flex h-[500px] w-full items-center space-x-12 rounded-xl bg-white/15 p-12 md:w-3/4">
                 <ContactCard
                     imageSrc="/ppif/images/ig.svg"
                     altText="Instagram"
@@ -38,27 +37,6 @@ function Contact({ id }) {
                     buttonLink="https://discord.gg/......"
                 />
             </div>
-            <footer className="w-full rounded-t-2xl bg-white/25 py-5 backdrop-blur-md">
-                <div className="z-10 mx-auto flex flex-col items-center justify-between lg:flex-row">
-                    <div className="mb-2 flex flex-col items-center justify-center lg:mb-0 lg:ml-6">
-                        <img
-                            src="/ppif/images/Logo_UMN_PPIF.svg"
-                            alt="logo UMN X PPIF"
-                            className="lg:w-4/4 mb-5 mt-4 w-3/4 px-7 lg:scale-125 lg:transform lg:pb-4"
-                        />
-                        <h2 className="text-center text-[3.3vw] font-bold text-[#ffffff] lg:ml-6 lg:text-base">
-                            © 2024 Perkenalan Prodi Informatika UMN
-                        </h2>
-                    </div>
-                    <Link href="/game/story">
-                        <img
-                            src="/ppif/icons/Game_icon.svg"
-                            alt="Navigate to Game Page"
-                            className="w-14 cursor-pointer lg:mr-8 lg:w-auto"
-                        />
-                    </Link>
-                </div>
-            </footer>
         </div>
     );
 }

@@ -1,6 +1,8 @@
+import { Link } from "@inertiajs/react";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
+import Footer from "../contact/Footer";
 
 export default function AnimatedBackground() {
     return (
@@ -43,10 +45,13 @@ export default function AnimatedBackground() {
                 <div className="bg-ball bottom-0 right-0 origin-top-left bg-[var(--ppif-blue)] opacity-40"></div>
             </div>
 
-            {/* CONTACT AND FOOTER */}
+            {/* CONTACT */}
             <div className="relative h-screen">
                 <div className="bg-ball -bottom-[70%] left-1/2 h-[900px] w-[900px] animate-none bg-[var(--ppif-blue)] opacity-90 [transform:translate(-50%,0)] md:h-[1000px] md:w-[1000px]"></div>
             </div>
+
+            {/* FOOTER */}
+            <Footer />
         </div>
     );
 }

@@ -50,7 +50,7 @@ html {
     }
 
     .text-footer {
-        @apply text-sm;
+        @apply text-xs sm:text-sm;
     }
 
     /* GLOW */
