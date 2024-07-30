@@ -68,7 +68,7 @@ function ImageCarousel({ imageUrls }) {
         <div className="relative h-[275px] w-full">
             <div
                 ref={carouselRef}
-                className="mask-ends flex h-full w-full snap-x snap-mandatory items-center space-x-8 overflow-x-scroll rounded-lg bg-white/10 px-10 shadow-[0_0_25px_rgba(255,255,255,0.2)] backdrop-blur-md"
+                className="carousel mask-ends flex h-full w-full snap-x snap-mandatory items-center space-x-8 overflow-x-scroll rounded-lg bg-white/10 px-10 shadow-[0_0_25px_rgba(255,255,255,0.2)] backdrop-blur-md"
             >
                 {/* CAROUSEL */}
                 {imageUrls.map(({ src, placeholderSrc }, index) => (

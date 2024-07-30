@@ -21,6 +21,10 @@ html {
         display: none;
     }
 
+    .carousel::-webkit-scrollbar {
+        @apply hidden;
+    }
+
     * {
         @apply selection:bg-white selection:text-black;
     }
