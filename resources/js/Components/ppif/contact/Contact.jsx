@@ -18,23 +18,21 @@ function Contact({ id }) {
             <div className="mx-4 mb-40 mt-8 grid flex-grow grid-cols-1 gap-6 rounded-lg bg-white bg-opacity-15 p-4 lg:mx-20 lg:grid-cols-3 lg:p-12">
                 <ContactCard
                     imageSrc="/ppif/images/ig.svg"
-                    altText="instagram_logo"
+                    altText="Instagram"
                     title="PPIF UMN"
                     buttonText="Follow Our Instagram"
                     buttonLink="https://www.instagram.com/ppif.umn/"
                 />
-
                 <ContactCard
                     imageSrc="/ppif/images/line.svg"
-                    altText="line_logo"
+                    altText="LINE"
                     title="PPIF UMN 2024"
                     buttonText="Join LINE GROUP"
                     buttonLink="https://line.me/ti/g2/..."
                 />
-
                 <ContactCard
                     imageSrc="/ppif/images/discord.svg"
-                    altText="discord_logo"
+                    altText="Discord"
                     title="Informatika UMN"
                     buttonText="Join Discord Server"
                     buttonLink="https://discord.gg/......"

@@ -4,7 +4,7 @@ import "react-lazy-load-image-component/src/effects/opacity.css";
 
 export default function AnimatedBackground() {
     return (
-        <div className="main-background absolute w-full overflow-hidden">
+        <div className="main-background absolute z-[-1] w-full select-none overflow-hidden">
             {/* HOME */}
             <div className="relative h-screen">
                 <div className="bg-ball left-1/2 top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
