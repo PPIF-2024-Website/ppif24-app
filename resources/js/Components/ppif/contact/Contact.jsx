@@ -6,7 +6,7 @@ function Contact({ id }) {
     return (
         <div
             id={id}
-            className="z-1 relative flex min-h-screen w-screen flex-col bg-cover text-white"
+            className="flex min-h-screen w-screen flex-col bg-cover text-white"
         >
             <div className="pt-16 text-center">
                 <span className="text-4xl font-black italic text-ppif-blue sm:text-5xl">
