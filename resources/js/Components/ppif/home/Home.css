@@ -1,0 +1,75 @@
+body {
+    background-color: #a000a0;
+}
+
+#main {
+    margin-top: 60px;
+}
+
+#square2 {
+    width: 100% !important;
+    height: 90px;
+    background-color: #ff6600;
+}
+
+#polygon2 {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: auto;
+    margin-top: 10px;
+    padding-top: 0px !important;
+}
+
+#text {
+    text-align: justify;
+    padding-top: 30px;
+    margin-top: 0px;
+}
+
+#polygon2 #images {
+    padding: 0px !important;
+}
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1023px) {
+    #polygon2 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #images {
+        width: 100%;
+        margin-top: 30px;
+    }
+    #main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 566px) {
+}
+
+@media (max-width: 483px) {
+    #informatika {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 400px) {
+    #informatika {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 362px) {
+    #informatika {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 300px) {
+    #informatika {
+        font-size: 18px;
+    }
+}
