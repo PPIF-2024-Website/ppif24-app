@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const Carousel = ({ slides }) => {
+const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
     const [slideWidth, setSlideWidth] = useState(0);
     const [translateX, setTranslateX] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
@@ -31,6 +31,7 @@ const Carousel = ({ slides }) => {
         setIsButtonDisabled(true);
         setIsTransitioning(true);
         setTranslateX((prevPosition) => prevPosition - slideWidth);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % 4);
 
         setTimeout(() => {
             setIsTransitioning(false);
@@ -46,6 +47,7 @@ const Carousel = ({ slides }) => {
         setIsButtonDisabled(true);
         setIsTransitioning(true);
         setTranslateX((prevPosition) => prevPosition + slideWidth);
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + 4) % 4);
 
         setTimeout(() => {
             setIsTransitioning(false);
@@ -78,19 +80,19 @@ const Carousel = ({ slides }) => {
 
     return (
         <div
-            className="items relative flex h-full max-h-[442.4px] w-full max-w-[1133px] items-center overflow-hidden"
+            className="items relative flex h-full max-h-[442.4px] w-full max-w-[1133px] items-center justify-center overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
         >
-            <div className="absolute z-[2] flex w-full cursor-pointer justify-between text-white">
+            <div className="absolute z-[2] flex w-full justify-between text-white">
                 <ChevronLeftIcon
-                    className="controlPrev hover:glow-white w-full max-w-20 transition-all duration-150 hover:scale-110"
+                    className="controlPrev hover:glow-white w-full max-w-16 cursor-pointer transition-all duration-150 hover:scale-110 opacity-50 hover:opacity-100"
                     onClick={handlePrevious}
                 >
                     Previous
                 </ChevronLeftIcon>
                 <ChevronRightIcon
-                    className="controlNext hover:glow-white w-full max-w-20 transition-all duration-150 hover:scale-110"
+                    className="controlNext hover:glow-white w-full max-w-16 cursor-pointer transition-all duration-150 hover:scale-110 opacity-50 hover:opacity-100"
                     onClick={handleNext}
                 >
                     Next
@@ -109,7 +111,7 @@ const Carousel = ({ slides }) => {
                         <div className="relative h-full max-h-[442px] w-full max-w-[663px]">
                             <LazyLoadImage
                                 src={slides}
-                                className="h-full w-full rounded-2xl object-fill"
+                                className="h-full w-full select-none rounded-2xl object-cover"
                             />
                         </div>
                     </div>
@@ -120,7 +122,7 @@ const Carousel = ({ slides }) => {
             ></div>
             <div
                 className={`pointer-events-none absolute right-0 top-0 z-[1] h-full w-full max-w-32 rounded-lg bg-gradient-to-l from-black/70 to-black/10 blur-lg transition-all duration-150 ${isButtonDisabled ? "opacity-5" : ""}`}
-            ></div>
+            ></div>            
         </div>
     );
 };

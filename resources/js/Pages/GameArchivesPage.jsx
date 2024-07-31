@@ -21,6 +21,8 @@ export default function GameArchives() {
 
     const [pageNumber, setPageNumber] = useState(1);
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     useEffect(() => {
         const savedToken = localStorage.getItem("group_token");
         const savedPageNumber = localStorage.getItem("page_number");
@@ -141,13 +143,33 @@ export default function GameArchives() {
                             ARCHIVES
                         </h1>
                         <div className="box-glow-white flex h-full max-h-[505px] min-h-[400px] w-full min-w-[320px] max-w-[1186px] items-center justify-center overflow-hidden bg-white/20 px-3 drop-shadow-[0_0_20px_rgba(255,255,255,0.75)] backdrop-blur-sm md:rounded-3xl lg:px-0">
-                            <Carousel slides={imageSlide} />
+                            <Carousel
+                                setCurrentIndex={setCurrentIndex}
+                                currentIndex={currentIndex}
+                                slides={imageSlide}
+                            />
                             <div className="pointer-events-none absolute left-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-white/[0.3] to-transparent blur-lg"></div>
                             <div className="pointer-events-none absolute right-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-transparent to-white/[0.3] blur-lg"></div>
                         </div>
+
+                        {/* CAROUSEL PAGINATION */}
+                        <div className="my-12 flex h-full max-h-[43px] w-screen justify-center space-x-8">
+                            {[0, 1, 2, 3].map((index) => (
+                                <div
+                                    key={index}
+                                    className={`aspect-square rounded-full backdrop-blur-sm transition-all duration-300 ${
+                                        currentIndex === index
+                                            ? "bg-white/75"
+                                            : "bg-white/20 shadow-[0px_0px_10px_rgba(255,255,255,0.5)]"
+                                    }`}
+                                ></div>
+                            ))}
+                        </div>
+                        {/* CAROUSEL PAGINATION END*/}
+
                         <button
                             onClick={() => setModalIsOpen(true)}
-                            className="box-glow-white mt-16 flex h-[76px] w-full min-w-[320px] max-w-[778px] items-center justify-center rounded-3xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/50"
+                            className="box-glow-white flex h-[76px] w-full min-w-[320px] max-w-[778px] items-center justify-center rounded-3xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/50"
                         >
                             Continue
                         </button>
@@ -158,7 +180,7 @@ export default function GameArchives() {
                     {pageNumber === 1 ? (
                         <div className="h-screen w-screen">
                             <div className="flex h-screen flex-col items-center justify-center">
-                                <h1 className="text-heading z-10 font-bold italic text-white drop-shadow-[0px_0px_5px_rgba(255,255,255,0.5)]">
+                                <h1 className="text-heading glow-white z-10 text-center font-bold italic text-white">
                                     DECODE THE MESSAGE
                                 </h1>
                                 <HeaderDecodeMessage
@@ -183,13 +205,33 @@ export default function GameArchives() {
                                 ARCHIVES
                             </h1>
                             <div className="box-glow-white flex h-full max-h-[505px] min-h-[400px] w-full min-w-[320px] max-w-[1186px] items-center justify-center overflow-hidden bg-white/20 px-3 drop-shadow-[0_0_20px_rgba(255,255,255,0.75)] backdrop-blur-sm md:rounded-3xl lg:px-0">
-                                <Carousel slides={imageSlide} />
+                                <Carousel
+                                    setCurrentIndex={setCurrentIndex}
+                                    currentIndex={currentIndex}
+                                    slides={imageSlide}
+                                />
                                 <div className="pointer-events-none absolute left-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-white/[0.3] to-transparent blur-lg"></div>
                                 <div className="pointer-events-none absolute right-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-transparent to-white/[0.3] blur-lg"></div>
                             </div>
+
+                            {/* CAROUSEL PAGINATION */}
+                            <div className="my-12 flex h-full max-h-[43px] w-screen justify-center space-x-8">
+                                {[0, 1, 2, 3].map((index) => (
+                                    <div
+                                        key={index}
+                                        className={`aspect-square rounded-full backdrop-blur-sm transition-all duration-300 ${
+                                            currentIndex === index
+                                                ? "bg-white/75"
+                                                : "bg-white/20 shadow-[0px_0px_10px_rgba(255,255,255,0.5)]"
+                                        }`}
+                                    ></div>
+                                ))}
+                            </div>
+                            {/* CAROUSEL PAGINATION END*/}
+
                             <button
                                 onClick={handlePageChange}
-                                className="box-glow-white mt-16 flex h-[76px] w-full min-w-[320px] max-w-[778px] items-center justify-center rounded-3xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/50"
+                                className="box-glow-white flex h-[76px] w-full min-w-[320px] max-w-[778px] items-center justify-center rounded-3xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/50"
                             >
                                 Back
                             </button>

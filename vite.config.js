@@ -12,8 +12,8 @@ export default defineConfig({
     ],
 
     // buat start di mobile
-    // server: {
-    //     host: "192.168.1.29", //ip host/desktop
-    //     port: "8000", //port host php
-    // },
+    server: {
+        host: "192.168.1.29", //ip host/desktop
+        port: "8000", //port host php
+    },
 });
