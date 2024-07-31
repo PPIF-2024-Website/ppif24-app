@@ -21,8 +21,8 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
     }, []);
 
     useEffect(() => {
-        setItems([...slides.slice(-2), ...slides.slice(0, -2)]);
-        setTranslateX((prevPosition) => (prevPosition - slideWidth) * 2);
+        setItems([...slides.slice(-1), ...slides, ...slides.slice(0, 1)]);
+        setTranslateX(-slideWidth);
     }, [slideWidth]);
 
     const handleNext = () => {
@@ -31,12 +31,13 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
         setIsButtonDisabled(true);
         setIsTransitioning(true);
         setTranslateX((prevPosition) => prevPosition - slideWidth);
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % 4);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
 
         setTimeout(() => {
             setIsTransitioning(false);
-            setItems((prev) => prev.slice(1).concat(prev[0]));
-            setTranslateX((prevPosition) => prevPosition + slideWidth);
+            if (currentIndex === slides.length - 1) {
+                setTranslateX(-slideWidth);
+            }
             setIsButtonDisabled(false);
         }, 300);
     };
@@ -47,15 +48,15 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
         setIsButtonDisabled(true);
         setIsTransitioning(true);
         setTranslateX((prevPosition) => prevPosition + slideWidth);
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + 4) % 4);
+        setCurrentIndex(
+            (prevIndex) => (prevIndex - 1 + slides.length) % slides.length,
+        );
 
         setTimeout(() => {
             setIsTransitioning(false);
-            setItems((prev) => [
-                prev[prev.length - 1],
-                ...prev.slice(0, prev.length - 1),
-            ]);
-            setTranslateX((prevPosition) => prevPosition - slideWidth);
+            if (currentIndex === 0) {
+                setTranslateX(-slideWidth * slides.length);
+            }
             setIsButtonDisabled(false);
         }, 300);
     };
@@ -84,45 +85,44 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
         >
+            {/* CONTROL BUTTON */}
             <div className="absolute z-[2] flex w-full justify-between text-white">
                 <ChevronLeftIcon
-                    className="controlPrev hover:glow-white w-full max-w-16 cursor-pointer transition-all duration-150 hover:scale-110 opacity-50 hover:opacity-100"
+                    className="controlPrev hover:glow-white w-full max-w-16 cursor-pointer opacity-50 transition-all duration-150 hover:scale-110 hover:opacity-100"
                     onClick={handlePrevious}
                 >
                     Previous
                 </ChevronLeftIcon>
                 <ChevronRightIcon
-                    className="controlNext hover:glow-white w-full max-w-16 cursor-pointer transition-all duration-150 hover:scale-110 opacity-50 hover:opacity-100"
+                    className="controlNext hover:glow-white w-full max-w-16 cursor-pointer opacity-50 transition-all duration-150 hover:scale-110 hover:opacity-100"
                     onClick={handleNext}
                 >
                     Next
                 </ChevronRightIcon>
             </div>
+
+            {/* CAROUSEL */}
             <div
                 ref={carouselRef}
-                className={`carousel m-auto flex h-[443px] flex-nowrap md:w-[65%] ${isTransitioning ? "transition-all duration-300" : ""}`}
+                className={`carousel m-auto flex h-[443px] flex-nowrap md:w-[65%] ${
+                    isTransitioning ? "transition-all duration-300" : ""
+                }`}
                 style={{ transform: `translateX(${translateX}px)` }}
             >
-                {items.map((slides) => (
+                {items.map((slide, index) => (
                     <div
                         className="flex h-full w-full shrink-0 px-8"
-                        key={slides}
+                        key={`${slide}-${index}`}
                     >
                         <div className="relative h-full max-h-[442px] w-full max-w-[663px]">
                             <LazyLoadImage
-                                src={slides}
+                                src={slide}
                                 className="h-full w-full select-none rounded-2xl object-cover"
                             />
                         </div>
                     </div>
                 ))}
             </div>
-            <div
-                className={`pointer-events-none absolute left-0 top-0 z-[1] h-full w-full max-w-32 rounded-lg bg-gradient-to-r from-black/70 to-black/10 blur-lg transition-all duration-150 ${isButtonDisabled ? "opacity-5" : ""}`}
-            ></div>
-            <div
-                className={`pointer-events-none absolute right-0 top-0 z-[1] h-full w-full max-w-32 rounded-lg bg-gradient-to-l from-black/70 to-black/10 blur-lg transition-all duration-150 ${isButtonDisabled ? "opacity-5" : ""}`}
-            ></div>            
         </div>
     );
 };

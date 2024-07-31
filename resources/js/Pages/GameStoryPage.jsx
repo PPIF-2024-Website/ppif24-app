@@ -1,6 +1,6 @@
 import { Link, Head } from "@inertiajs/react";
 import React from "react";
-import Storyboard from "@/Components/ppif/games/Storyboard";
+import Storyboard from "@/Components/ppif/games/storyboard";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 
 function GameStory() {
