@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
 
 :root {
     --ppif-orange-rgb: 255, 102, 0;
@@ -9,24 +16,109 @@
     --ppif-blue: rgb(var(--ppif-blue-rgb));
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer base {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel::-webkit-scrollbar {
+        @apply hidden;
+    }
+
+    * {
+        @apply selection:bg-white selection:text-black;
+    }
+}
 
 @layer utilities {
+    /* GENERAL */
+    .smooth {
+        @apply transition-all duration-150 ease-out;
+    }
+
+    /* TEXT */
+    .text-heading {
+        @apply text-5xl;
+    }
+
+    .text-subheading {
+        @apply text-2xl;
+    }
+
+    .text-body {
+        @apply text-sm sm:text-base;
+    }
+
+    .text-footer {
+        @apply text-xs sm:text-sm;
+    }
+
+    /* GLOW */
     .glow-white {
-        @apply drop-shadow-[0_10px_10px_rgba(255,255,255,0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
     }
 
     .glow-orange {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-orange-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-orange-rgb),0.75)];
     }
 
     .glow-pink {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-pink-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-pink-rgb),0.75)];
     }
 
     .glow-blue {
-        @apply drop-shadow-[0_10px_10px_rgba(var(--ppif-blue-rgb),0.75)];
+        @apply drop-shadow-[0_0_10px_rgba(var(--ppif-blue-rgb),0.75)];
+    }
+
+    /* BACKGROUND */
+    .mask-bg {
+        mask-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0) 80%
+        );
+    }
+
+    /* ABOUT PPIF */
+    .mask-ends {
+        mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0)
+        );
+    }
+}
+
+@layer components {
+    .bg-ball {
+        @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_20s_linear_infinite] rounded-full blur-[150px] md:h-[500px] md:w-[500px] md:blur-[200px];
+    }
+}
+
+/* ini style untuk main background, karena tailwindnya somehow ga bisa -tio */
+.main-background {
+    background: linear-gradient(
+        to bottom,
+        #14000b 0%,
+        #14000b 60%,
+        #0e0600 65%,
+        #0e0600 70%,
+        #0e0600 80%,
+        #00000e 85%,
+        #00000e 100%
+    );
+}
+
+@keyframes ball-movement {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }

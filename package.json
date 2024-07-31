@@ -10,8 +10,8 @@
         "@inertiajs/react": "^1.0.0",
         "@tailwindcss/forms": "^0.5.3",
         "@vitejs/plugin-react": "^4.2.0",
-        "autoprefixer": "^10.4.19",
-        "axios": "^1.6.4",
+        "autoprefixer": "^10.4.12",
+        "axios": "^1.7.2",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.39",
         "prettier": "^3.3.2",
@@ -22,6 +22,8 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@heroicons/react": "^2.1.5",
+        "react-lazy-load-image-component": "^1.6.2",
         "react-powerglitch": "^1.0.3"
     }
 }

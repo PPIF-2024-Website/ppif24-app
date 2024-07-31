@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Home.css";
 
-function Home() {
+function Home({ id }) {
     useEffect(() => {
         const updateViewBox = () => {
             const mySVG = document.getElementById("svg");
@@ -27,7 +27,10 @@ function Home() {
 
     return (
         <>
-            <div className="py-auto relative mx-auto h-screen overflow-hidden sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]">
+            <div
+                className="py-auto relative mx-auto h-screen overflow-hidden sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]"
+                id={id}
+            >
                 <div id="main">
                     <div className="absolute z-10 hidden w-11/12 lg:block lg:w-2/5">
                         <img
