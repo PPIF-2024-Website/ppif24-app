@@ -35,10 +35,10 @@ export default function AboutPPIF({ id }) {
 
             {/* CAROUSEL */}
             <ImageCarousel
-                imageUrls={Array.from(
-                    { length: 10 },
-                    (_, i) => `/ppif/images/about-ppif/${i + 1}.webp`,
-                )}
+                imageUrls={Array.from({ length: 10 }, (_, i) => ({
+                    src: `/ppif/images/about-ppif/${i + 1}.webp`,
+                    placeholderSrc: `/ppif/images/about-ppif/${i + 1}-placeholder.webp`,
+                }))}
             />
         </section>
     );

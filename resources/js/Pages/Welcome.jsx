@@ -1,11 +1,11 @@
 import { Head } from "@inertiajs/react";
 import Navbar from "@/Components/ppif/navbar-footer/Navbar";
 import Landing from "@/Components/ppif/landing/Landing";
-import Background from "@/Components/ppif/background/Background";
 import AboutPPIF from "@/Components/ppif/about-ppif/AboutPPIF";
 import AnimatedBackground from "@/Components/ppif/background/AnimatedBackground";
 import Timeline from "@/Components/ppif/timeline/Timeline";
 import Contact from "@/Components/ppif/contact/Contact";
+import Home from "@/Components/ppif/home/Home";
 
 export default function Welcome() {
     return (
@@ -14,7 +14,7 @@ export default function Welcome() {
             <AnimatedBackground />
             <Navbar />
             <Landing id={"Home"} />
-            <Landing id={"AboutIF"} />
+            <Home id={"AboutIF"} />
             <AboutPPIF id={"AboutPPIF"} />
             <Timeline id={"Timeline"} />
             <Contact id={"Contact"} />
