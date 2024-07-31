@@ -168,7 +168,7 @@ function Home({ id }) {
                                         <img
                                             alt="gallery"
                                             className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/16.jpg"
+                                            src="/ppif/images/activities/10.jpg"
                                         />
                                     </div>
                                     <div className="w-1/2 p-1 md:p-2">
@@ -230,7 +230,7 @@ function Home({ id }) {
                     </div>
 
                     <div
-                        className="container mx-auto block h-[550px] rounded-sm p-8 lg:hidden"
+                        className="container mx-auto block h-[550px] rounded p-8 lg:hidden"
                         id="polygon2"
                     >
                         <div className="flex flex-col lg:flex-row">
@@ -288,7 +288,7 @@ function Home({ id }) {
                                         <img
                                             alt="gallery"
                                             className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/16.jpg"
+                                            src="/ppif/images/activities/10.jpg"
                                         />
                                     </div>
                                     <div className="w-1/2 p-1 md:p-2">
