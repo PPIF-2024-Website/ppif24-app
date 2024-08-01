@@ -6,7 +6,6 @@ import { Link } from "@inertiajs/react";
 const getRandomColorClass = () => {
     const colors = ["blue", "orange", "pink"];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    console.log(randomColor);
     return `text-ppif-${randomColor}`;
 };
 
@@ -43,19 +42,20 @@ function DecodeMessage({ groupToken, children: button }) {
         localStorage.removeItem("group_token");
         localStorage.removeItem("page_number");
         localStorage.removeItem("riddle");
-    }
+    };
 
     return (
         <>
             <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
                 <h1
-                    className="flex h-3/4 items-center justify-center text-center text-6xl font-semibold tracking-wide text-white"
+                    className="flex h-3/4 items-center justify-center text-center text-6xl font-semibold leading-normal tracking-wide text-white"
                     dangerouslySetInnerHTML={{ __html: response }}
                 />
                 {response != "Message Salah" ? (
                     <div className="flex w-full justify-center pt-20">
                         <Link
-                            href="/" onClick={removeToken}
+                            href="/"
+                            onClick={removeToken}
                             className="rounded-xl bg-[#3d3c3c] px-20 py-6 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95"
                         >
                             Continue
@@ -78,7 +78,7 @@ function DecodeMessage({ groupToken, children: button }) {
                             onChange={(e) =>
                                 setDecryptedMessage(e.target.value)
                             }
-                            className="peer w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 pt-3 text-sm text-white placeholder-white focus:border-blue-600 focus:outline-none focus:ring-0 md:pt-1 md:text-lg"
+                            className="peer w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 pt-3 text-sm text-white placeholder-white focus:outline-none focus:ring-0 md:pt-1 md:text-lg"
                             placeholder="Type the Decrypted Message..."
                             autoComplete="off"
                         />

@@ -57,6 +57,9 @@ html {
     .glow-white {
         @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
     }
+    .box-glow-white {
+        @apply shadow-[0_0_20px_rgba(255,255,255,0.5)];
+    }
 
     .glow-orange {
         @apply drop-shadow-[0_0_10px_rgba(var(--ppif-orange-rgb),0.75)];
