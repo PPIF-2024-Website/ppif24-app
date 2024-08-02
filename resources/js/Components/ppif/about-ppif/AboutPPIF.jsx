@@ -29,7 +29,7 @@ export default function AboutPPIF({ id }) {
                 </h1>
 
                 {/* BODY */}
-                <div className="text-body z-[1] font-light !leading-relaxed sm:w-[70%]">
+                <div className="text-body z-[1] text-justify font-light !leading-relaxed sm:w-[70%] lg:text-center">
                     {textContent}
                 </div>
             </div>

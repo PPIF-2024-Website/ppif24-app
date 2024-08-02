@@ -1,7 +1,45 @@
 import React, { useEffect } from "react";
 import "./Home.css";
+import {
+    LazyLoadImage,
+    trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
+const ImageContainer = ({ srcIndex, fullWidth }) => (
+    <div className={`p-1 md:p-2 ${fullWidth ? "w-full" : "w-1/2"}`}>
+        <div className="block h-full w-full overflow-hidden rounded-lg bg-white/10">
+            <LazyLoadImage
+                src={`/ppif/images/activities/${srcIndex}.jpg`}
+                alt={`Foto Dokumentasi Kegiatan Informatika ${srcIndex}`}
+                className="h-full w-full object-cover object-center"
+                delayTime="100"
+                fetchpriority="low"
+                effect="blur"
+                wrapperProps={{
+                    style: { transitionDelay: "1s" },
+                }}
+            />
+        </div>
+    </div>
+);
 
 function Home({ id }) {
+    const textContent = `
+        Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      
+    `;
+
     useEffect(() => {
         const updateViewBox = () => {
             const mySVG = document.getElementById("svg");
@@ -34,14 +72,14 @@ function Home({ id }) {
                 <div id="main">
                     <div className="absolute hidden w-11/12 lg:block lg:w-2/5">
                         <img
-                            className="w-full"
+                            className="glow-orange w-full"
                             src="/ppif/images/orangebackground.png"
                         />
 
                         <div className="absolute inset-0 flex w-11/12 items-center justify-center">
                             <h1
                                 id="informatika"
-                                className="text-center text-4xl font-bold text-white md:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
+                                className="text-center text-4xl font-semibold text-white md:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
                             >
                                 INFORMATIKA
                             </h1>
@@ -53,12 +91,12 @@ function Home({ id }) {
                         id="parentofsquare2"
                     >
                         <div
-                            className="relative inset-0 flex w-full items-center justify-center rounded-md"
+                            className="glow-orange relative inset-0 flex w-full items-center justify-center rounded-lg"
                             id="square2"
                         >
                             <h1
                                 id="informatika"
-                                className="text-center text-5xl font-bold text-white md:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
+                                className="text-center text-5xl font-semibold text-white md:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
                             >
                                 INFORMATIKA
                             </h1>
@@ -116,18 +154,11 @@ function Home({ id }) {
                                 className="p-4 lg:mt-0 lg:w-2/5 lg:pl-6 lg:pt-[50px] xl:pl-7 xl:pt-[70px] 2xl:pl-7 2xl:pt-[100px]"
                                 id="paragraph"
                             >
-                                <p className="mb-4 text-white" id="text">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat. Duis aute irure
-                                    dolor in reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat nulla pariatur.
-                                    Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt
-                                    mollit anim id est laborum.
+                                <p
+                                    className="mb-4 font-light text-white"
+                                    id="text"
+                                >
+                                    {textContent}
                                 </p>
                             </div>
                             <div
@@ -135,119 +166,76 @@ function Home({ id }) {
                                 id="images"
                             >
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/7.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/13.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/9.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={7}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={13}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={9}
+                                        fullWidth={true}
+                                    />
                                 </div>
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/15.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/10.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/5.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={15}
+                                        fullWidth={true}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={10}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={5}
+                                        fullWidth={false}
+                                    />
                                 </div>
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/3.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/6.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/17.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={3}
+                                        fullWidth={true}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={6}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={17}
+                                        fullWidth={false}
+                                    />
                                 </div>
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/8.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/16.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/12.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={8}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={16}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={12}
+                                        fullWidth={true}
+                                    />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div
-                        className="container mx-auto block h-[550px] rounded-lg p-8 backdrop-blur-md lg:hidden"
+                        className="container mx-auto block rounded-lg p-8 backdrop-blur-md lg:hidden"
                         id="polygon2"
                     >
                         <div className="flex flex-col lg:flex-row">
-                            <div className="lg:w-2/5" id="paragraph2">
-                                <p className="mb-4 text-white" id="text">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat. Duis aute irure
-                                    dolor in reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat nulla pariatur.
-                                    Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt
-                                    mollit anim id est laborum.
+                            <div className="px-8" id="paragraph2">
+                                <p
+                                    className="text-body font-light text-white"
+                                    id="text"
+                                >
+                                    {textContent}
                                 </p>
                             </div>
                             <div
@@ -255,96 +243,60 @@ function Home({ id }) {
                                 id="images"
                             >
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/7.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/13.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/9.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={7}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={13}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={9}
+                                        fullWidth={true}
+                                    />
                                 </div>
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/15.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/10.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/5.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={15}
+                                        fullWidth={true}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={10}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={5}
+                                        fullWidth={false}
+                                    />
                                 </div>
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/3.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/6.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/17.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={3}
+                                        fullWidth={true}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={6}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={17}
+                                        fullWidth={false}
+                                    />
                                 </div>
                                 <div className="flex flex-wrap md:w-1/2">
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/8.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-1/2 p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/16.jpg"
-                                        />
-                                    </div>
-                                    <div className="w-full p-1 md:p-2">
-                                        <img
-                                            alt="gallery"
-                                            className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/12.jpg"
-                                        />
-                                    </div>
+                                    <ImageContainer
+                                        srcIndex={8}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={16}
+                                        fullWidth={false}
+                                    />
+                                    <ImageContainer
+                                        srcIndex={12}
+                                        fullWidth={true}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -355,4 +307,4 @@ function Home({ id }) {
     );
 }
 
-export default Home;
+export default trackWindowScroll(Home);
