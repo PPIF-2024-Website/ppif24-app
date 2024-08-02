@@ -32,7 +32,7 @@ function Home({ id }) {
                 id={id}
             >
                 <div id="main">
-                    <div className="absolute z-10 hidden w-11/12 lg:block lg:w-2/5">
+                    <div className="absolute hidden w-11/12 lg:block lg:w-2/5">
                         <img
                             className="w-full"
                             src="/ppif/images/orangebackground.png"
@@ -49,7 +49,7 @@ function Home({ id }) {
                     </div>
 
                     <div
-                        className="relative z-10 block w-full lg:hidden"
+                        className="relative block w-full lg:hidden"
                         id="parentofsquare2"
                     >
                         <div
