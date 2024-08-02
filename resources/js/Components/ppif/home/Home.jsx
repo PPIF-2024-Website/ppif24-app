@@ -71,7 +71,7 @@ function Home({ id }) {
                     >
                         <div className="relative m-0 flex items-center justify-center p-0">
                             <svg
-                                className="absolute inset-0 -z-10 hidden lg:flex"
+                                className="absolute inset-0 -z-10 hidden backdrop-blur-md lg:flex"
                                 viewBox="0 0 1500 750"
                                 preserveAspectRatio="none"
                                 id="svg"
@@ -104,7 +104,7 @@ function Home({ id }) {
                                     width="100%"
                                     height="100%"
                                     mask="url(#mask)"
-                                    fill="rgba(255, 255, 255, 0.2)"
+                                    fill="rgba(255, 255, 255, 0.1)"
                                 />
                             </svg>
                         </div>
@@ -231,7 +231,7 @@ function Home({ id }) {
                     </div>
 
                     <div
-                        className="container mx-auto block h-[550px] rounded p-8 lg:hidden"
+                        className="container mx-auto block h-[550px] rounded-lg p-8 backdrop-blur-md lg:hidden"
                         id="polygon2"
                     >
                         <div className="flex flex-col lg:flex-row">

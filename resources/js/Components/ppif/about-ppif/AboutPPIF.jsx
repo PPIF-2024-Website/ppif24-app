@@ -1,5 +1,6 @@
 import React from "react";
 import ImageCarousel from "./ImageCarousel";
+import "./AboutPPIF.css";
 
 export default function AboutPPIF({ id }) {
     const textContent = `

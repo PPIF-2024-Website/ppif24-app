@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .bg-ball {
+        @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_20s_linear_infinite] rounded-full blur-[150px] md:h-[500px] md:w-[500px] md:blur-[200px];
+    }
+}
+
+@keyframes ball-movement {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
