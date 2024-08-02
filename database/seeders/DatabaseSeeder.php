@@ -1,10 +1,6 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\GroupName;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +10,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        GroupName::factory(10)->create();
+        $this->call([
+            GroupNameSeeder::class,
+            
+        ]);
+        // GroupName::factory(10)->create();
 
         // User::factory()->create([
         //     'name' => 'Test User',
