@@ -3,13 +3,13 @@ import ImageCarousel from "./ImageCarousel";
 
 export default function AboutPPIF({ id }) {
     const textContent = `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna 
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum. 
+        Perkenalan Prodi Informatika merupakan bagian dari kegiatan Orientasi Mahasiswa Baru 
+        Universitas Multimedia Nusantara yang diselenggarakan oleh Himpunan Mahasiswa Informatika 
+        setiap tahunnya pada awal tahun ajar perkuliahan. Pada tahun ini, Perkenalan Prodi Informatika 
+        2024 mengusung tema Express Yourself with Technology yang menggambarkan mahasiswa Informatika 
+        sebagai peserta Perkenalan Prodi Informatika 2024 dapat mengeksplorasi dan mengekspresikan kemampuan 
+        diri di dalam Program Studi Informatika, serta mengeksekusi hal tersebut agar menjadi pribadi yang aktif, 
+        kreatif, dan inovatif. 
     `;
 
     return (
