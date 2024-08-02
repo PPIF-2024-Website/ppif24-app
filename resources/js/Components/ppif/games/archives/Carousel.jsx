@@ -119,7 +119,7 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
                                 src={slide}
                                 className="aspect-[3/2] select-none rounded-md object-cover sm:rounded-lg md:h-full md:w-full lg:rounded-2xl"
                             />
-                            <span className="absolute inset-0 flex items-center overflow-y-auto p-10 text-center text-lg text-white">
+                            <span className="absolute inset-0 flex items-center overflow-y-auto p-2 text-center text-sm text-white sm:p-10 sm:text-lg">
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Illum quam voluptatem soluta
                                 animi sapiente modi suscipit esse natus amet
