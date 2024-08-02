@@ -14,22 +14,14 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/home', function () {
+    return Inertia::render('HomeSection');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/contact', function () {
-    return Inertia::render('ContactPage');
-});
-
-Route::get('/footer', function () {
-    return Inertia::render('FooterPage');
-});
-
-Route::get('/timeline', function () {
-    return Inertia::render('TimelinePage');
-});
-    
+ 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -44,10 +36,6 @@ Route::prefix('game')->group(function () {
         return Inertia::render('GameArchivesPage');
     
     });
-});
-
-Route::get('/background', function(){
-    return Inertia::render('BackgroundTest');
 });
 
 require __DIR__.'/auth.php';

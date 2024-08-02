@@ -1,12 +1,12 @@
 import axios from "axios";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 import Modal from "@/Components/ppif/CustomModal";
-import Carousel from "@/Components/ppif/games/archives/Carousel";
 import { useState, useEffect } from "react";
 import HeaderDecodeMessage from "@/Components/ppif/games/HeaderDecodeMessage";
 import DecodeForm from "@/Components/ppif/games/DecodeMessage";
 import { Head } from "@inertiajs/react";
-import imagesSlide from "@/Components/ppif/games/archives/ImageSlide";
+import imageSlide from "@/Components/ppif/games/archives/ImageSlide";
+import Carousel from "@/Components/ppif/games/archives/Carousel";
 
 export default function GameArchives() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -20,6 +20,8 @@ export default function GameArchives() {
     const [riddleString, setRiddleString] = useState("");
 
     const [pageNumber, setPageNumber] = useState(1);
+
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const savedToken = localStorage.getItem("group_token");
@@ -65,8 +67,6 @@ export default function GameArchives() {
         } else {
             setPageNumber(pageNumber);
         }
-
-        console.log(pageNumber);
     };
 
     const handleSubmit = async (e) => {
@@ -106,12 +106,13 @@ export default function GameArchives() {
                         title={"SECRET CODE"}
                         isOpen={modalIsOpen}
                         setIsOpen={setModalIsOpen}
+                        setResponse={setResponse}
                     >
                         <form
                             onSubmit={handleSubmit}
                             className="relative flex h-full justify-center"
                         >
-                            <div className="absolute top-32 w-full max-w-[616px] border-b-2">
+                            <div className="absolute top-16 w-full max-w-[616px] border-b-2 sm:top-32">
                                 <input
                                     type="text"
                                     name="secretCode"
@@ -122,7 +123,7 @@ export default function GameArchives() {
                                     }
                                     onFocus={inputCheck}
                                     onBlur={noInputCheck}
-                                    className="flex w-full justify-start border-none bg-transparent px-0 pb-2 text-3xl font-light text-white focus:outline-none focus:ring-0"
+                                    className="flex w-full justify-start border-none bg-transparent px-0 pb-2 text-lg font-light text-white focus:outline-none focus:ring-0 sm:text-3xl"
                                     autoComplete="off"
                                 />
                             </div>
@@ -131,31 +132,44 @@ export default function GameArchives() {
                             </div>
                             <button
                                 type="submit"
-                                className="absolute bottom-16 rounded-xl bg-[#3d3c3c] px-20 py-6 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95"
+                                className="absolute bottom-16 rounded-xl bg-[#3d3c3c] px-8 py-3 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95 sm:px-20 sm:py-6"
                             >
                                 Submit
                             </button>
                         </form>
                     </Modal>
                     <div className="archives flex h-screen w-screen flex-col items-center justify-center">
-                        <h1 className="title mb-3 text-5xl font-bold italic text-white antialiased drop-shadow-[0px_0px_5px_rgba(255,255,255,0.5)] sm:text-7xl">
+                        <h1 className="title glow-white sm:text-heading mb-6 text-3xl font-bold italic text-white antialiased sm:mb-3">
                             ARCHIVES
                         </h1>
-                        <div className="flex h-full max-h-[505px] min-h-[400px] w-full min-w-[320px] max-w-[1186px] items-center justify-center bg-white/20 px-3 drop-shadow-[0_0_20px_rgba(255,255,255,0.75)] backdrop-blur-sm md:rounded-3xl lg:px-0">
-                            <Carousel>
-                                {imagesSlide.map((image, index) => (
-                                    <img
-                                        key={index}
-                                        className="w-full rounded-xl"
-                                        src={image}
-                                        alt={"image " + index}
-                                    />
-                                ))}
-                            </Carousel>
+                        <div className="box-glow-white flex h-min max-h-[505px] w-screen min-w-[320px] max-w-[1186px] items-center justify-center overflow-hidden bg-white/20 py-5 drop-shadow-[0_0_20px_rgba(255,255,255,0.75)] backdrop-blur-sm md:h-full md:w-full lg:rounded-3xl lg:px-0">
+                            <Carousel
+                                setCurrentIndex={setCurrentIndex}
+                                currentIndex={currentIndex}
+                                slides={imageSlide}
+                            />
+                            <div className="pointer-events-none absolute left-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-white/[0.3] to-transparent blur-lg"></div>
+                            <div className="pointer-events-none absolute right-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-transparent to-white/[0.3] blur-lg"></div>
                         </div>
+
+                        {/* CAROUSEL PAGINATION */}
+                        <div className="mb-20 mt-10 flex h-full max-h-[32px] w-screen justify-center space-x-4 sm:max-h-[43px] sm:space-x-10">
+                            {[0, 1, 2, 3].map((index) => (
+                                <div
+                                    key={index}
+                                    className={`aspect-square rounded-full backdrop-blur-sm transition-all duration-300 ${
+                                        currentIndex === index
+                                            ? "bg-white/75"
+                                            : "box-glow-white bg-white/20"
+                                    }`}
+                                ></div>
+                            ))}
+                        </div>
+                        {/* CAROUSEL PAGINATION END*/}
+
                         <button
                             onClick={() => setModalIsOpen(true)}
-                            className="mt-16 flex h-[76px] w-full min-w-[320px] max-w-[778px] items-center justify-center rounded-3xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:bg-white/50"
+                            className="box-glow-white flex h-14 min-w-[320px] max-w-[778px] items-center justify-center rounded-xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/50 sm:h-[76px] sm:w-full sm:rounded-3xl"
                         >
                             Continue
                         </button>
@@ -166,7 +180,7 @@ export default function GameArchives() {
                     {pageNumber === 1 ? (
                         <div className="h-screen w-screen">
                             <div className="flex h-screen flex-col items-center justify-center">
-                                <h1 className="z-10 py-4 text-center text-[36px] font-bold italic text-white drop-shadow-[0px_0px_5px_rgba(255,255,255,0.5)] md:text-[50px]">
+                                <h1 className="text-heading glow-white z-10 text-center font-bold italic text-white">
                                     DECODE THE MESSAGE
                                 </h1>
                                 <HeaderDecodeMessage
@@ -187,24 +201,37 @@ export default function GameArchives() {
                         </div>
                     ) : (
                         <div className="archives flex h-screen w-screen flex-col items-center justify-center">
-                            <h1 className="title mb-3 text-5xl font-bold italic text-white antialiased drop-shadow-[0px_0px_5px_rgba(255,255,255,0.5)] sm:text-7xl">
+                            <h1 className="title glow-white sm:text-heading mb-6 text-3xl font-bold italic text-white antialiased sm:mb-3">
                                 ARCHIVES
                             </h1>
-                            <div className="flex h-full max-h-[505px] min-h-[400px] w-full min-w-[320px] max-w-[1186px] items-center justify-center bg-white/20 px-3 drop-shadow-[0_0_20px_rgba(255,255,255,0.75)] backdrop-blur-sm md:rounded-3xl lg:px-0">
-                                <Carousel>
-                                    {imagesSlide.map((image, index) => (
-                                        <img
-                                            key={index}
-                                            className="w-full rounded-xl"
-                                            src={image}
-                                            alt={"image " + index}
-                                        />
-                                    ))}
-                                </Carousel>
+                            <div className="box-glow-white flex h-min max-h-[505px] w-screen min-w-[320px] max-w-[1186px] items-center justify-center overflow-hidden bg-white/20 py-5 drop-shadow-[0_0_20px_rgba(255,255,255,0.75)] backdrop-blur-sm md:h-full md:w-full lg:rounded-3xl lg:px-0">
+                                <Carousel
+                                    setCurrentIndex={setCurrentIndex}
+                                    currentIndex={currentIndex}
+                                    slides={imageSlide}
+                                />
+                                <div className="pointer-events-none absolute left-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-white/[0.3] to-transparent blur-lg"></div>
+                                <div className="pointer-events-none absolute right-0 top-0 z-[1] h-full w-[200px] rounded-lg bg-gradient-to-r from-transparent to-white/[0.3] blur-lg"></div>
                             </div>
+
+                            {/* CAROUSEL PAGINATION */}
+                            <div className="mb-20 mt-10 flex h-full max-h-[32px] w-screen justify-center space-x-4 sm:max-h-[43px] sm:space-x-10">
+                                {[0, 1, 2, 3].map((index) => (
+                                    <div
+                                        key={index}
+                                        className={`aspect-square rounded-full backdrop-blur-sm transition-all duration-300 ${
+                                            currentIndex === index
+                                                ? "bg-white/75"
+                                                : "box-glow-white bg-white/20"
+                                        }`}
+                                    ></div>
+                                ))}
+                            </div>
+                            {/* CAROUSEL PAGINATION END*/}
+
                             <button
                                 onClick={handlePageChange}
-                                className="mt-16 flex h-[76px] w-full min-w-[320px] max-w-[778px] items-center justify-center rounded-3xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:bg-white/50"
+                                className="box-glow-white flex h-14 min-w-[320px] max-w-[778px] items-center justify-center rounded-xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/50 sm:h-[76px] sm:w-full sm:rounded-3xl"
                             >
                                 Back
                             </button>

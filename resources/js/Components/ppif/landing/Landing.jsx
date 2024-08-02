@@ -1,9 +1,6 @@
 export default function Landing({ id }) {
     return (
-        <div
-            id={id}
-            className="flex h-screen w-full items-end justify-center bg-black"
-        >
+        <div id={id} className="flex h-screen w-full items-end justify-center">
             <div className="absolute flex h-screen w-full items-center justify-center">
                 <img
                     className="max-w-32 lg:w-full"
