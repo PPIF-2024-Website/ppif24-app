@@ -1,15 +1,49 @@
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
 body {
     background-color: #a000a0;
 }
 
 #main {
-    margin-top: 60px;
 }
 
 #square2 {
     width: 100% !important;
     height: 90px;
     background-color: #ff6600;
+}
+
+#polygon {
+    padding: 0px;
+}
+
+#polygoncontent #images {
+    /*margin-top: 15px;*/
+}
+
+#polygoncontent #paragraph {
+    /* margin-top: 10px;
+    margin-left: 10px; */
 }
 
 #polygon2 {
@@ -19,14 +53,31 @@ body {
     padding-top: 0px !important;
 }
 
+#paragraph2 {
+    margin-top: -15px;
+    padding-top: 0px;
+}
+
 #text {
     text-align: justify;
     padding-top: 30px;
     margin-top: 0px;
 }
 
+#svg {
+    /* margin-top: 100px; */
+    margin: 0px !important;
+    width: 100%;
+}
+
 #polygon2 #images {
+    /* margin-top: 0px;
     padding: 0px !important;
+    margin-bottom: 15px !important; */
+}
+
+#parentofsquare2 {
+    margin-top: 100px;
 }
 
 @media (max-width: 1280px) {

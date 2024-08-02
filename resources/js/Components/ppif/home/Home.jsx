@@ -28,7 +28,7 @@ function Home({ id }) {
     return (
         <>
             <div
-                className="py-auto relative mx-auto h-screen overflow-hidden sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]"
+                className="py-auto relative mx-auto flex h-screen items-center justify-center overflow-hidden sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]"
                 id={id}
             >
                 <div id="main">
@@ -70,52 +70,54 @@ function Home({ id }) {
                         className="container mx-auto hidden h-[550px] rounded-sm p-8 lg:block"
                         id="polygon"
                     >
-                        <svg
-                            className="absolute inset-0 -z-10 hidden lg:flex"
-                            viewBox="0 0 1500 750"
-                            preserveAspectRatio="none"
-                            id="svg"
-                        >
-                            <defs>
-                                <mask
-                                    id="mask"
-                                    x="0"
-                                    y="0"
-                                    width="100%"
-                                    height="100%"
-                                >
-                                    <rect
+                        <div className="relative m-0 flex items-center justify-center p-0">
+                            <svg
+                                className="absolute inset-0 -z-10 hidden lg:flex"
+                                viewBox="0 0 1500 750"
+                                preserveAspectRatio="none"
+                                id="svg"
+                            >
+                                <defs>
+                                    <mask
+                                        id="mask"
                                         x="0"
                                         y="0"
                                         width="100%"
                                         height="100%"
-                                        fill="white"
-                                    />
-                                    <path
-                                        d="M 0 0 V 130 Q 0 115 15 115 H 510 q 10 0 25 -15 l 85 -85 q 15 -15 30 -15 Z"
-                                        fill="black"
-                                    />
-                                </mask>
-                            </defs>
+                                    >
+                                        <rect
+                                            x="0"
+                                            y="0"
+                                            width="100%"
+                                            height="100%"
+                                            fill="white"
+                                        />
+                                        <path
+                                            d="M 0 0 V 130 Q 0 115 15 115 H 510 q 10 0 25 -15 l 85 -85 q 15 -15 30 -15 Z"
+                                            fill="black"
+                                        />
+                                    </mask>
+                                </defs>
 
-                            <rect
-                                x="0"
-                                y="0"
-                                width="100%"
-                                height="100%"
-                                mask="url(#mask)"
-                                fill="rgba(255, 255, 255, 0.2)"
-                            />
-                        </svg>
-                        <div className="flex flex-col lg:flex-row">
-                            <div className="p-4 lg:w-2/5" id="paragraph">
-                                <p
-                                    className="mb-4 text-white"
-                                    id="text"
-                                    style={{
-                                        paddingTop: "6.5em",
-                                    }}
-                                >
+                                <rect
+                                    x="0"
+                                    y="0"
+                                    width="100%"
+                                    height="100%"
+                                    mask="url(#mask)"
+                                    fill="rgba(255, 255, 255, 0.2)"
+                                />
+                            </svg>
+                        </div>
+                        <div
+                            className="flex flex-col lg:flex-row"
+                            id="polygoncontent"
+                        >
+                            <div
+                                className="p-4 lg:mt-0 lg:w-2/5 lg:pl-6 lg:pt-[50px] xl:pl-7 xl:pt-[70px] 2xl:pl-7 2xl:pt-[100px]"
+                                id="paragraph"
+                            >
+                                <p className="mb-4 text-white" id="text">
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua.
@@ -130,7 +132,7 @@ function Home({ id }) {
                                 </p>
                             </div>
                             <div
-                                className="flex h-[500px] w-[60%] flex-wrap overflow-y-scroll p-1 pl-6 pt-0"
+                                className="mt-3 flex w-[60%] flex-wrap overflow-y-scroll pl-6 lg:h-[530px] xl:h-[520px] 2xl:h-[550px]"
                                 id="images"
                             >
                                 <div className="flex flex-wrap md:w-1/2">
@@ -168,7 +170,7 @@ function Home({ id }) {
                                         <img
                                             alt="gallery"
                                             className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/16.jpg"
+                                            src="/ppif/images/activities/10.jpg"
                                         />
                                     </div>
                                     <div className="w-1/2 p-1 md:p-2">
@@ -230,11 +232,11 @@ function Home({ id }) {
                     </div>
 
                     <div
-                        className="container mx-auto block h-[550px] rounded-sm p-8 lg:hidden"
+                        className="container mx-auto block h-[550px] rounded p-8 lg:hidden"
                         id="polygon2"
                     >
                         <div className="flex flex-col lg:flex-row">
-                            <div className="lg:w-2/5" id="paragraph">
+                            <div className="lg:w-2/5" id="paragraph2">
                                 <p className="mb-4 text-white" id="text">
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do eiusmod tempor
@@ -250,7 +252,7 @@ function Home({ id }) {
                                 </p>
                             </div>
                             <div
-                                className="flex h-[500px] w-[60%] flex-wrap overflow-y-scroll p-1 pl-6 pt-0"
+                                className="flex h-[300px] w-[60%] flex-wrap overflow-y-scroll p-1 pl-6 pt-0"
                                 id="images"
                             >
                                 <div className="flex flex-wrap md:w-1/2">
@@ -288,7 +290,7 @@ function Home({ id }) {
                                         <img
                                             alt="gallery"
                                             className="block h-full w-full rounded-lg object-cover object-center"
-                                            src="/ppif/images/activities/16.jpg"
+                                            src="/ppif/images/activities/10.jpg"
                                         />
                                     </div>
                                     <div className="w-1/2 p-1 md:p-2">
