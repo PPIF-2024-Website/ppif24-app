@@ -48,15 +48,15 @@ function DecodeMessage({ groupToken, children: button }) {
         <>
             <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
                 <h1
-                    className="flex h-3/4 items-center justify-center text-center text-6xl font-semibold leading-normal tracking-wide text-white"
+                    className="flex h-3/4 items-center justify-center text-center md:text-6xl text-3xl font-semibold leading-normal tracking-wide text-white"
                     dangerouslySetInnerHTML={{ __html: response }}
                 />
-                {response != "Message Salah" ? (
-                    <div className="flex w-full justify-center pt-20">
+                {response != "Decode Salah !" ? (
+                    <div className="flex w-full justify-center ">
                         <Link
                             href="/"
                             onClick={removeToken}
-                            className="rounded-xl bg-[#3d3c3c] px-20 py-6 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95"
+                            className="rounded-xl bg-[#3d3c3c] md:px-20 md:py-6 px-8 py-3 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95"
                         >
                             Continue
                         </Link>

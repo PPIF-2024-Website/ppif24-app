@@ -88,13 +88,13 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
             {/* CONTROL BUTTON */}
             <div className="absolute z-[2] flex w-full justify-between text-white">
                 <ChevronLeftIcon
-                    className="controlPrev hover:glow-white w-full max-w-16 cursor-pointer opacity-50 transition-all duration-150 hover:scale-110 hover:opacity-100"
+                    className="controlPrev hover:glow-white w-full max-w-8 cursor-pointer opacity-50 transition-all duration-150 hover:scale-110 hover:opacity-100 sm:max-w-16"
                     onClick={handlePrevious}
                 >
                     Previous
                 </ChevronLeftIcon>
                 <ChevronRightIcon
-                    className="controlNext hover:glow-white w-full max-w-16 cursor-pointer opacity-50 transition-all duration-150 hover:scale-110 hover:opacity-100"
+                    className="controlNext hover:glow-white w-full max-w-8 cursor-pointer opacity-50 transition-all duration-150 hover:scale-110 hover:opacity-100 sm:max-w-16"
                     onClick={handleNext}
                 >
                     Next
@@ -104,21 +104,27 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
             {/* CAROUSEL */}
             <div
                 ref={carouselRef}
-                className={`carousel m-auto flex h-[443px] flex-nowrap md:w-[65%] ${
+                className={`carousel m-auto flex h-full max-h-[443px] w-[65%] flex-nowrap ${
                     isTransitioning ? "transition-all duration-300" : ""
                 }`}
                 style={{ transform: `translateX(${translateX}px)` }}
             >
                 {items.map((slide, index) => (
                     <div
-                        className="flex h-full w-full shrink-0 px-8"
+                        className="flex h-full w-full shrink-0 px-2 md:px-8"
                         key={`${slide}-${index}`}
                     >
-                        <div className="relative h-full max-h-[442px] w-full max-w-[663px]">
+                        <div className="relative flex h-full max-h-[442px] w-full max-w-[663px] items-center">
                             <LazyLoadImage
                                 src={slide}
-                                className="h-full w-full select-none rounded-2xl object-cover"
+                                className="aspect-[3/2] select-none rounded-md object-cover sm:rounded-lg md:h-full md:w-full lg:rounded-2xl"
                             />
+                            <span className="absolute inset-0 flex items-center overflow-y-auto p-10 text-center text-lg text-white">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Illum quam voluptatem soluta
+                                animi sapiente modi suscipit esse natus amet
+                                cumque.
+                            </span>
                         </div>
                     </div>
                 ))}
