@@ -36,7 +36,6 @@ function Home({ id }) {
                         <img
                             className="w-full"
                             src="/ppif/images/orangebackground.png"
-                            alt="ppif"
                         />
 
                         <div className="absolute inset-0 flex w-11/12 items-center justify-center">
