@@ -10,7 +10,7 @@ const ImageContainer = ({ srcIndex, fullWidth }) => (
     <div className={`p-1 md:p-2 ${fullWidth ? "w-full" : "w-1/2"}`}>
         <div className="block h-full w-full overflow-hidden rounded-lg bg-white/10">
             <LazyLoadImage
-                src={`/ppif/images/activities/${srcIndex}.jpg`}
+                src={`/ppif/images/activities/${srcIndex}.webp`}
                 alt={`Foto Dokumentasi Kegiatan Informatika ${srcIndex}`}
                 className="h-full w-full object-cover object-center"
                 delayTime="100"
@@ -37,7 +37,6 @@ function Home({ id }) {
         Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
-      
     `;
 
     useEffect(() => {

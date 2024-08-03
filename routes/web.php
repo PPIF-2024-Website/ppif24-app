@@ -14,8 +14,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/home', function () {
-    return Inertia::render('HomeSection');
+Route::get('/landing', function () {
+    return Inertia::render('Welcome');
 });
 
 Route::get('/dashboard', function () {
