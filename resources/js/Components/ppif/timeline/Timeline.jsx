@@ -216,7 +216,7 @@ function Timeline({ id }) {
             className="flex h-screen w-full items-center justify-center"
         >
             <div className="container text-white">
-                <div className="select-none whitespace-nowrap pt-4 text-center text-[36px] drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] lg:pt-32 lg:text-[68px]">
+                <div className="select-none whitespace-nowrap pt-4 text-center text-[36px] drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] lg:text-[68px]">
                     <span className="font-semibold">Our </span>
                     <span className="font-black italic text-ppif-orange">
                         TIMELINE
