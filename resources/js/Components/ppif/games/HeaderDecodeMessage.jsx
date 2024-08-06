@@ -11,7 +11,7 @@ function HeaderDecodeMessage({ image, text }) {
                         alt="Header image"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <pre className="text-xl text-white sm:text-3xl md:text-5xl lg:text-6xl">
+                        <pre className="text-2xl text-white sm:text-3xl md:text-5xl lg:text-6xl">
                             {text}
                         </pre>
                     </div>

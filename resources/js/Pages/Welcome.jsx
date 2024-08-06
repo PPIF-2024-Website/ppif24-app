@@ -6,12 +6,14 @@ import AnimatedBackground from "@/Components/ppif/background/AnimatedBackground"
 import Timeline from "@/Components/ppif/timeline/Timeline";
 import Contact from "@/Components/ppif/contact/Contact";
 import Home from "@/Components/ppif/home/Home";
+import Background from "@/Components/ppif/background/Background";
 
 export default function Welcome() {
     return (
         <>
             <Head title="Home" />
             <AnimatedBackground />
+            {/* <Background /> */}
             <Navbar />
             <Landing id={"Home"} />
             <Home id={"AboutIF"} />
