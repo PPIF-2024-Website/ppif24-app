@@ -144,7 +144,7 @@ export default function Contact({ id }) {
             id={id}
             className="flex h-screen w-full flex-col items-center justify-center px-6 py-12 text-white md:px-12 lg:p-20"
         >
-            <div className="text-heading mb-8 text-center min-[600px]:mb-16">
+            <div className="text-heading mb-8 flex space-x-4 text-center min-[600px]:mb-16">
                 <span className="glow-blue font-extrabold italic text-ppif-blue">
                     CONTACT
                 </span>{" "}
