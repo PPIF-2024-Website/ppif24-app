@@ -144,22 +144,22 @@ export default function Contact({ id }) {
             id={id}
             className="flex h-screen w-full flex-col items-center justify-center px-6 py-12 text-white md:px-12 lg:p-20"
         >
-            <div className="text-heading mb-8 text-center sm:mb-16">
+            <div className="text-heading mb-8 text-center min-[600px]:mb-16">
                 <span className="glow-blue font-extrabold italic text-ppif-blue">
                     CONTACT
                 </span>{" "}
                 <span className="glow-white font-light">Us</span>
             </div>
 
-            <div className="grid gap-4 min-[375px]:grid-cols-2 sm:gap-x-8 sm:gap-y-8 xl:grid-cols-4 xl:gap-y-0">
+            <div className="grid grid-cols-2 gap-4 min-[600px]:gap-x-8 min-[600px]:gap-y-8 xl:grid-cols-4 xl:gap-y-0">
                 {logos.map(({ Logo, bgColor, link }) => (
-                    <div className="group relative flex items-center justify-center rounded-xl p-8 sm:p-12">
+                    <div className="group relative flex items-center justify-center rounded-xl p-8 min-[600px]:p-12">
                         <div
                             className={`smooth absolute left-0 top-0 h-full w-full origin-bottom-left rounded-xl bg-gradient-to-r to-transparent group-hover:rotate-12 ${bgColor} opacity-50 group-hover:opacity-100`}
                         ></div>
                         <div className="smooth absolute left-0 top-0 h-full w-full origin-bottom-left rounded-xl border-[2px] border-white/10 bg-white/5 p-12 shadow-inner backdrop-blur-md"></div>
                         <a href={link} target="__blank">
-                            <Logo className="smooth group-hover:glow-white w-[100px] shrink-0 cursor-pointer opacity-75 group-hover:opacity-100 min-[375px]:w-[75px] sm:w-[125px]" />
+                            <Logo className="smooth group-hover:glow-white w-[50px] shrink-0 cursor-pointer opacity-75 group-hover:opacity-100 min-[380px]:w-[100px] min-[600px]:w-[125px]" />
                         </a>
                         {/* <div className="text-footer smooth absolute -bottom-[85px] left-0 rounded-lg bg-white/10 px-6 py-4 text-center font-light uppercase tracking-widest opacity-0 group-hover:opacity-100">
                             <Text />
