@@ -14,10 +14,22 @@ Route::get('/', function () {
     ]);
 });
 
+//ppif
 Route::get('/landing', function () {
     return Inertia::render('Welcome');
 });
 
+Route::prefix('game')->group(function () {
+    Route::get('/story', function () {
+        return Inertia::render('GameStoryPage');
+    });
+    Route::get('/archive', function () {
+        return Inertia::render('GameArchivesPage');
+    });
+});
+
+
+//auth
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -28,14 +40,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('game')->group(function () {
-    Route::get('/story', function () {
-        return Inertia::render('GameStoryPage');
-    });
-    Route::get('/archive', function () {
-        return Inertia::render('GameArchivesPage');
-    
-    });
-});
 
 require __DIR__.'/auth.php';
