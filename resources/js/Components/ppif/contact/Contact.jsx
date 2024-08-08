@@ -152,8 +152,11 @@ export default function Contact({ id }) {
             </div>
 
             <div className="grid grid-cols-2 gap-4 min-[600px]:gap-x-8 min-[600px]:gap-y-8 xl:grid-cols-4 xl:gap-y-0">
-                {logos.map(({ Logo, bgColor, link }) => (
-                    <div className="group relative flex items-center justify-center rounded-xl p-8 min-[600px]:p-12">
+                {logos.map(({ Logo, bgColor, link }, index) => (
+                    <div
+                        key={index}
+                        className="group relative flex items-center justify-center rounded-xl p-8 min-[600px]:p-12"
+                    >
                         <div
                             className={`smooth absolute left-0 top-0 h-full w-full origin-bottom-left rounded-xl bg-gradient-to-r to-transparent group-hover:rotate-12 ${bgColor} opacity-50 group-hover:opacity-100`}
                         ></div>
