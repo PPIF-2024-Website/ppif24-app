@@ -5,8 +5,6 @@
 @layer components {
     .bg-ball {
         @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_20s_linear_infinite] rounded-full blur-[150px] will-change-transform md:h-[500px] md:w-[500px] md:blur-[200px];
-        transform: translateZ(0);
-        will-change: transform;
     }
 }
 
