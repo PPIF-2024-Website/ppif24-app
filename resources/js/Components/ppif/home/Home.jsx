@@ -7,7 +7,7 @@ import {
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ImageContainer = ({ srcIndex, fullWidth }) => (
-    <div className={`p-1 md:p-2 ${fullWidth ? "w-full" : "w-1/2"}`}>
+    <div className={`p-1 md:p-2 ${fullWidth ? "w-full" : "w-1/2"} select-none`}>
         <div className="block h-full w-full overflow-hidden rounded-lg bg-white/10">
             <LazyLoadImage
                 src={`/ppif/images/activities/${srcIndex}.webp`}
@@ -65,7 +65,7 @@ function Home({ id }) {
     return (
         <>
             <div
-                className="py-auto relative mx-auto flex h-screen items-center justify-center overflow-hidden sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]"
+                className="relative mx-auto flex h-screen items-center justify-center overflow-hidden py-12 sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]"
                 id={id}
             >
                 <div id="main">

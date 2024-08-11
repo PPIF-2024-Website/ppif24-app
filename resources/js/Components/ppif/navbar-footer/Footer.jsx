@@ -12,12 +12,12 @@ export default function Footer() {
                 <div className="flex items-center space-x-8">
                     <img
                         src="/ppif/images/footer/umn-logo.svg"
-                        alt=""
+                        alt="UMN Logo"
                         className="w-[80px] min-[380px]:h-[30px] min-[380px]:w-auto min-[410px]:h-[40px] min-[490px]:h-[50px]"
                     />
                     <img
                         src="/ppif/images/footer/ppif2024-logo.svg"
-                        alt=""
+                        alt="PPIF 2024 Logo"
                         className="w-[130px] min-[380px]:h-[25px] min-[380px]:w-auto min-[410px]:h-[30px] min-[490px]:h-[40px]"
                     />
                 </div>

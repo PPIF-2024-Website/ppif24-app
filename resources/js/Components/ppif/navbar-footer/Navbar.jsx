@@ -9,13 +9,7 @@ export default function Navbar() {
 
         const handleScroll = () => {
             const scroll = window.scrollY;
-
-            if (scroll < lastScroll) {
-                setIsScrollUp(true);
-            } else {
-                setIsScrollUp(false);
-            }
-
+            setIsScrollUp(scroll < lastScroll);
             lastScroll = scroll;
         };
 
@@ -33,7 +27,7 @@ export default function Navbar() {
     };
 
     return (
-        <div className="flex w-screen justify-center">
+        <div className="flex w-screen select-none justify-center">
             <div className="fixed z-50 flex h-24 w-screen justify-end md:hidden">
                 <img
                     onClick={handleBurger}
