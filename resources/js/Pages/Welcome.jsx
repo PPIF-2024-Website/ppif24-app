@@ -15,11 +15,11 @@ export default function Welcome() {
             <AnimatedBackground />
             {/* <Background /> */}
             <Navbar />
-            <Landing id={"Home"} />
-            <Home id={"AboutIF"} />
-            <AboutPPIF id={"AboutPPIF"} />
-            <Timeline id={"Timeline"} />
-            <Contact id={"Contact"} />
+            <Landing id={"home"} />
+            <Home id={"about-if"} />
+            <AboutPPIF id={"about-ppif"} />
+            <Timeline id={"timeline"} />
+            <Contact id={"contact"} />
         </>
     );
 }

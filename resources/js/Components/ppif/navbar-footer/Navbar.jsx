@@ -48,35 +48,35 @@ export default function Navbar() {
                 <a
                     onClick={handleBurger}
                     className={`${isBurgerActive ? "translate-y-0 delay-0" : "-translate-y-10 opacity-0 delay-[250ms]"} glow-white py-4 font-light transition-all ease-in-out hover:drop-shadow-[0px_0px_5px_rgba(255,255,255,1)] md:translate-y-0 md:p-0 md:font-normal md:opacity-100 md:delay-0`}
-                    href="#Home"
+                    href="#home"
                 >
                     Home
                 </a>
                 <a
                     onClick={handleBurger}
                     className={`${isBurgerActive ? "translate-y-0 delay-[50ms]" : "-translate-y-10 opacity-0 delay-200"} glow-white py-4 font-light transition-all ease-in-out hover:drop-shadow-[0px_0px_5px_rgba(255,255,255,1)] md:translate-y-0 md:p-0 md:font-normal md:opacity-100 md:delay-0`}
-                    href="#AboutIF"
+                    href="#about-if"
                 >
                     About IF
                 </a>
                 <a
                     onClick={handleBurger}
                     className={`${isBurgerActive ? "translate-y-0 delay-100" : "-translate-y-10 opacity-0 delay-150"} glow-white py-4 font-light transition-all ease-in-out hover:drop-shadow-[0px_0px_5px_rgba(255,255,255,1)] md:translate-y-0 md:p-0 md:font-normal md:opacity-100 md:delay-0`}
-                    href="#AboutPPIF"
+                    href="#about-ppif"
                 >
                     About PPIF
                 </a>
                 <a
                     onClick={handleBurger}
                     className={`${isBurgerActive ? "translate-y-0 delay-150" : "-translate-y-10 opacity-0 delay-100"} glow-white py-4 font-light transition-all ease-in-out hover:drop-shadow-[0px_0px_5px_rgba(255,255,255,1)] md:translate-y-0 md:p-0 md:font-normal md:opacity-100 md:delay-0`}
-                    href="#Timeline"
+                    href="#timeline"
                 >
                     Timeline
                 </a>
                 <a
                     onClick={handleBurger}
                     className={`${isBurgerActive ? "translate-y-0 delay-200" : "-translate-y-10 opacity-0 delay-[50ms]"} glow-white py-4 font-light transition-all ease-in-out hover:drop-shadow-[0px_0px_5px_rgba(255,255,255,1)] md:translate-y-0 md:p-0 md:font-normal md:opacity-100 md:delay-0`}
-                    href="#Contact"
+                    href="#contact"
                 >
                     Contact
                 </a>
