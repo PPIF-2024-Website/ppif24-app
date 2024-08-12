@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Modal from "../CustomModal";
+import Modal from "./CustomModal";
 import { Link } from "@inertiajs/react";
 
 const getRandomColorClass = () => {
