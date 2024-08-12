@@ -17,7 +17,7 @@ export default function Popup({
         <div
             className={`smooth fixed left-0 top-0 z-20 m-0 flex h-screen w-screen items-center justify-center bg-black/40 backdrop-blur-[8px] ${active ? "opacity-100" : "pointer-events-none opacity-0"}`}
         >
-            <div className="glow-orange flex max-h-[80%] w-[1000px] max-w-[90%] flex-col overflow-y-scroll rounded-3xl bg-[rgba(var(--ppif-orange-rgb),0.5)] px-6 py-12 backdrop-blur-md min-[420px]:px-8 sm:px-16">
+            <div className="thin-scroll glow-orange flex max-h-[80%] w-[1000px] max-w-[90%] flex-col overflow-y-auto rounded-3xl bg-[rgba(var(--ppif-orange-rgb),0.5)] px-6 py-12 backdrop-blur-md min-[420px]:px-8 sm:px-16">
                 <div className="flex w-full items-start justify-between">
                     {/* DAY TITLE */}
                     <div className="glow-white mb-4 flex flex-col -space-y-1 text-4xl font-extrabold tracking-tighter sm:text-5xl">
@@ -49,7 +49,7 @@ export default function Popup({
                     <span className="text-subheading font-extrabold tracking-tighter">
                         Necessities
                     </span>
-                    <div className="necessities flex w-full space-x-6 overflow-x-auto overflow-y-hidden py-3">
+                    <div className="thin-scroll flex w-full space-x-6 overflow-x-auto overflow-y-hidden py-3">
                         {necessities.map(({ name, imgSrc }, index) => (
                             <div
                                 className="size-[75px] shrink-0 rounded-xl bg-white/10"
