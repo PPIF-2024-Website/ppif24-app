@@ -14,10 +14,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/landing', function () {
-    return Inertia::render('Welcome');
-});
-
 Route::prefix('game')->group(function () {
     Route::get('/story', function () {
         return Inertia::render('GameStoryPage');

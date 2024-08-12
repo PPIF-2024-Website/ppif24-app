@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Home.css";
+import "./AboutIF.css";
 import {
     LazyLoadImage,
     trackWindowScroll,
@@ -24,7 +24,7 @@ const ImageContainer = ({ srcIndex, fullWidth }) => (
     </div>
 );
 
-function Home({ id }) {
+function AboutIF({ id }) {
     const textContent = `
         Lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor
@@ -306,4 +306,4 @@ function Home({ id }) {
     );
 }
 
-export default trackWindowScroll(Home);
+export default trackWindowScroll(AboutIF);

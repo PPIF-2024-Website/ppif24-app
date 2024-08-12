@@ -6,7 +6,7 @@ import Footer from "@/Components/ppif/navbar-footer/Footer";
 import Landing from "@/Components/ppif/landing/Landing";
 import { Head } from "@inertiajs/react";
 import Navbar from "@/Components/ppif/navbar-footer/Navbar";
-import Home from "@/Components/ppif/home/Home";
+import Home from "@/Components/ppif/about-if/AboutIF";
 import AboutPPIF from "@/Components/ppif/about-ppif/AboutPPIF";
 import Timelinee from "@/Components/ppif/timeline/Timeline";
 import Contact from "@/Components/ppif/contact/Contact";
