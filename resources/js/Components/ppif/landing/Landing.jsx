@@ -6,12 +6,12 @@ export default function Landing({ id }) {
     return (
         <div
             id={id}
-            className="flex h-screen w-full select-none items-end justify-center"
+            className="flex h-screen w-full select-none items-end justify-center overflow-hidden"
         >
             <div className="absolute flex h-screen w-full items-center justify-center">
                 <LazyLoadImage
                     src="/ppif/images/landing/ppif-emblem-glow.svg"
-                    className="max-w-[400px] lg:w-full"
+                    className="w-[250px] min-[420px]:w-[400px]"
                     alt="PPIF 2024 Logo"
                     effect="opacity"
                     wrapperProps={{

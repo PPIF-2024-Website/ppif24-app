@@ -1,15 +1,14 @@
 .necessities::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    height: 5px;
 }
 
 .necessities::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 10px;
 }
 
 .necessities::-webkit-scrollbar-thumb {
-    background: rgba(66, 66, 66, 1);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
 }
 

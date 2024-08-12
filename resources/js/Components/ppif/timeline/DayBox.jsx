@@ -10,9 +10,9 @@ export default function DayBox({
     onClick,
 }) {
     return (
-        <div className="glow-orange smooth flex max-h-[25vh] w-full flex-col justify-center rounded-3xl bg-[rgba(var(--ppif-orange-rgb),0.4)] p-10 backdrop-blur-md hover:bg-ppif-orange md:w-[500px] xl:max-h-none xl:w-full 2xl:px-16 2xl:py-12">
+        <div className="glow-orange smooth flex max-h-[25vh] w-full flex-col justify-center rounded-3xl bg-[rgba(var(--ppif-orange-rgb),0.4)] p-8 backdrop-blur-md hover:bg-ppif-orange sm:p-10 md:w-[500px] xl:max-h-none xl:w-full 2xl:px-16 2xl:py-12">
             {/* DAY TITLE */}
-            <div className="glow-white mb-4 flex flex-col -space-y-1 text-4xl font-extrabold tracking-tighter sm:text-5xl">
+            <div className="glow-white mb-2 flex flex-col -space-y-2 text-3xl font-extrabold tracking-tighter min-[300px]:text-4xl sm:mb-4 sm:-space-y-1 sm:text-5xl">
                 <span>{day === 0 ? "BRIEFING" : "DAY"}</span>
                 <span>{day === 0 ? "DAY" : day === 1 ? "ONE" : "TWO"}</span>
             </div>
