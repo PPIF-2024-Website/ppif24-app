@@ -34,27 +34,28 @@ html {
 
     /* TEXT */
     .text-heading {
-        @apply text-5xl;
+        @apply text-4xl min-[380px]:text-5xl;
     }
 
     .text-subheading {
-        @apply text-2xl;
+        @apply text-lg min-[380px]:text-xl sm:text-2xl;
     }
 
     .text-body {
-        @apply text-sm sm:text-base;
+        @apply text-xs min-[380px]:text-sm sm:text-base;
     }
 
     .text-footer {
-        @apply text-xs sm:text-sm;
+        @apply text-[10px] min-[380px]:text-[11px] min-[490px]:text-xs sm:text-sm;
     }
 
     /* GLOW */
     .glow-white {
         @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
     }
+
     .box-glow-white {
-        @apply shadow-[0_0_20px_rgba(255,255,255,0.5)];
+        @apply shadow-[0_0_10px_rgba(255,255,255,0.15)];
     }
 
     .glow-orange {
@@ -82,7 +83,7 @@ html {
 }
 
 /* ini style untuk main background, karena tailwindnya somehow ga bisa -tio */
-.main-background {
+body {
     background: linear-gradient(
         to bottom,
         #14000b 0%,
@@ -93,4 +94,26 @@ html {
         #00000e 85%,
         #00000e 100%
     );
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0%;
+        /* filter: blur(20px); */
+    }
+    to {
+        opacity: 100%;
+        /* filter: blur(0px); */
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 100%;
+        /* filter: blur(0px); */
+    }
+    to {
+        opacity: 0%;
+        /* filter: blur(20px); */
+    }
 }

@@ -1,14 +1,14 @@
 import React from "react";
 
-const ContactCard = ({ imageSrc, altText, title, buttonText, buttonLink }) => {
+const ContactCard = ({ LogoComponent, title, buttonText, buttonLink }) => {
     return (
-        <div className="flex h-[400px] w-full flex-col items-center justify-center rounded-lg bg-white/10">
-            {/* IMAGE */}
-            <div className="flex h-[200px] items-center justify-center">
-                <img src={imageSrc} alt={altText} className="glow-white" />
+        <div className="flex w-full items-center space-x-8 rounded-lg bg-white/10 p-8 md:h-[400px] md:flex-col md:justify-center md:space-x-0 md:space-y-8">
+            {/* LOGO */}
+            <div className="md:h-[150px]">
+                <LogoComponent className="glow-white w-[75px] shrink-0 sm:w-[100px] lg:w-[125px] xl:w-[150px]" />
             </div>
 
-            <div className="flex flex-col space-y-2 text-center">
+            <div className="flex flex-col space-y-3 md:text-center">
                 {/* TITLE */}
                 <h2 className="text-subheading">{title}</h2>
 

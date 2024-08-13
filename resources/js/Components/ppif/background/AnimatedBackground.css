@@ -4,7 +4,16 @@
 
 @layer components {
     .bg-ball {
-        @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_20s_linear_infinite] rounded-full blur-[150px] md:h-[500px] md:w-[500px] md:blur-[200px];
+        @apply absolute h-[350px] w-[350px] origin-top animate-[ball-movement_20s_linear_infinite] select-none rounded-full blur-[150px] md:h-[500px] md:w-[500px] md:blur-[200px];
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000;
+        transform: translate3d(0, 0, 0);
+        transform: translateZ(0);
+        will-change: transform;
     }
 }
 

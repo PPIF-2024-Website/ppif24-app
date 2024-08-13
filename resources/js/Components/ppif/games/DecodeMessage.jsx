@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Modal from "../CustomModal";
+import Modal from "./CustomModal";
 import { Link } from "@inertiajs/react";
 
 const getRandomColorClass = () => {
@@ -76,30 +76,30 @@ function DecodeMessage({ groupToken, children: button }) {
                 <div className="flex w-full justify-center md:w-auto md:justify-end">
                     {button}
                 </div>
-                </div>
-                {response != "Decode Salah !" ? (
-                    <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
-                        <h1
-                            className="flex h-3/4 items-center justify-center text-center md:text-6xl text-3xl font-semibold leading-normal tracking-wide text-white"
-                            dangerouslySetInnerHTML={{ __html: response }}
-                        />
-                            <div className="flex w-full justify-center ">
-                                <Link
-                                    href="/"
-                                    onClick={removeToken}
-                                    className="rounded-xl bg-[#3d3c3c] md:px-20 md:py-6 px-8 py-3 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95"
-                                >
-                                    Continue
-                                </Link>
-                            </div>
-                    </Modal>
-                ) : (
-                    <>
-                        <div>
-                            <h1 className="text-red-600">Message Salah</h1>
-                        </div>
-                    </>
-                )}
+            </div>
+            {response != "Decode Salah !" ? (
+                <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
+                    <h1
+                        className="flex h-3/4 items-center justify-center text-center text-3xl font-semibold leading-normal tracking-wide text-white md:text-6xl"
+                        dangerouslySetInnerHTML={{ __html: response }}
+                    />
+                    <div className="flex w-full justify-center">
+                        <Link
+                            href="/"
+                            onClick={removeToken}
+                            className="rounded-xl bg-[#3d3c3c] px-8 py-3 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95 md:px-20 md:py-6"
+                        >
+                            Continue
+                        </Link>
+                    </div>
+                </Modal>
+            ) : (
+                <>
+                    <div>
+                        <h1 className="text-red-600">Message Salah</h1>
+                    </div>
+                </>
+            )}
         </>
     );
 }

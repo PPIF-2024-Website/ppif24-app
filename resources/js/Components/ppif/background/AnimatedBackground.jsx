@@ -1,7 +1,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
-import Footer from "../contact/Footer";
+import Footer from "../navbar-footer/Footer";
 import "./AnimatedBackground.css";
 
 export default function AnimatedBackground() {
