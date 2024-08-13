@@ -2,9 +2,9 @@ import axios from "axios";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 import Modal from "@/Components/ppif/games/CustomModal";
 import { useState, useEffect } from "react";
+import { Head } from "@inertiajs/react";
 import HeaderDecodeMessage from "@/Components/ppif/games/HeaderDecodeMessage";
 import DecodeForm from "@/Components/ppif/games/DecodeMessage";
-import { Head } from "@inertiajs/react";
 import imageSlide from "@/Components/ppif/games/archives/ImageSlide";
 import Carousel from "@/Components/ppif/games/archives/Carousel";
 

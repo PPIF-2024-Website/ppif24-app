@@ -16,9 +16,9 @@ function Storyboard({ image }) {
             <img
                 src={image}
                 alt="Story Image"
-                className="w-[450px] rounded-2xl"
+                className="w-[500px] rounded-2xl"
             />
-            <div className="text-body glow-white w-3/4 bg-gradient-to-bl from-white to-white/30 bg-clip-text text-center font-semibold text-transparent">
+            <div className="text-body glow-white w-1/2 bg-gradient-to-bl from-white to-white/30 bg-clip-text text-center font-semibold text-transparent">
                 {story}
             </div>
         </div>

@@ -18,42 +18,45 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(200px);
+    /* backdrop-filter: blur(200px); */
 }
 
 .bg-container2 div {
     position: absolute;
     border-radius: 100%;
     animation:
-        rotate 15s linear infinite,
-        pulse 5s linear infinite;
+        rotate 25s linear infinite,
+        pulse 10s ease-in-out infinite;
 }
 
 .bg-color1 {
     background-color: #ff00d8;
-    width: 50rem;
-    height: 65rem;
-    left: -25rem;
-    bottom: -10rem;
-    animation-delay: 2s;
+    width: 700px;
+    height: 700px;
+    left: 0;
+    bottom: 0;
+    filter: blur(200px);
+    /* animation-delay: 2s; */
 }
 
 .bg-color2 {
     background-color: #ff6600;
-    width: 50rem;
-    height: 60rem;
-    top: -25rem;
-    right: 20rem;
-    animation-delay: 4s;
+    width: 700px;
+    height: 700px;
+    top: 0;
+    right: 35%;
+    filter: blur(200px);
+    /* animation-delay: 4s; */
 }
 
 .bg-color3 {
     background-color: #003cff;
-    width: 50rem;
-    height: 60rem;
-    right: -5rem;
-    bottom: -30rem;
-    animation-delay: 500ms;
+    width: 700px;
+    height: 700px;
+    right: 0;
+    bottom: 0;
+    filter: blur(200px);
+    /* animation-delay: 500ms; */
 }
 
 @keyframes rotate {

@@ -18,7 +18,7 @@ Route::prefix('game')->group(function () {
     Route::get('/story', function () {
         return Inertia::render('GameStoryPage');
     });
-    Route::get('/archive', function () {
+    Route::get('/archives', function () {
         return Inertia::render('GameArchivesPage');
     });
 });

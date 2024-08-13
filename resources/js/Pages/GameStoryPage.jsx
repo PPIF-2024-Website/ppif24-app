@@ -1,23 +1,63 @@
-import { Link, Head } from "@inertiajs/react";
 import React from "react";
+import { Link, Head } from "@inertiajs/react";
 import Storyboard from "@/Components/ppif/games/Storyboardd";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 import TransitionedPage from "@/Components/ppif/TransitionedPage";
+import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
+import "@/Components/ppif/games/games.css";
 
 function Page() {
+    const story = `
+        Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia 
+        deserunt mollit anim id est laborum. 
+    `;
+
     return (
         <>
             <Head title="Story" />
             <ArchivesBackground />
-            <div className="flex flex-col items-center justify-center space-y-8 px-24 py-16 text-white">
-                <Storyboard image="/ppif/images/story_1.png" />
-                <Link
-                    href="/game/archive"
-                    className="glow-white smooth text-body w-3/4 rounded-3xl bg-white/10 px-10 py-3 text-center font-light uppercase tracking-widest"
-                >
-                    Continue
-                </Link>
-            </div>
+
+            <main className="flex h-screen w-screen flex-col items-center justify-center space-y-8 overflow-hidden px-8 text-white sm:px-12 md:px-24">
+                {/* STORYBOARD */}
+                <div className="flex flex-col items-center justify-center space-y-6 rounded-3xl">
+                    <div className="relative w-full select-none overflow-hidden rounded-3xl md:w-[650px]">
+                        <img
+                            src="/ppif/images/games/story.png"
+                            alt="Story Image"
+                            className="mask-ends h-full w-full animate-[image-pulse_5s_ease-in-out_infinite]"
+                        />
+
+                        {/* CONTINUE BUTTON */}
+                        <Link
+                            as="button"
+                            href="/game/archives"
+                            className="glow-white group absolute right-0 top-1/2 flex cursor-pointer items-center space-x-2 rounded-l-2xl bg-gradient-to-r from-white/10 to-transparent px-2 py-1 backdrop-blur-md [transform:translate(0,-50%)] sm:px-4 sm:py-2"
+                        >
+                            <ArrowRightCircleIcon className="smooth w-6 opacity-60 group-hover:-rotate-90 group-hover:opacity-100 min-[400px]:w-8 sm:w-12 [&>path]:stroke-[0.8]" />
+                            <div className="smooth text-body uppercase tracking-wide opacity-60 group-hover:tracking-[0.25em] group-hover:opacity-100">
+                                CONTINUE
+                            </div>
+                        </Link>
+                    </div>
+
+                    <div className="text-body glow-white w-full bg-gradient-to-bl from-white to-white/40 bg-clip-text text-justify font-semibold text-transparent md:text-center lg:w-3/4 xl:w-1/2">
+                        {story}
+                    </div>
+
+                    {/* WITH BACKGROUND */}
+                    {/* <div className="w-1/2 rounded-2xl bg-gradient-to-tr from-white/15 from-[1%] to-transparent px-12 py-6">
+                        <div className="text-body glow-white w-full bg-gradient-to-bl from-white to-white/50 bg-clip-text text-center font-semibold text-transparent">
+                            {story}
+                        </div>
+                    </div> */}
+                </div>
+            </main>
         </>
     );
 }

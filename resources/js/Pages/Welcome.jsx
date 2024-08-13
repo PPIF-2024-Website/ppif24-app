@@ -7,12 +7,14 @@ import AboutPPIF from "@/Components/ppif/about-ppif/AboutPPIF";
 import Timeline from "@/Components/ppif/timeline/Timeline";
 import Contact from "@/Components/ppif/contact/Contact";
 import TransitionedPage from "@/Components/ppif/TransitionedPage";
+import Background from "@/Components/ppif/background/Background";
 
 function Page() {
     return (
         <>
             <Head title="Home" />
             <AnimatedBackground />
+            {/* <Background /> */}
             <Navbar />
             <Landing id={"home"} />
             <AboutIF id={"about-if"} />
