@@ -6,8 +6,9 @@ import AboutIF from "@/Components/ppif/about-if/AboutIF";
 import AboutPPIF from "@/Components/ppif/about-ppif/AboutPPIF";
 import Timeline from "@/Components/ppif/timeline/Timeline";
 import Contact from "@/Components/ppif/contact/Contact";
+import TransitionedPage from "@/Components/ppif/TransitionedPage";
 
-export default function Welcome() {
+function Page() {
     return (
         <>
             <Head title="Home" />
@@ -20,4 +21,8 @@ export default function Welcome() {
             <Contact id={"contact"} />
         </>
     );
+}
+
+export default function Welcome() {
+    return <TransitionedPage Page={Page} />;
 }
