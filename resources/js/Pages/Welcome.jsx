@@ -21,6 +21,7 @@ function Page() {
             <AboutPPIF id={"about-ppif"} />
             <Timeline id={"timeline"} />
             <Contact id={"contact"} />
+            <div>Halo ini test</div>
         </>
     );
 }
