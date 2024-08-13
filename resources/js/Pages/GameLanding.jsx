@@ -1,12 +1,12 @@
 import { Link, Head } from "@inertiajs/react";
-import React from "react";
-import Game_story_card from "@/Components/ppif/games/Storyboard";
-import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
+// import React from "react";
+// import Game_story_card from "@/Components/ppif/games/Storyboard";
+// import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 
 function GameLanding() {
     return (
         <div className="h-screen w-screen">
-            <ArchivesBackground />
+            {/* <ArchivesBackground />
             <div className="flex h-screen flex-col items-center justify-center gap-6">
                 <Game_story_card image="/ppif/images/story_1.png" />
                 <Link
@@ -15,7 +15,7 @@ function GameLanding() {
                 >
                     Continue
                 </Link>
-            </div>
+            </div> */}
         </div>
     );
 }
