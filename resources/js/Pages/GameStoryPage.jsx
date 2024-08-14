@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Head } from "@inertiajs/react";
 import Storyboard from "@/Components/ppif/games/Storyboardd";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
@@ -24,8 +24,13 @@ function Page() {
             <ArchivesBackground />
 
             <main className="flex h-screen w-screen flex-col items-center justify-center space-y-8 overflow-hidden px-8 text-white sm:px-12 md:px-24">
-                {/* STORYBOARD */}
-                <div className="flex flex-col items-center justify-center space-y-6 rounded-3xl">
+                <div className="relative flex flex-col items-center justify-center space-y-6 rounded-3xl">
+                    {/* TITLE */}
+                    <div className="glow-pink absolute left-1/2 top-0 select-none bg-gradient-to-tr from-ppif-pink to-transparent bg-clip-text text-3xl font-black italic tracking-tighter text-transparent [transform:translate(-50%,0)] min-[340px]:-top-[12px] min-[340px]:text-5xl min-[440px]:-top-[30px] min-[440px]:text-7xl sm:-top-[45px] sm:text-8xl">
+                        STORY
+                    </div>
+
+                    {/* IMAGE */}
                     <div className="relative w-full select-none overflow-hidden rounded-3xl md:w-[650px]">
                         <img
                             src="/ppif/images/games/story.png"
@@ -46,6 +51,7 @@ function Page() {
                         </Link>
                     </div>
 
+                    {/* STORY TEXT */}
                     <div className="text-body glow-white w-full bg-gradient-to-bl from-white to-white/40 bg-clip-text text-justify font-semibold text-transparent md:text-center lg:w-3/4 xl:w-1/2">
                         {story}
                     </div>
