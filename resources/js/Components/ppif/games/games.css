@@ -33,6 +33,7 @@
         var(--ppif-pink),
         var(--ppif-blue)
     );
+
     animation: gradient-rotation 100s linear infinite;
     z-index: -1;
 }

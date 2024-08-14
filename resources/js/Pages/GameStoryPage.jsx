@@ -4,6 +4,8 @@ import ArchivesBackground from "@/Components/ppif/background/archives-background
 import TransitionedPage from "@/Components/ppif/TransitionedPage";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
 import "@/Components/ppif/games/games.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 function Page() {
     const story = `
@@ -31,10 +33,14 @@ function Page() {
 
                     {/* IMAGE */}
                     <div className="glowing-border relative w-full select-none md:w-[650px]">
-                        <img
+                        <LazyLoadImage
                             src="/ppif/images/games/story.png"
                             alt="Story Image"
                             className="mask-ends h-full w-full animate-[image-pulse_5s_ease-in-out_infinite]"
+                            effect="opacity"
+                            wrapperProps={{
+                                style: { transitionDelay: "0.5s" },
+                            }}
                         />
 
                         {/* CONTINUE BUTTON */}

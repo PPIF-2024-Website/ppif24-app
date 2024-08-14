@@ -31,32 +31,51 @@
 
 .bg-color1 {
     background-color: var(--ppif-pink);
-    width: 700px;
-    height: 700px;
     left: 0;
     bottom: 0;
-    filter: blur(200px);
     /* animation-delay: 2s; */
 }
 
 .bg-color2 {
     background-color: var(--ppif-orange);
-    width: 700px;
-    height: 700px;
     top: 0;
     right: 35%;
-    filter: blur(200px);
     /* animation-delay: 4s; */
 }
 
 .bg-color3 {
     background-color: var(--ppif-blue);
-    width: 700px;
-    height: 700px;
     right: 0;
     bottom: 0;
-    filter: blur(200px);
     /* animation-delay: 500ms; */
+}
+
+.bg-color1,
+.bg-color2,
+.bg-color3 {
+    filter: blur(100px);
+    width: 300px;
+    height: 300px;
+}
+
+@media (min-width: 640px) {
+    .bg-color1,
+    .bg-color2,
+    .bg-color3 {
+        filter: blur(150px);
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .bg-color1,
+    .bg-color2,
+    .bg-color3 {
+        filter: blur(200px);
+        width: 700px;
+        height: 700px;
+    }
 }
 
 @keyframes rotate {
