@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Head } from "@inertiajs/react";
-import Storyboard from "@/Components/ppif/games/Storyboardd";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 import TransitionedPage from "@/Components/ppif/TransitionedPage";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
@@ -26,12 +25,12 @@ function Page() {
             <main className="flex h-screen w-screen flex-col items-center justify-center space-y-8 overflow-hidden px-8 text-white sm:px-12 md:px-24">
                 <div className="relative flex flex-col items-center justify-center space-y-6 rounded-3xl">
                     {/* TITLE */}
-                    <div className="glow-pink absolute left-1/2 top-0 select-none bg-gradient-to-tr from-ppif-pink to-transparent bg-clip-text text-3xl font-black italic tracking-tighter text-transparent [transform:translate(-50%,0)] min-[340px]:-top-[12px] min-[340px]:text-5xl min-[440px]:-top-[30px] min-[440px]:text-7xl sm:-top-[45px] sm:text-8xl">
+                    <div className="glow-pink absolute left-1/2 top-0 -z-[2] select-none bg-gradient-to-tr from-ppif-pink to-transparent bg-clip-text text-3xl font-black italic tracking-tighter text-transparent [transform:translate(-50%,0)] min-[340px]:-top-[12px] min-[340px]:text-5xl min-[440px]:-top-[30px] min-[440px]:text-7xl sm:-top-[50px] sm:text-8xl">
                         STORY
                     </div>
 
                     {/* IMAGE */}
-                    <div className="relative w-full select-none overflow-hidden rounded-3xl md:w-[650px]">
+                    <div className="glowing-border relative w-full select-none md:w-[650px]">
                         <img
                             src="/ppif/images/games/story.png"
                             alt="Story Image"
@@ -46,22 +45,15 @@ function Page() {
                         >
                             <ArrowRightCircleIcon className="smooth w-6 opacity-60 group-hover:-rotate-90 group-hover:opacity-100 min-[400px]:w-8 sm:w-12 [&>path]:stroke-[0.8]" />
                             <div className="smooth text-body uppercase tracking-wide opacity-60 group-hover:tracking-[0.25em] group-hover:opacity-100">
-                                CONTINUE
+                                Continue
                             </div>
                         </Link>
                     </div>
 
                     {/* STORY TEXT */}
-                    <div className="text-body glow-white w-full bg-gradient-to-bl from-white to-white/40 bg-clip-text text-justify font-semibold text-transparent md:text-center lg:w-3/4 xl:w-1/2">
+                    <div className="text-body glow-white w-full bg-gradient-to-bl from-white to-white/40 bg-clip-text text-justify font-bold text-transparent md:text-center lg:w-3/4 xl:w-1/2">
                         {story}
                     </div>
-
-                    {/* WITH BACKGROUND */}
-                    {/* <div className="w-1/2 rounded-2xl bg-gradient-to-tr from-white/15 from-[1%] to-transparent px-12 py-6">
-                        <div className="text-body glow-white w-full bg-gradient-to-bl from-white to-white/50 bg-clip-text text-center font-semibold text-transparent">
-                            {story}
-                        </div>
-                    </div> */}
                 </div>
             </main>
         </>

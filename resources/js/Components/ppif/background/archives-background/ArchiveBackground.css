@@ -30,7 +30,7 @@
 }
 
 .bg-color1 {
-    background-color: #ff00d8;
+    background-color: var(--ppif-pink);
     width: 700px;
     height: 700px;
     left: 0;
@@ -40,7 +40,7 @@
 }
 
 .bg-color2 {
-    background-color: #ff6600;
+    background-color: var(--ppif-orange);
     width: 700px;
     height: 700px;
     top: 0;
@@ -50,7 +50,7 @@
 }
 
 .bg-color3 {
-    background-color: #003cff;
+    background-color: var(--ppif-blue);
     width: 700px;
     height: 700px;
     right: 0;
