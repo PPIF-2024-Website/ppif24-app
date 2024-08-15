@@ -15,23 +15,18 @@ export default function Landing({ id }) {
         >
             <div className="absolute flex h-screen w-full items-center justify-center">
                 <Canvas>
-                    {/* LIGHTS */}
-                    <pointLight position={[0.5, 1, 1]} intensity={3} />
                     <pointLight position={[-0.5, 0, 1]} intensity={3} />
 
-                    {/* CONTROLS */}
                     <OrbitControls enableZoom={false} />
 
-                    {/* BLOOM */}
                     <EffectComposer>
                         <Bloom
                             intensity={3}
-                            luminanceThreshold={0.2}
-                            luminanceSmoothing={4}
+                            luminanceThreshold={0.1}
+                            luminanceSmoothing={7}
                         />
                     </EffectComposer>
 
-                    {/* MODEL */}
                     <Suspense fallback={null}>
                         <PpifLogo scale={0.4} />
                     </Suspense>
