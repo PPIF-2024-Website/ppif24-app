@@ -1,6 +1,11 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Suspense, useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import PpifLogo from "./PpifLogo";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 export default function Landing({ id }) {
     return (
@@ -9,7 +14,30 @@ export default function Landing({ id }) {
             className="flex h-screen w-full select-none items-end justify-center overflow-hidden"
         >
             <div className="absolute flex h-screen w-full items-center justify-center">
-                <LazyLoadImage
+                <Canvas>
+                    {/* LIGHTS */}
+                    <pointLight position={[0.5, 1, 1]} intensity={3} />
+                    <pointLight position={[-0.5, 0, 1]} intensity={3} />
+
+                    {/* CONTROLS */}
+                    <OrbitControls enableZoom={false} />
+
+                    {/* BLOOM */}
+                    <EffectComposer>
+                        <Bloom
+                            intensity={3}
+                            luminanceThreshold={0.2}
+                            luminanceSmoothing={4}
+                        />
+                    </EffectComposer>
+
+                    {/* MODEL */}
+                    <Suspense fallback={null}>
+                        <PpifLogo scale={0.4} />
+                    </Suspense>
+                </Canvas>
+
+                {/* <LazyLoadImage
                     src="/ppif/images/landing/ppif-emblem-glow.svg"
                     className="w-[250px] min-[420px]:w-[400px]"
                     alt="PPIF 2024 Logo"
@@ -17,7 +45,7 @@ export default function Landing({ id }) {
                     wrapperProps={{
                         style: { transitionDelay: "0.1s" },
                     }}
-                />
+                /> */}
             </div>
             <a
                 href="#about-if"

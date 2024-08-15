@@ -54,12 +54,11 @@ function ImageCarousel({ imageUrls }) {
         }
 
         return () => {
-            if (carouselElement) {
+            if (carouselElement)
                 carouselElement.removeEventListener(
                     "scroll",
                     checkScrollPosition,
                 );
-            }
         };
     }, []);
 

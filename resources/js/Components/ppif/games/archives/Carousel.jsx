@@ -61,14 +61,12 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
         }, 300);
     };
 
-    const handleTouchStart = (event) => {
-        touchStartX.current = event.touches[0].clientX;
-    };
+    const handleTouchStart = (event) =>
+        (touchStartX.current = event.touches[0].clientX);
 
     const handleTouchMove = (event) => {
         if (touchStartX.current !== null) {
             const deltaX = event.touches[0].clientX - touchStartX.current;
-
             if (deltaX > 50) {
                 handlePrevious();
                 touchStartX.current = null;
