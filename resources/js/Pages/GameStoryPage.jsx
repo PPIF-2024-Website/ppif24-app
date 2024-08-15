@@ -9,14 +9,10 @@ import "react-lazy-load-image-component/src/effects/opacity.css";
 
 function Page() {
     const story = `
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint occaecat cupidatat non proident, sunt in culpa qui officia 
-        deserunt mollit anim id est laborum. 
+        Oblivion telah mengambil alih peran manusia di Cyber City akibat kecerdasan buatan yang melebihi kecerdasan manusia. Oblivion merupakan AI yang dibuat oleh salah satu ilmuan di Cyber City. Namun, ketergantungan manusia terhadap Oblivion membuat Oblivion menyalahgunakan kecerdasannya sehingga Oblivion memberontak terhadap manusia dan mulai mengacaukan Cyber City.
+        <br /> Kalian, sebagai tim penerus Cyber City, diberi tugas untuk menghentikan Oblivion. Banyak tim yang sudah diutus oleh pemerintah Cyber City, namun hanya sedikit yang berhasil melewati semua tantangan. Oleh karena itu, kalian harus menyelesaikan misi pertama kalian dengan memecahkan teka-teki yang nantinya akan menjadi nama kelompok kalian.
+        Selamat berjuang, Cyber Team!
+
     `;
 
     return (
