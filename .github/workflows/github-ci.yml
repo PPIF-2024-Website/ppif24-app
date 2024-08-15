@@ -29,6 +29,16 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           server-dir: public_html/laravel/
+          exclude: |
+            vendor/
+            .github/
+
+      - name: 📦 Install dependencies on server
+        run: |
+          sshpass -p "${{ secrets.ftp_password }}" ssh -o StrictHostKeyChecking=no ${{ secrets.ftp_username }}@${{ secrets.ftp_server }} << 'EOF'
+          cd public_html/laravel/
+          composer install --no-dev --prefer-dist --optimize-autoloader
+          EOF
 
       - name: 🗑️ Remove .env and rename .env.jagoan to .env
         run: |
