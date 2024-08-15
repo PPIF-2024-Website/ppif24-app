@@ -26,17 +26,16 @@ const ImageContainer = ({ srcIndex, fullWidth }) => (
 
 function AboutIF({ id }) {
     const textContent = `
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit
-        esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Informatika adalah bidang ilmu yang menggabungkan teknologi dan pemrograman untuk 
+        memecahkan masalah melalui pengolahan informasi dan data. Di jurusan ini, kamu akan 
+        belajar bagaimana mengembangkan perangkat lunak, memahami algoritma, dan merancang 
+        sistem yang inovatif untuk kebutuhan di berbagai sektor, mulai dari bisnis hingga kesehatan. 
+        Di era digital ini, informatika menjadi semakin penting karena hampir setiap aspek kehidupan 
+        kita terhubung dengan teknologi. Di Universitas Multimedia Nusantara, kamu akan mendapatkan 
+        banyak dukungan untuk belajar informatika, termasuk fasilitas modern dan acara seperti codeXpo, 
+        yang memberikan pengalaman langsung dan memperluas wawasan dalam dunia teknologi. 
+        Bagi kamu yang tertarik dengan dunia teknologi, kreativitas, dan ingin menjadi bagian dari revolusi 
+        digital, jurusan informatika di UMN adalah pilihan yang tepat.
     `;
 
     useEffect(() => {
