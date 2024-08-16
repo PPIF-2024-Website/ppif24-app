@@ -22,6 +22,10 @@ jobs:
       - name: 🛠️ Build assets
         run: npm run build
 
+      - name: Create env file
+        run: |
+          echo "!.env" > .git-ftp-include
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
