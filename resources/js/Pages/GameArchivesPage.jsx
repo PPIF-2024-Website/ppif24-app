@@ -1,26 +1,23 @@
+import { useState, useEffect } from "react";
+import { Head } from "@inertiajs/react";
 import axios from "axios";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 import Modal from "@/Components/ppif/games/CustomModal";
-import { useState, useEffect } from "react";
-import { Head } from "@inertiajs/react";
 import HeaderDecodeMessage from "@/Components/ppif/games/HeaderDecodeMessage";
 import DecodeForm from "@/Components/ppif/games/DecodeMessage";
 import imageSlide from "@/Components/ppif/games/archives/ImageSlide";
 import Carousel from "@/Components/ppif/games/archives/Carousel";
+import TransitionedPage from "@/Components/ppif/TransitionedPage";
 
-export default function GameArchives() {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-
+function Page() {
     const placeHolder = "Input Your Group's Secret Code";
-    const [inputValue, setInputValue] = useState(placeHolder);
 
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [inputValue, setInputValue] = useState(placeHolder);
     const [response, setResponse] = useState(null);
     const [authToken, setAuthToken] = useState(null);
-
     const [riddleString, setRiddleString] = useState("");
-
     const [pageNumber, setPageNumber] = useState(1);
-
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -28,17 +25,9 @@ export default function GameArchives() {
         const savedPageNumber = localStorage.getItem("page_number");
         const savedRiddle = localStorage.getItem("riddle");
 
-        if (savedToken) {
-            setAuthToken(savedToken);
-        }
-
-        if (savedPageNumber) {
-            setPageNumber(parseInt(savedPageNumber, 10));
-        }
-
-        if (savedRiddle) {
-            setRiddleString(savedRiddle);
-        }
+        if (savedToken) setAuthToken(savedToken);
+        if (savedPageNumber) setPageNumber(parseInt(savedPageNumber, 10));
+        if (savedRiddle) setRiddleString(savedRiddle);
     }, []);
 
     useEffect(() => {
@@ -80,6 +69,7 @@ export default function GameArchives() {
                         secret_code: inputValue,
                     },
                 });
+
                 if (res.data.token) {
                     setAuthToken(res.data.token);
                     localStorage.setItem("group_token", res.data.token);
@@ -165,8 +155,8 @@ export default function GameArchives() {
                                 ></div>
                             ))}
                         </div>
-                        {/* CAROUSEL PAGINATION END*/}
 
+                        {/* CAROUSEL PAGINATION END*/}
                         <button
                             onClick={() => setModalIsOpen(true)}
                             className="box-glow-white flex h-14 min-w-[320px] max-w-[778px] items-center justify-center rounded-xl bg-white/20 text-3xl text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/50 sm:h-[76px] sm:w-full sm:rounded-3xl"
@@ -241,4 +231,8 @@ export default function GameArchives() {
             )}
         </>
     );
+}
+
+export default function GamesArchivePage() {
+    return <TransitionedPage Page={Page} />;
 }
