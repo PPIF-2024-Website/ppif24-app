@@ -47,23 +47,28 @@ jobs:
           bye
           EOF
 
-      - name: 🗂️ Copy contents of public to root public_html
+          - name: Setup SSH key
+          uses: webfactory/ssh-agent@v0.5.0
+          with:
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Copy contents of public to root public_html
         run: |
-          sshpass -p "${{ secrets.ftp_password }}" ssh -o StrictHostKeyChecking=no ${{ secrets.ftp_username }}@${{ secrets.ftp_server }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ${{ secrets.ssh_username }}@${{ secrets.ssh_server }} << 'EOF'
           cp -r public_html/laravel/public/* public_html/
           EOF
 
-      - name: 🔄 Replace index.php in public_html
+      - name: Replace index.php in public_html
         run: |
-          sshpass -p "${{ secrets.ftp_password }}" ssh -o StrictHostKeyChecking=no ${{ secrets.ftp_username }}@${{ secrets.ftp_server }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ${{ secrets.ssh_username }}@${{ secrets.ssh_server }} << 'EOF'
           cd public_html/
           rm -f index.php
           mv index.php.jagoan index.php
           EOF
 
-      - name: 📦 Install dependencies on server
+      - name: Install dependencies on server
         run: |
-          sshpass -p "${{ secrets.ftp_password }}" ssh -o StrictHostKeyChecking=no ${{ secrets.ftp_username }}@${{ secrets.ftp_server }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ${{ secrets.ssh_username }}@${{ secrets.ssh_server }} << 'EOF'
           cd public_html/laravel/
           composer install --no-dev --prefer-dist --optimize-autoloader
           EOF
