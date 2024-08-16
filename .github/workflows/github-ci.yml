@@ -51,10 +51,16 @@ jobs:
           bye
           EOF
 
-      - name: Setup SSH key
+      - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        env:
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+
+      - name: Add SSH key
+        run: |
+          echo "${SSH_PASSPHRASE}" | ssh-add -
 
       - name: Copy contents of public to root public_html
         run: |
