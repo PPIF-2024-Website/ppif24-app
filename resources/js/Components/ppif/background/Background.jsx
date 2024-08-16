@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../contact/Footer";
 
 function Background() {
     return (
@@ -55,6 +56,7 @@ function Background() {
                     alt=""
                 /> */}
                 </div>
+                <Footer />
             </div>
         </div>
     );

@@ -7,6 +7,7 @@ import DecodeForm from "@/Components/ppif/games/DecodeMessage";
 import { Head } from "@inertiajs/react";
 import imageSlide from "@/Components/ppif/games/archives/ImageSlide";
 import Carousel from "@/Components/ppif/games/archives/Carousel";
+import Background from "@/Components/ppif/background/Background";
 
 export default function GameArchives() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -100,6 +101,7 @@ export default function GameArchives() {
         <>
             <Head title="Game" />
             <ArchivesBackground />
+            {/* <Background /> */}
             {authToken === null || response === "Group Invalid" ? (
                 <>
                     <Modal
@@ -178,7 +180,7 @@ export default function GameArchives() {
             ) : (
                 <>
                     {pageNumber === 1 ? (
-                        <div className="h-screen w-screen">
+                        <div className="h-screen w-screen overflow-hiddene">
                             <div className="flex h-screen flex-col items-center justify-center">
                                 <h1 className="text-heading glow-white z-10 text-center font-bold italic text-white">
                                     DECODE THE MESSAGE
