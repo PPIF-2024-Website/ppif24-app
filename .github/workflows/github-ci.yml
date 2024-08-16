@@ -42,6 +42,7 @@ jobs:
           ftp -inv ${{ secrets.ftp_server }} <<EOF
           user ${{ secrets.ftp_username }} ${{ secrets.ftp_password }}
           cd public_html/laravel/
+          ls
           delete .env
           rename .env.jagoan .env
           bye
