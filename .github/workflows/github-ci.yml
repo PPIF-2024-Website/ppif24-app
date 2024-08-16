@@ -31,9 +31,11 @@ jobs:
           local-dir: ./
           server-dir: public_html/laravel/
           exclude: |
-            vendor/
-            .github/
-            node_modules/
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/vendor/**
+            **/.github/**
 
       - name: 📦 Install dependencies on server
         run: |
