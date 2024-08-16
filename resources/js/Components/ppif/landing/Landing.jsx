@@ -28,7 +28,7 @@ export default function Landing({ id }) {
                     </EffectComposer>
 
                     <Suspense fallback={null}>
-                        <PpifLogo scale={0.3} />
+                        <PpifLogo scale={0.4} />
                     </Suspense>
                 </Canvas>
 
