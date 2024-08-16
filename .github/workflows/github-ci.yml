@@ -47,15 +47,14 @@ jobs:
           user ${{ secrets.ftp_username }} ${{ secrets.ftp_password }}
           cd public_html/laravel/
           ls
-          delete .env
-          rename .env.jagoan .env
+          rename .env.example .env
           bye
           EOF
 
-          - name: Setup SSH key
-          uses: webfactory/ssh-agent@v0.5.0
-          with:
-            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Copy contents of public to root public_html
         run: |
