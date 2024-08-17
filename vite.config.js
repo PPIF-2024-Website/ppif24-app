@@ -10,10 +10,4 @@ export default defineConfig({
         }),
         react(),
     ],
-
-    // buat start di mobile
-    server: {
-        host: "192.168.1.8", //ip host/desktop
-        port: "8000", //port host npm
-    },
 });
