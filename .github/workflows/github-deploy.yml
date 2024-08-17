@@ -22,16 +22,6 @@ jobs:
       - name: 🛠️ Build assets
         run: npm run build
 
-      - name: Remove all contents of public_html
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_SERVER }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.CPANEL_PASSWORD }}
-          port: 45022
-          script: |
-            rm -rf public_html/*
-
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
