@@ -22,10 +22,6 @@ jobs:
       - name: 🛠️ Build assets
         run: npm run build
 
-      - name: Create env file
-        run: |
-          echo "!.env" > .git-ftp-include
-
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -51,20 +47,14 @@ jobs:
           bye
           EOF
 
-      - name: Install expect
-        run: sudo apt-get install expect
-
-      - name: Setup SSH with passphrase
+      - name: Setup SSH with a passphrase
+        env:
+          SSH_PASSPHRASE: ${{secrets.SSH_PASSPHRASE}}
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          expect -c '
-          spawn ssh-add ~/.ssh/id_rsa
-          expect "Enter passphrase"
-          send "${{ secrets.SSH_PASSPHRASE }}\r"
-          interact'
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          echo "echo $SSH_PASSPHRASE" > ~/.ssh_askpass && chmod +x ~/.ssh_askpass
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' | DISPLAY=None SSH_ASKPASS=~/.ssh_askpass ssh-add - >/dev/null
 
       - name: Copy contents of public to root public_html
         run: |
