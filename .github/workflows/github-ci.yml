@@ -47,18 +47,14 @@ jobs:
           user ${{ secrets.ftp_username }} ${{ secrets.ftp_password }}
           cd public_html/laravel/
           ls
-          rename .env.example .env
+          rename .env. .env
           bye
           EOF
 
-      - name: Setup SSH passphrase
-        env:
-          SSH_PASSPHRASE: ${{secrets.SSH_PASSPHRASE}}
-          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-        run: |
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          echo 'echo $SSH_PASSPHRASE' > ~/.ssh_askpass && chmod +x ~/.ssh_askpass
-          echo "$SSH_PRIVATE_KEY" | tr -d '\r' | DISPLAY=None SSH_ASKPASS=~/.ssh_askpass ssh-add - >/dev/null
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Copy contents of public to root public_html
         run: |
