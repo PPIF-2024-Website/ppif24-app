@@ -64,7 +64,7 @@ function AboutIF({ id }) {
     return (
         <>
             <div
-                className="relative mx-auto flex h-screen items-center justify-center overflow-hidden py-12 sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]"
+                className="relative mx-auto flex min-h-screen items-center justify-center overflow-hidden py-12 sm:w-[460px] md:w-[640px] lg:w-[844px] xl:w-[1100px] 2xl:w-[1400px]"
                 id={id}
             >
                 <div id="main">

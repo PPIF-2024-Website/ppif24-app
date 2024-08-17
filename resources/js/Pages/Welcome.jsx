@@ -8,20 +8,26 @@ import Timeline from "@/Components/ppif/timeline/Timeline";
 import Contact from "@/Components/ppif/contact/Contact";
 import TransitionedPage from "@/Components/ppif/TransitionedPage";
 import Background from "@/Components/ppif/background/Background";
+import Footer from "@/Components/ppif/navbar-footer/Footer";
 
 function Page() {
     return (
         <>
-            <Head title="Home" />
-            <AnimatedBackground />
-            {/* <Background /> */}
-            <Navbar />
-            <Landing id={"home"} />
-            <AboutIF id={"about-if"} />
-            <AboutPPIF id={"about-ppif"} />
-            <Timeline id={"timeline"} />
-            <Contact id={"contact"} />
-            <div>Halo ini test</div>
+            <div className="relative max-h-fit w-screen overflow-hidden">
+                <Head title="Home" />
+                <AnimatedBackground />
+                {/* <Background /> */}
+                <Navbar />
+                <Landing id={"home"} />
+                <AboutIF id={"about-if"} />
+                <AboutPPIF id={"about-ppif"} />
+                <Timeline id={"timeline"} />
+                <Contact id={"contact"} />
+                <Footer />
+                <div className="absolute bottom-0 -z-10 w-screen">
+                    <div className="bg-ball absolute -bottom-[70vh] left-1/2 h-[900px] w-[900px] animate-none bg-[var(--ppif-blue)] opacity-90 [transform:translate(-50%,0)] md:h-[1000px] md:w-[1000px]"></div>
+                </div>
+            </div>
         </>
     );
 }
