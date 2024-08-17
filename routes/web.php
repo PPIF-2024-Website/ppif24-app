@@ -14,7 +14,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::prefix('game')->group(function () {
+Route::prefix('/game')->group(function () {
     Route::get('/story', function () {
         return Inertia::render('GameStoryPage');
     });
@@ -23,6 +23,10 @@ Route::prefix('game')->group(function () {
     });
 });
 
+// 404
+Route::any('{url}', function(){
+    return redirect('/');
+  })->where('url', '.*');
 
 //auth
 Route::get('/dashboard', function () {
