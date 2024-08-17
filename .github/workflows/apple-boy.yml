@@ -37,15 +37,18 @@ jobs:
             **/vendor/**
             **/.github/**
 
-      - name: 🗑️ Remove .env and rename .env.jagoan to .env
-        run: |
-          ftp -inv ${{ secrets.ftp_server }} <<EOF
-          user ${{ secrets.ftp_username }} ${{ secrets.ftp_password }}
-          cd public_html/laravel/
-          ls
-          rename .env. .env
-          bye
-          EOF
+      - name: 🗑️ Rename .env.example to .env and update environment variables
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.CPNALE_PASSWORD }}
+          port: 45022
+          script: |
+            cd public_html/laravel/
+
+            # Rename .env.example to .env
+            mv .env.example .env
 
       - name: Copy contents of public to root public_html
         uses: appleboy/ssh-action@v1.0.3
