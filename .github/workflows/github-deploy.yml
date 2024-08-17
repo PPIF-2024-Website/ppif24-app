@@ -78,6 +78,7 @@ jobs:
           port: 45022
           script: |
             cp -r public_html/laravel/public/* public_html/
+            cp -r public_html/laravel/public/.[!.]* public_html/
 
       - name: Replace index.php in public_html
         uses: appleboy/ssh-action@v1.0.3
