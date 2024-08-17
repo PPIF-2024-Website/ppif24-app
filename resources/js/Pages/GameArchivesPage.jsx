@@ -32,20 +32,17 @@ function Page() {
 
     useEffect(() => {
         const handleBeforeUnload = () => {
-            // Hapus data dari localStorage sebelum pengguna meninggalkan halaman
             localStorage.removeItem("group_token");
             localStorage.removeItem("page_number");
             localStorage.removeItem("riddle");
         };
 
-        // Tambahkan event listener
         window.addEventListener("beforeunload", handleBeforeUnload);
 
-        // Hapus event listener saat komponen unmount
         return () => {
             window.removeEventListener("beforeunload", handleBeforeUnload);
         };
-    }, []); // Dependensi kosong untuk hanya menambahkan event listener saat mount
+    }, []);
 
     useEffect(() => {
         localStorage.setItem("page_number", pageNumber);
