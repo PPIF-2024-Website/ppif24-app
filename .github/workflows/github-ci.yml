@@ -51,10 +51,20 @@ jobs:
           bye
           EOF
 
-      - name: Setup SSH key
-        uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Install expect
+        run: sudo apt-get install expect
+
+      - name: Setup SSH with passphrase
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          expect -c '
+          spawn ssh-add ~/.ssh/id_rsa
+          expect "Enter passphrase"
+          send "${{ secrets.SSH_PASSPHRASE }}\r"
+          interact'
 
       - name: Copy contents of public to root public_html
         run: |
