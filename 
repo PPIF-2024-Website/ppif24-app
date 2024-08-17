@@ -1,0 +1,237 @@
+[33meb8287c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mstaging[m[33m, [m[1;31morigin/archives[m[33m, [m[1;32marchives[m[33m)[m fix svg for background
+[33m95c80c9[m fix svg for background
+[33m7d4df2c[m[33m ([m[1;31morigin/staging[m[33m)[m Revert "Fixing footer BG"
+[33m7960de0[m Revert "fix: resize 3d model"
+[33m2361be5[m Fixing footer BG
+[33m1b2bf7a[m temp commit
+[33m850d398[m fix: resize 3d model
+[33me0824af[m Merge branch 'staging' of https://github.com/PPIF-2024-Website/ppif24-app into staging
+[33m4defc3d[m fix: update 3d model
+[33m66c4172[m feat: add 3d PPIF logo
+[33m04358a5[m ganti lorem ipsum
+[33mf8b4526[m menambahkan composer install dan remove vendor
+[33m5368390[m fix: adjust for responsive sizes on games gradient background
+[33m5d5bf27[m fix: add glowing border to Storyboard
+[33mc6c4f23[m fix: add title to Game Story Page
+[33m93f5d48[m Merge branch 'staging' of https://github.com/PPIF-2024-Website/ppif24-app into staging
+[33mc36499f[m fix: redesign to address design and responsiveness issues on Game Story Page
+[33mac198ca[m coba remove gamelanding
+[33ma44e552[m test lagi, ganti yml
+[33m5300426[m ganti ubuntu version
+[33m6e5ff5f[m update composer lock
+[33m9935f25[m add github-ci dan index.php.jagoan
+[33m1a88e1a[m update ci/yml
+[33m536b5f5[m Update Welcome.jsx
+[33ma61016d[m ubah github-ci
+[33m10879d5[m remove integrates/yml ubha welcome.jsx
+[33m338151a[m Update Welcome.jsx
+[33mdb32933[m Merge branch 'staging'
+[33md1dc8a7[m Update github-ci.yml
+[33m695ef7f[m nambahin .env hosting dan github CI
+[33m7680009[m Update github-ci.yml
+[33mf9f7d18[m feat: add page transition
+[33m7785715[m nyoba ci/cd pipeline
+[33m475d09a[m delete riddles
+[33mea26676[m fix: minor refactoring and naming adjustments on game-related components
+[33m3af49a5[m fix: change Home to AboutIF for better semantics and clean up other stuffs
+[33m03e14f4[m fix: finish up new Timeline and remove unused assets
+[33m6186b71[m fix: fix overflow issue at 420px breakpoint
+[33me154894[m fix: refactor and remake Timeline and major cleanup
+[33m12646bb[m fix: replace emblem with svg and rename IDs
+[33m04a8a9e[m fix: minor optimization on Animated Background
+[33m57f0dee[m fix: finish new footer
+[33m98fce88[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Create integrate.yml
+[33m6f62db2[m Delete .htaccess.backup
+[33m23bf8f3[m remove margin top
+[33mb5c5e13[m fix: move Footer.jsx
+[33mff9e9f5[m fix: try optimize animated background a bit
+[33m6d6d363[m fix: clear some unused images
+[33m3fd261a[m fix: remove stupid pink background color
+[33m455008e[m fix: add key to mapped components
+[33ma8b4b69[m fix: adjust responsive font sizes
+[33m9cf2262[m fix: adjust responsive contact cards
+[33m7cf7fb3[m fix: finish new Contact Us page
+[33m0abfaef[m Merge branch 'main' into staging
+[33m97d0d1e[m config cors jadi * aja
+[33ma83262a[m Create .htaccess.backup
+[33m7b5ad66[m nambahin cors.php
+[33me2186e0[m rapihin route doang
+[33m00035e0[m nambahin data group json, ngubah tampilan decode message mobile cuman text size
+[33mf9472af[m Update .gitignore
+[33ma5c7d2a[m Update .gitignore
+[33m2a0c050[m benerin padding section timeline
+[33m038feb8[m nambahin webp image untuk activities, namabahin route landing sebagai backup
+[33mb422b21[m fix: adjust navbar
+[33m8b4d798[m fix: optimize home images and other minor adjustments
+[33m6635e35[m fix: adjust home section bg and refactor CSS
+[33m3dc2241[m fix: fix home section covering navbar
+[33ma5b0eaa[m Merge branch 'staging' of https://github.com/PPIF-2024-Website/ppif24-app into staging
+[33mf839908[m fix: fix minor details and add icon SVGs
+[33m4838b73[m[33m ([m[1;31morigin/game_landing_dan_decode_message[m[33m)[m Update kalo message salah clear form
+[33mb6e1a44[m Merge branch 'staging' into game_landing_dan_decode_message
+[33m3d87d5a[m benerin database seeder.php
+[33m2ecfbb4[m nge backup component penting inertia
+[33m4f15eec[m update content about ppif
+[33me3c2096[m Merge branch 'staging' of https://github.com/PPIF-2024-Website/ppif24-app into staging
+[33m3135dba[m merge archives into staging
+[33me9895df[m responsive design game archive page update
+[33mb7c2a4e[m responsive design game page update
+[33m85a0a2b[m Merge branch 'home-section' into staging
+[33m2a946c1[m[33m ([m[1;31morigin/home-section[m[33m)[m benerin dikit
+[33mbcf796a[m Merge branch 'staging' of https://github.com/PPIF-2024-Website/ppif24-app into staging
+[33m14b36a4[m update carousel
+[33m36251b3[m Merge remote-tracking branch 'origin/staging' into archives
+[33m5486dd2[m archive page done
+[33m12a0349[m[33m ([m[1;31morigin/david-done-branch-backup[m[33m)[m done
+[33me4fbe6f[m Merge pull request #7 from PPIF-2024-Website/home-section
+[33m9a0b75a[m Merge pull request #6 from PPIF-2024-Website/home-section
+[33mb3c2cfb[m bikin animtead background jadi -10
+[33m092b59a[m merge punya david, dan nambah id
+[33m6a95e83[m Merge branch 'home-section' into staging
+[33m8498f25[m done
+[33m2ad13c6[m fix: revamp and fix contact + footer
+[33m22c5f10[m Merge branch 'staging' of https://github.com/PPIF-2024-Website/ppif24-app into staging
+[33m9292121[m fix:  fix contact and footer not showing
+[33m709584d[m benerin page yang salah, hapus beberapa path di web.php
+[33m5a745f2[m cuman benerin fetchpriotity
+[33mc7338fe[m Merge branch 'about-ppif' into staging
+[33m6daed91[m Merge branch 'animated-background' into staging
+[33maa6bc1c[m membersihkan file dan menghapsu background yang ga penting
+[33m5ba956b[m carousel functionality done
+[33mde7de62[m Resolve Conflict
+[33m3feaec3[m Merge branch 'staging' of https://github.com/PPIF-2024-Website/ppif24-app into archives
+[33m1c8bd4c[m[33m ([m[1;31morigin/about-ppif[m[33m)[m Merge branch 'staging' into about-ppif
+[33mebda64f[m fix: hide scrollbar locally
+[33m2019323[m[33m ([m[1;31morigin/animated-background[m[33m)[m fix: optimize UMN building background
+[33mdcd9fc9[m feat: add placeholders and remove old JPG images
+[33m9f0fc83[m fix: fix image hovering at center
+[33m2f32423[m[33m ([m[1;31morigin/landing_page[m[33m)[m kasih id di contact
+[33m6b3ffc4[m Merge branch 'about-ppif' into staging
+[33m1d1d8d4[m Merge remote-tracking branch 'origin/staging' into game_landing_dan_decode_message
+[33m78adec6[m Merge branch 'game_landing_dan_decode_message' into staging
+[33mebf450d[m merge punya abel
+[33m33f35f9[m compress images
+[33mccb0f60[m done
+[33m1ba7436[m fix punya ales, tapi ada problem untuk hidden scroll
+[33mc5f8491[m fix: reduce placeholder opacity
+[33m095182c[m fix: change JPG to WEBP
+[33m40f8dc0[m nambahin routes timeline
+[33m40ea4c3[m nambahin timeline
+[33m63d495b[m Merge branch 'timeline' into staging
+[33m0958b92[m merge about  & Animated Background
+[33m2722dd0[m Merge remote-tracking branch 'origin/animated-background' into staging
+[33m72c4b17[m fix: add opacity transition on load
+[33me56c8f7[m Revert "Merge branch 'contact_and_footer' into staging"
+[33m614c990[m Merge branch 'contact_and_footer' into staging
+[33m38416be[m feat: add react-lazy-load-image-component
+[33m4bb2643[m Update Responsive Decode Message
+[33m36b1147[m Merge remote-tracking branch 'origin/archives' into game_landing_dan_decode_message
+[33m14eb03a[m hapus background
+[33m169362b[m commit
+[33mfae17c8[m fix: optimize images
+[33m7cd30c3[m fixed responsive
+[33m683c3f8[m Merge branch 'animated-background' into about-ppif
+[33ma43edad[m fix: optimize UMN building background
+[33m690b325[m fix: replace alt text with role for UMN building background
+[33m4a451b5[m Polygon Fix
+[33maecb6a8[m feat: add and resize images
+[33m33e7757[m Merge remote-tracking branch 'origin/utilities' into staging
+[33m668d312[m fix: fix UMN background cover fit
+[33m52d53a6[m fix: unhide minor gradient ball
+[33maca5f86[m fix: terminate last section animation and sped up animation
+[33mc013131[m img resize
+[33ma142aa1[m img and foreground text changed
+[33mb859a53[m done
+[33m5e213fe[m Blur update
+[33m5be34d8[m feat: add UMN background at About IF
+[33m39c28bd[m Merge branch 'staging' into animated-background
+[33m70659c2[m Minor navbar fix again
+[33m303e980[m Navbar Minor fixes
+[33m8b83b1f[m fix: make paragraph font light
+[33m599fe50[m Merge branch 'staging' into about-ppif
+[33m5c0c4ad[m feat: simulate staging
+[33m636f3d7[m page game/archive fungsional
+[33mc2c6341[m Minor Fix
+[33m111a3c7[m[33m ([m[1;31morigin/timeline[m[33m)[m necessity fix
+[33mfff85f7[m scrollbar
+[33mfd2b26e[m Navbar Animation Update
+[33m1e83f84[m footer edited
+[33meada25e[m ContactCard Component
+[33m835e930[m delete dummy redirect page
+[33m855bd66[m link inertia
+[33mca375bf[m Updated Background Landing
+[33m2c426b8[m merge
+[33m094612d[m ..
+[33m3ddd8e7[m contact footer merge
+[33m9839398[m Merged Games
+[33m16e469a[m Merge remote-tracking branch 'origin/archives' into game_landing_dan_decode_message
+[33m9feda23[m Added Modal to Decode Message
+[33m2d8cf2d[m secret code token pass
+[33mc1c3ead[m background
+[33mef3fc47[m Merge branch 'contact_and_footer' into staging
+[33md8844cb[m Merge remote-tracking branch 'origin/archives' into game_landing_dan_decode_message
+[33m1fd4419[m Updated axios request
+[33m7859688[m added dummy image and header for decode message
+[33m4e940cd[m minor changed
+[33me8828e9[m glow added
+[33m53358f7[m carousel + modal update
+[33mb419a3e[m Merge branch 'staging' into about-ppif
+[33m3cf65d5[m Merge branch 'utilities' into about-ppif
+[33m14015a4[m fix: changed cursor to pointer at control hover
+[33mc3c5e86[m[33m ([m[1;31morigin/utilities[m[33m)[m feat: change global text selection color
+[33m4a192f9[m timeline popups
+[33m03c5b3e[m fix: add minor responsive and control visibility adjustments
+[33mbea2f37[m Merge branch 'utilities' into about-ppif
+[33mff4cc53[m feat: hide all scrollbars and add standard transition utility
+[33m82f8bdd[m feat: complete carousel for about-ppif
+[33m069a8f3[m feat: polish image carousel skeleton
+[33m0c0aa33[m Merge branch 'utilities' into about-ppif
+[33ma13dbc0[m feat: install @heroicons/react
+[33m1bf82f2[m feat: create about-ppif base
+[33md3e9b0f[m fix: resize heading and subheading utilities
+[33m34cb6b8[m Merge pull request #4 from PPIF-2024-Website/fix/bacground-test
+[33m8852044[m Update BG Responsve section 1
+[33ma0804e6[m added header
+[33mcd347ba[m[33m ([m[1;31morigin/background[m[33m)[m upload background update
+[33m32731b9[m Decode Message Form kelar
+[33m1f27319[m add gradient dan vector
+[33m2958992[m update carousel
+[33m9302683[m page archive, carousel, modal, background
+[33m624f35c[m nyoba css manual untuk main background
+[33m1e6157c[m update background
+[33mcbc947c[m Merge branch 'staging' into game_landing_dan_decode_message
+[33mca1b0ab[m[33m ([m[1;32mmain[m[33m)[m feat: add font sizes for uniformity
+[33mb5e989b[m fix: center offset on glow utilities - Changed offset x and y values to 0
+[33mca31b94[m menambah background component sementara
+[33m3895f82[m Merge branch 'background' into staging
+[33m5e6b0a3[m mengubah w-screen menjadi w-full untuk landing section
+[33m72f70e4[m Merge pull request #2 from PPIF-2024-Website/staging
+[33m7645adc[m popup (gambar placeholder)
+[33m62d80aa[m sedang mengurusi responsif
+[33m155b0bc[m Fixing Routes
+[33m4815b04[m minor fix
+[33m6be4d1a[m Major fixes, responsive
+[33mf5bca0d[m footer upload
+[33m2c30aef[m Navbar and Landing Page
+[33mf148f71[m font
+[33m4cb7618[m ubah path jadi lewat request
+[33m791bb03[m api jadi
+[33me065950[m nyoba background langsung tempel semua
+[33m87e21f8[m responsive
+[33m75ff1b5[m timeline page
+[33m7d3a5a5[m upload gambar
+[33m3823194[m contact page
+[33m1335802[m feat: add utility classes for glows
+[33m0819a51[m fix: port colors to CSS variables
+[33m934d090[m feat: add a couple fonts to Tailwind CSS config - Prepended Plus Jakarta Sans, Inter as default sans-serif fonts in config - Imported corresponding fonts in /resources/css/app.css
+[33m0c1e425[m nyoba bikin background
+[33m11d2b18[m GameLanding 1.0
+[33ma922e18[m test githbu bot
+[33m61dbf56[m test github bot
+[33m5106d6e[m Merge pull request #1 from PPIF-2024-Website/background
+[33m5b6d5a4[m nambahin glitch package dan add animasi
+[33m50c94d5[m nambahin gambar, set up file, nambahin custom color, import poppins
+[33m2e55326[m nyoba bikin countdown
+[33m4c9928a[m commit 1 set up
+[33mc06475f[m Install Breeze
+[33ma3ccc04[m Set up a fresh Laravel app

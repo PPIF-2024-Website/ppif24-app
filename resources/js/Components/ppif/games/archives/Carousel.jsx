@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import {
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    KeyIcon,
+} from "@heroicons/react/24/outline";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
@@ -114,14 +118,22 @@ const Carousel = ({ slides, currentIndex, setCurrentIndex }) => {
                     >
                         <div className="relative flex h-full max-h-[442px] w-full max-w-[663px] items-center">
                             <LazyLoadImage
-                                src={slide}
-                                className="aspect-[3/2] select-none rounded-md object-cover sm:rounded-lg md:h-full md:w-full lg:rounded-2xl"
+                                src={slide.image}
+                                className="aspect-[3/2] select-none rounded-md object-fill sm:rounded-lg md:h-full md:w-full lg:rounded-2xl"
                             />
-                            <span className="absolute inset-0 flex items-center overflow-y-auto p-2 text-center text-sm text-white sm:p-10 sm:text-lg">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Illum quam voluptatem soluta
-                                animi sapiente modi suscipit esse natus amet
-                                cumque.
+                            <span className="absolute inset-0 flex items-center justify-center overflow-hidden p-2 text-center text-[0.6rem] text-white sm:p-10 sm:text-[1rem] sm:text-lg md:text-[1.3rem] lg:text-[1.6rem]">
+                                <div>
+                                    <div className="mb- sm:mb-5 md:mb-8 lg:mb-10 flex items-center justify-center">
+                                        <KeyIcon className="w-5 sm:w-7 md:w-8 lg:w-full max-w-12" />{" "}
+                                        {" : " + slide.Key}
+                                    </div>
+                                    <pre className="text-start leading-tight md:leading-snug">
+                                        {slide.content}
+                                    </pre>
+                                    {slide.content2 && (
+                                        <pre>{slide.content2}</pre>
+                                    )}
+                                </div>
                             </span>
                         </div>
                     </div>
