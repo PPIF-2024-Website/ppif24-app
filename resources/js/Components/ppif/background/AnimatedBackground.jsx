@@ -1,7 +1,6 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
-import Footer from "../navbar-footer/Footer";
 import "./AnimatedBackground.css";
 
 export default function AnimatedBackground() {
@@ -93,22 +92,6 @@ export default function AnimatedBackground() {
                 <div className="bg-ball -top-[20%] right-[10%] origin-left bg-[var(--ppif-orange)]"></div>
                 <div className="bg-ball bottom-0 right-0 origin-top-left bg-[var(--ppif-blue)] opacity-40"></div> */}
             </div>
-
-            {/* CONTACT */}
-            <div className="relative h-screen">
-                <img
-                    width="2000"
-                    height="2000"
-                    src="/ppif/images/background/blue-ball.svg"
-                    alt="-"
-                    className="absolute bottom-0 left-[1/2] origin-bottom animate-[spin_23s_linear_infinite]"
-                />
-
-                {/* <div className="bg-ball -bottom-[70%] left-1/2 h-[900px] w-[900px] animate-none bg-[var(--ppif-blue)] opacity-90 [transform:translate(-50%,0)] md:h-[1000px] md:w-[1000px]"></div> */}
-            </div>
-
-            {/* FOOTER */}
-            <Footer />
         </div>
     );
 }
