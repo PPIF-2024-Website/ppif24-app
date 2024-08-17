@@ -1,0 +1,110 @@
+on:
+  push:
+    branches:
+      - main
+
+name: 🚀 Deploy website on push
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📦 Install dependencies
+        run: |
+          composer install --no-dev --prefer-dist --optimize-autoloader
+          npm ci
+
+      - name: 🛠️ Build assets
+        run: npm run build
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.ftp_server }}
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          local-dir: ./
+          server-dir: public_html/laravel/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/vendor/**
+            **/.github/**
+
+      - name: 🗑️ Rename .env.example to .env and update environment variables
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.CPNALE_PASSWORD }}
+          port: 45022
+          script: |
+            cd public_html/laravel/
+
+            if [ -f .env.example ]; then
+                mv .env.example .env
+            else
+                echo ".env.example not found, skipping rename."
+            fi
+
+      - name: Copy contents of public to root public_html
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.CPNALE_PASSWORD }}
+          port: 45022
+          script: |
+            cp -r public_html/laravel/public/* public_html/
+
+      - name: Replace index.php in public_html
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.CPNALE_PASSWORD }}
+          port: 45022
+          script: |
+            cd public_html/
+            rm -f index.php
+            mv index.php.jagoan index.php
+
+      - name: Install dependencies on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.CPNALE_PASSWORD }}
+          port: 45022
+          script: |
+            cd public_html/laravel/
+            composer install --no-dev --prefer-dist --optimize-autoloader
+
+      - name: ✅ Check deployment status
+        run: echo "Deployment complete!"
+        if: ${{ success() }}
+
+      - name: 🚨 Upload logs if deployment fails
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-logs
+          path: ./logs
+
+      - name: 🛡️ Cleanup
+        if: always()
+        run: echo "Running cleanup steps..."
+
+      - name: 📧 Notify on failure
+        if: ${{ failure() }}
+        run: echo "Deployment failed, sending notification!"
+
+      - name: 📧 Notify on success
+        if: ${{ success() }}
+        run: echo "Deployment successful, sending notification!"

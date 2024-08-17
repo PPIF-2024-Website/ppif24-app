@@ -53,7 +53,7 @@ function DecodeMessage({ groupToken, children: button }) {
                     className="flex w-full gap-4 md:w-[600px] md:pt-2"
                     onSubmit={handle_submit}
                 >
-                    <div className="group relative z-0 mb-5 w-full md:w-1/2">
+                    <div className="group relative z-0 mb-5 w-full md:w-1/2 flex justify-center">
                         <input
                             id="decode_message"
                             type="text"
@@ -61,7 +61,7 @@ function DecodeMessage({ groupToken, children: button }) {
                             onChange={(e) =>
                                 setDecryptedMessage(e.target.value)
                             }
-                            className="peer w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 pt-3 text-sm text-white placeholder-white focus:outline-none focus:ring-0 md:pt-1 md:text-lg"
+                            className="peer w-[90%] appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-2 pt-3 pb-1 text-sm text-white placeholder-white focus:outline-none focus:ring-0 md:pt-1 md:text-lg"
                             placeholder="Type the Decrypted Message..."
                             autoComplete="off"
                         />
