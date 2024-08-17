@@ -26,7 +26,7 @@ Route::prefix('/game')->group(function () {
 // 404
 Route::any('{url}', function(){
     return redirect('/');
-  })->where('url', '.*');
+})->where('url', '.*');
 
 //auth
 Route::get('/dashboard', function () {
