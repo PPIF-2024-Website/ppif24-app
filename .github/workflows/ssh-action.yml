@@ -1,0 +1,17 @@
+name: Remote SSH Command
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute remote SSH command
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_SERVER }} # Alamat IP atau domain server SSH
+          username: ${{ secrets.SSH_USERNAME }} # Username untuk autentikasi SSH
+          password: ${{ secrets.SSH_PASSPHRASE }} # Password untuk autentikasi SSH
+          port: 22 # Port SSH (biasanya 22)
+          script: whoami # Perintah atau skrip yang akan dijalankan di server remote
