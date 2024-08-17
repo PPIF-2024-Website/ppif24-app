@@ -5,7 +5,7 @@ import "./Footer.css";
 
 export default function Footer() {
     return (
-        <footer className="flex w-full items-center justify-between rounded-t-xl bg-gradient-to-t from-black/50 to-transparent px-16 py-5 text-white backdrop-blur-md">
+        <footer className="flex w-full items-center justify-between rounded-t-xl bg-gradient-to-t from-black/50 to-transparent bg-transparent px-16 py-5 text-white backdrop-blur-md">
             {/* LOGO AND FOOTER TEXT */}
             <div className="flex w-full flex-col items-center space-y-5 md:items-start">
                 {/* LOGO */}
