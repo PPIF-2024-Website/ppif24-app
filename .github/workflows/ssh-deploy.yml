@@ -1,9 +1,9 @@
+name: 🚀 Deploy website on push
+
 on:
   push:
     branches:
-      - background
-
-name: 🚀 Deploy website on push
+      - main
 
 jobs:
   web-deploy:
@@ -22,35 +22,6 @@ jobs:
       - name: 🛠️ Build assets
         run: npm run build
 
-      - name: Create env file
-        run: |
-          echo "!.env" > .git-ftp-include
-
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.ftp_server }}
-          username: ${{ secrets.ftp_username }}
-          password: ${{ secrets.ftp_password }}
-          local-dir: ./
-          server-dir: public_html/laravel/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/vendor/**
-            **/.github/**
-
-      - name: 🗑️ Remove .env and rename .env.jagoan to .env
-        run: |
-          ftp -inv ${{ secrets.ftp_server }} <<EOF
-          user ${{ secrets.ftp_username }} ${{ secrets.ftp_password }}
-          cd public_html/laravel/
-          ls
-          rename .env. .env
-          bye
-          EOF
-
       - name: Install expect
         run: sudo apt-get install expect
 
@@ -59,17 +30,24 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa ${{ secrets.ssh_server }} >> ~/.ssh/known_hosts
           expect -c '
           spawn ssh-add ~/.ssh/id_rsa
           expect "Enter passphrase"
           send "${{ secrets.SSH_PASSPHRASE }}\r"
           interact'
 
-      - name: Copy contents of public to root public_html
+      - name: 📂 Sync files using rsync
+        run: |
+          rsync -avz --exclude=".git*" --exclude="node_modules/" --exclude="vendor/" --exclude=".github/" \
+          ./ ${{ secrets.ssh_username }}@${{ secrets.ssh_server }}:/home/${{ secrets.ssh_username }}/public_html/laravel/
+
+      - name: 🗑️ Remove .env and rename .env.jagoan to .env
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.ssh_username }}@${{ secrets.ssh_server }} << 'EOF'
-          cp -r public_html/laravel/public/* public_html/
+          cd public_html/laravel/
+          rm -f .env
+          mv .env.jagoan .env
           EOF
 
       - name: Replace index.php in public_html
