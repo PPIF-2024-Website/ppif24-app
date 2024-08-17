@@ -47,8 +47,11 @@ jobs:
           script: |
             cd public_html/laravel/
 
-            # Rename .env.example to .env
-            mv .env.example .env
+            if [ -f .env.example ]; then
+                mv .env.example .env
+            else
+                echo ".env.example not found, skipping rename."
+            fi
 
       - name: Copy contents of public to root public_html
         uses: appleboy/ssh-action@v1.0.3
