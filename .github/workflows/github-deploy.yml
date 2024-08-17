@@ -96,7 +96,7 @@ jobs:
           script: |
             cd public_html/laravel/
             php artisan key:generate
-            php artisan migrate --fresh --force
+            php artisan migrate:fresh --seed
 
       - name: ✅ Check deployment status
         run: echo "Deployment complete!"
