@@ -1,0 +1,100 @@
+.bg-container1 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
+
+.bg-container2 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    animation-delay: 2s;
+}
+
+.bg-container2::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* backdrop-filter: blur(200px); */
+}
+
+.bg-container2 div {
+    position: absolute;
+    border-radius: 100%;
+    animation:
+        rotate 25s linear infinite,
+        pulse 10s ease-in-out infinite;
+}
+
+.bg-color1 {
+    background-color: var(--ppif-pink);
+    left: 0;
+    bottom: 0;
+    /* animation-delay: 2s; */
+}
+
+.bg-color2 {
+    background-color: var(--ppif-orange);
+    top: 0;
+    right: 35%;
+    /* animation-delay: 4s; */
+}
+
+.bg-color3 {
+    background-color: var(--ppif-blue);
+    right: 0;
+    bottom: 0;
+    /* animation-delay: 500ms; */
+}
+
+.bg-color1,
+.bg-color2,
+.bg-color3 {
+    filter: blur(100px);
+    width: 300px;
+    height: 300px;
+}
+
+@media (min-width: 640px) {
+    .bg-color1,
+    .bg-color2,
+    .bg-color3 {
+        filter: blur(150px);
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .bg-color1,
+    .bg-color2,
+    .bg-color3 {
+        filter: blur(200px);
+        width: 700px;
+        height: 700px;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 60%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

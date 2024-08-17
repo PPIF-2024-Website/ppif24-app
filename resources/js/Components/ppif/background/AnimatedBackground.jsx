@@ -1,7 +1,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
-import Footer from "../contact/Footer";
+import Footer from "../navbar-footer/Footer";
 import "./AnimatedBackground.css";
 
 export default function AnimatedBackground() {
@@ -9,12 +9,30 @@ export default function AnimatedBackground() {
         <div className="main-background absolute -z-10 w-full select-none overflow-hidden">
             {/* HOME */}
             <div className="relative h-screen">
-                <div className="bg-ball left-1/2 top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
-                <div className="bg-ball left-1/2 top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
-                <div className="bg-ball -bottom-[10%] left-[30%] origin-left bg-[var(--ppif-pink)] [transform:translate(-50%,0%)]"></div>
+                {/* <div className="bg-ball left-1/2 top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
+                <div className="bg-ball left-1/2 top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div> */}
+                <img
+                    src="/ppif/images/background/orange-ball.svg"
+                    alt="-"
+                    className="absolute left-1/2 top-0 origin-left animate-[spin_30s_linear_infinite_reverse]"
+                />
+
+                <img
+                    src="/ppif/images/background/pink-ball.svg"
+                    alt="-"
+                    className="absolute -bottom-[10%] left-[30%] origin-left animate-[spin_20s_linear_infinite]"
+                />
+
+                <img
+                    src="/ppif/images/background/blue-ball.svg"
+                    alt="-"
+                    className="absolute -bottom-[30%] left-[70%] origin-left animate-[spin_15s_linear_infinite_reverse]"
+                />
+
+                {/* <div className="bg-ball -bottom-[10%] left-[30%] origin-left bg-[var(--ppif-pink)] [transform:translate(-50%,0%)]"></div>
                 <div className="bg-ball -bottom-[10%] left-[30%] origin-left bg-[var(--ppif-pink)] [transform:translate(-50%,0%)]"></div>
                 <div className="bg-ball -bottom-[30%] left-[70%] origin-right bg-[var(--ppif-blue)] [transform:translate(-50%,0%)]"></div>
-                <div className="bg-ball -bottom-[30%] left-[70%] origin-right bg-[var(--ppif-blue)] [transform:translate(-50%,0%)]"></div>
+                <div className="bg-ball -bottom-[30%] left-[70%] origin-right bg-[var(--ppif-blue)] [transform:translate(-50%,0%)]"></div> */}
             </div>
 
             {/* ABOUT IF */}

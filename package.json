@@ -23,7 +23,11 @@
     },
     "dependencies": {
         "@heroicons/react": "^2.1.5",
+        "@react-three/drei": "^9.109.5",
+        "@react-three/fiber": "^8.17.5",
+        "@react-three/postprocessing": "^2.16.2",
         "react-lazy-load-image-component": "^1.6.2",
-        "react-powerglitch": "^1.0.3"
+        "react-powerglitch": "^1.0.3",
+        "three": "^0.167.1"
     }
 }

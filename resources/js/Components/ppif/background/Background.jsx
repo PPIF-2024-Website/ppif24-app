@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../contact/Footer";
+import Footer from "@/Components/ppif/navbar-footer/Footer";
 
 function Background() {
     return (

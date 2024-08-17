@@ -53,8 +53,9 @@ html {
     .glow-white {
         @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.75)];
     }
+
     .box-glow-white {
-        @apply shadow-[0_0_20px_rgba(255,255,255,0.5)];
+        @apply shadow-[0_0_10px_rgba(255,255,255,0.15)];
     }
 
     .glow-orange {
@@ -82,7 +83,7 @@ html {
 }
 
 /* ini style untuk main background, karena tailwindnya somehow ga bisa -tio */
-.main-background {
+body {
     background: linear-gradient(
         to bottom,
         #14000b 0%,
@@ -93,4 +94,26 @@ html {
         #00000e 85%,
         #00000e 100%
     );
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0%;
+        /* filter: blur(20px); */
+    }
+    to {
+        opacity: 100%;
+        /* filter: blur(0px); */
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 100%;
+        /* filter: blur(0px); */
+    }
+    to {
+        opacity: 0%;
+        /* filter: blur(20px); */
+    }
 }

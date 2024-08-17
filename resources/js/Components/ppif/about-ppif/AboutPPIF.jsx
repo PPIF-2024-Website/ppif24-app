@@ -22,7 +22,7 @@ export default function AboutPPIF({ id }) {
             <div className="mb-14 flex flex-col items-center justify-center text-center">
                 {/* TITLE */}
                 <h1 className="text-heading mb-6">
-                    <span className="glow-white">ABOUT</span>{" "}
+                    <span className="glow-white">About</span>{" "}
                     <span className="glow-pink font-extrabold italic text-[var(--ppif-pink)]">
                         PPIF
                     </span>
