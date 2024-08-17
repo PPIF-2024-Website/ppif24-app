@@ -75,7 +75,7 @@ jobs:
             rm -f index.php
             mv index.php.jagoan index.php
 
-      - name: Install dependencies on server
+      - name: Composer Install
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_SERVER }}
@@ -85,6 +85,18 @@ jobs:
           script: |
             cd public_html/laravel/
             composer install --no-dev --prefer-dist --optimize-autoloader
+
+      - name: Database Migration
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.CPNALE_PASSWORD }}
+          port: 45022
+          script: |
+            cd public_html/laravel/
+            php artisan key:generate
+            php artisan migrate --fresh --force
 
       - name: ✅ Check deployment status
         run: echo "Deployment complete!"
