@@ -100,10 +100,12 @@ jobs:
           password: ${{ secrets.CPANEL_PASSWORD }}
           port: 45022
           script: |
+            ls  
             sed -i 's/^APP_ENV=.*/APP_ENV="local"/' .env
             cd public_html/laravel/
             php artisan key:generate
             php artisan migrate:fresh --seed
+            ls
             sed -i 's/^APP_ENV=.*/APP_ENV="production"/' .env
 
       - name: ✅ Check deployment status
