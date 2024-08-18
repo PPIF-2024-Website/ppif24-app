@@ -18,7 +18,9 @@ export default function Landing({ id }) {
                 <Canvas>
                     <pointLight position={[-0.5, 0, 1]} intensity={3} />
 
-                    {!isMobile && <OrbitControls enableZoom={false} />}
+                    {!isMobile && (
+                        <OrbitControls enableZoom={false} enablePan={false} />
+                    )}
 
                     <EffectComposer>
                         <Bloom
