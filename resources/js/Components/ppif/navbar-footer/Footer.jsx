@@ -5,7 +5,7 @@ import "./Footer.css";
 
 export default function Footer() {
     return (
-        <footer className="flex w-full items-center justify-between rounded-t-xl bg-gradient-to-t from-black/50 to-transparent bg-transparent px-16 py-5 text-white backdrop-blur-md">
+        <footer className="flex w-full flex-col items-center justify-between space-y-8 rounded-t-xl bg-transparent bg-gradient-to-t from-black/50 to-transparent px-16 py-5 text-white backdrop-blur-md md:flex-row md:space-y-0">
             {/* LOGO AND FOOTER TEXT */}
             <div className="flex w-full flex-col items-center space-y-5 md:items-start">
                 {/* LOGO */}
@@ -30,8 +30,8 @@ export default function Footer() {
             </div>
 
             {/* GAME LINK */}
-            <Link href="/game/story" className="hidden md:block">
-                <FolderOpenIcon className="glow-white w-[75px] animate-[pulse_3s_ease-out_infinite] opacity-100 hover:animate-[shake_1s_ease-in_infinite] [&>path]:stroke-[0.4]" />
+            <Link href="/game/story">
+                <FolderOpenIcon className="glow-white w-[50px] animate-[pulse_3s_ease-out_infinite] opacity-100 hover:animate-[shake_1s_ease-in_infinite] md:w-[75px] [&>path]:stroke-[0.4]" />
             </Link>
         </footer>
     );
