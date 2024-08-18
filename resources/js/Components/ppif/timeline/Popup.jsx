@@ -14,7 +14,7 @@ function Popup({
     date,
     time,
     location,
-    description,
+    Description,
     necessities,
     onClick,
 }) {
@@ -49,7 +49,9 @@ function Popup({
             </div>
 
             {/* DESCRIPTION */}
-            <div className="text-body mb-8">{description}</div>
+            <div className="text-body mb-8">
+                <Description />
+            </div>
 
             {/* NECESSITIES */}
             <div className="flex flex-col">

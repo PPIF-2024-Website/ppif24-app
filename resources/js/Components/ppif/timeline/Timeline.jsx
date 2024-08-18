@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DayBox from "./DayBox";
 import Popup from "./Popup";
-import days from "./data";
+import days from "./data.jsx";
 import "./Timeline.css";
 import { CSSTransition } from "react-transition-group";
 
@@ -30,7 +30,7 @@ export default function Timeline({ id }) {
             <div className="flex w-full flex-col items-center space-y-8 px-8 sm:px-16 xl:flex-row xl:space-x-8 xl:space-y-0">
                 {days.map(
                     (
-                        { day, dayName, date, time, location, description },
+                        { day, dayName, date, time, location, Description },
                         index,
                     ) => (
                         <DayBox
@@ -39,7 +39,7 @@ export default function Timeline({ id }) {
                             date={date}
                             time={time}
                             location={location}
-                            description={description}
+                            Description={Description}
                             onClick={() => setActive(day)}
                             key={index}
                         />
@@ -59,7 +59,7 @@ export default function Timeline({ id }) {
                             date,
                             time,
                             location,
-                            description,
+                            Description,
                             necessities,
                         },
                         index,
@@ -77,7 +77,7 @@ export default function Timeline({ id }) {
                                 date={date}
                                 time={time}
                                 location={location}
-                                description={description}
+                                Description={Description}
                                 necessities={necessities}
                                 onClick={() => setActive(-1)}
                             />
