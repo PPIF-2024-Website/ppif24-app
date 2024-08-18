@@ -31,6 +31,20 @@ function Page() {
     }, []);
 
     useEffect(() => {
+        const handleBeforeUnload = () => {
+            localStorage.removeItem("group_token");
+            localStorage.removeItem("page_number");
+            localStorage.removeItem("riddle");
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, []);
+
+    useEffect(() => {
         localStorage.setItem("page_number", pageNumber);
     }, [pageNumber]);
 
@@ -169,7 +183,7 @@ function Page() {
             ) : (
                 <>
                     {pageNumber === 1 ? (
-                        <div className="h-screen w-screen overflow-hiddene">
+                        <div className="overflow-hiddene h-screen w-screen">
                             <div className="flex h-screen flex-col items-center justify-center">
                                 <h1 className="text-heading glow-white z-10 text-center font-bold italic text-white">
                                     DECODE THE MESSAGE

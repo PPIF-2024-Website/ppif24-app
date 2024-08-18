@@ -1,9 +1,10 @@
 const days = [
     {
         day: 0,
-        date: "Senin, 12 Agustus 2024",
-        time: "12:30 WIB",
-        location: "Lecture Theatre Gedung D UMN",
+        day_name: "Briefing Day",
+        date: "Senin, 19 Agustus 2024",
+        time: "12:45 WIB",
+        location: "Online Zoom",
         description: `
             Hari briefing merupakan momen penting bagi teman-teman 
             mahasiswa baru untuk mempersiapkan diri menghadapi hari Perkenalan Prodi  
@@ -13,16 +14,23 @@ const days = [
             seluruh rangkaian kegiatan PPIF 2024.
         `,
         necessities: [
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
+            {
+                name: "Polo Putih",
+                imageSrc: "/ppif/images/timeline/polo_putih.webp",
+            },
+            {
+                name: "Device",
+                imageSrc: "/ppif/images/timeline/polo_putih.webp",
+            },
+            { name: "Zoom", imageSrc: "/ppif/images/timeline/zoom.webp" },
+            { name: "Buku", imageSrc: "/ppif/images/timeline/buku_tulis.webp" },
+            { name: "Pulpen", imageSrc: "/ppif/images/timeline/pulpen.webp" },
         ],
     },
     {
         day: 1,
-        date: "Senin, 12 Agustus 2024",
+        day_name: "D-DAY PPIF",
+        date: "Selasa, 20 Agustus 2024",
         time: "12:30 WIB",
         location: "Lecture Theatre Gedung D UMN",
         description: `
@@ -33,16 +41,29 @@ const days = [
             pengalaman, tips, dan inspirasi mengenai perjalanan mereka di dunia informatika.
         `,
         necessities: [
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
+            {
+                name: "Polo Orange",
+                imageSrc: "/ppif/images/timeline/polo_orange.webp",
+            },
+            {
+                name: "Jeans Hitam",
+                imageSrc: "/ppif/images/timeline/jeans_hitam.webp",
+            },
+            { name: "Sepatu", imageSrc: "/ppif/images/timeline/sepatu.webp" },
+            {
+                name: "Botol Minum",
+                imageSrc: "/ppif/images/timeline/botol_minum.webp",
+            },
+            { name: "Tas", imageSrc: "/ppif/images/timeline/tas.webp" },
+            { name: "Bekal", imageSrc: "/ppif/images/timeline/bekal.webp" },
+            { name: "Buku", imageSrc: "/ppif/images/timeline/buku_tulis.webp" },
+            { name: "Pulpen", imageSrc: "/ppif/images/timeline/pulpen.webp" },
         ],
     },
     {
         day: 2,
-        date: "Senin, 12 Agustus 2024",
+        day_name: "HMIF EXECUTION TIME",
+        date: "Sabtu, 24 Agustus 2024",
         time: "12:30 WIB",
         location: "Lecture Theatre Gedung D UMN",
         description: `
@@ -53,11 +74,23 @@ const days = [
             sebagai bagian dari mahasiswa Informatika.
         `,
         necessities: [
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
-            { name: "Item", imageSrc: "" },
+            {
+                name: "Kaos Putih Polos",
+                imageSrc: "/ppif/images/timeline/kaos_putih_polos.webp",
+            },
+            {
+                name: "Jeans Hitam",
+                imageSrc: "/ppif/images/timeline/jeans_hitam.webp",
+            },
+            { name: "Sepatu", imageSrc: "/ppif/images/timeline/sepatu.webp" },
+            {
+                name: "Botol Minum",
+                imageSrc: "/ppif/images/timeline/botol_minum.webp",
+            },
+            { name: "Tas", imageSrc: "/ppif/images/timeline/tas.webp" },
+            { name: "Bekal", imageSrc: "/ppif/images/timeline/bekal.webp" },
+            { name: "Buku", imageSrc: "/ppif/images/timeline/buku_tulis.webp" },
+            { name: "Pulpen", imageSrc: "/ppif/images/timeline/pulpen.webp" },
         ],
     },
 ];

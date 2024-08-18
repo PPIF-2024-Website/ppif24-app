@@ -25,7 +25,9 @@ function DecodeMessage({ groupToken, children: button }) {
             const res = await axios.get("/api/group", {
                 params: {
                     token: token,
-                    decode_message: decryptedMessage,
+                    decode_message: decryptedMessage
+                        .toLowerCase()
+                        .replace(/\s+/g, ""),
                 },
             });
             setResponse(
@@ -53,7 +55,7 @@ function DecodeMessage({ groupToken, children: button }) {
                     className="flex w-full gap-4 md:w-[600px] md:pt-2"
                     onSubmit={handle_submit}
                 >
-                    <div className="group relative z-0 mb-5 w-full md:w-1/2 flex justify-center">
+                    <div className="group relative z-0 mb-5 flex w-full justify-center md:w-1/2">
                         <input
                             id="decode_message"
                             type="text"
@@ -61,7 +63,7 @@ function DecodeMessage({ groupToken, children: button }) {
                             onChange={(e) =>
                                 setDecryptedMessage(e.target.value)
                             }
-                            className="peer w-[90%] appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-2 pt-3 pb-1 text-sm text-white placeholder-white focus:outline-none focus:ring-0 md:pt-1 md:text-lg"
+                            className="peer w-[90%] appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-2 pb-1 pt-3 text-sm text-white placeholder-white focus:outline-none focus:ring-0 md:pt-1 md:text-lg"
                             placeholder="Type the Decrypted Message..."
                             autoComplete="off"
                         />

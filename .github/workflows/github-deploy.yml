@@ -42,13 +42,19 @@ jobs:
         with:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.CPNALE_PASSWORD }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
           port: 45022
           script: |
             cd public_html/laravel/
 
             if [ -f .env.example ]; then
                 mv .env.example .env
+                sed -i 's/^APP_NAME=.*/APP_NAME="PPIF"/' .env
+                sed -i 's/^APP_DEBUG=.*/APP_DEBUG="FALSE"/' .env
+                sed -i 's|^APP_URL=.*|APP_URL="https://ppifumn.com"|' .env
+                sed -i 's/^DB_DATABASE=.*/DB_DATABASE="${{ secrets.DB_DATABASE }}"/' .env
+                sed -i 's/^DB_USERNAME=.*/DB_USERNAME="${{ secrets.DB_USERNAME }}"/' .env
+                sed -i 's/^DB_PASSWORD=.*/DB_PASSWORD="${{ secrets.DB_PASSWORD }}"/' .env
             else
                 echo ".env.example not found, skipping rename."
             fi
@@ -58,17 +64,18 @@ jobs:
         with:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.CPNALE_PASSWORD }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
           port: 45022
           script: |
             cp -r public_html/laravel/public/* public_html/
+            cp -r public_html/laravel/public/.[!.]* public_html/
 
       - name: Replace index.php in public_html
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.CPNALE_PASSWORD }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
           port: 45022
           script: |
             cd public_html/
@@ -80,7 +87,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.CPNALE_PASSWORD }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
           port: 45022
           script: |
             cd public_html/laravel/
@@ -91,12 +98,14 @@ jobs:
         with:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.CPNALE_PASSWORD }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
           port: 45022
           script: |
             cd public_html/laravel/
+            sed -i 's/^APP_ENV=.*/APP_ENV="local"/' .env
             php artisan key:generate
-            php artisan migrate --fresh --force
+            php artisan migrate:fresh --seed
+            sed -i 's/^APP_ENV=.*/APP_ENV="production"/' .env
 
       - name: ✅ Check deployment status
         run: echo "Deployment complete!"
