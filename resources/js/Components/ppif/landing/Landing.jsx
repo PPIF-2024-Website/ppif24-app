@@ -1,11 +1,12 @@
-import { Suspense, useRef } from "react";
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import PpifLogo from "./PpifLogo";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/opacity.css";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import PpifLogo from "./PpifLogo";
+import { isMobile } from "react-device-detect";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+// import "react-lazy-load-image-component/src/effects/opacity.css";
 
 export default function Landing({ id }) {
     return (
@@ -17,7 +18,7 @@ export default function Landing({ id }) {
                 <Canvas>
                     <pointLight position={[-0.5, 0, 1]} intensity={3} />
 
-                    <OrbitControls enableZoom={false} />
+                    {!isMobile && <OrbitControls enableZoom={false} />}
 
                     <EffectComposer>
                         <Bloom
