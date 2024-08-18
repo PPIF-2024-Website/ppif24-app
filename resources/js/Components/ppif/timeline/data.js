@@ -1,7 +1,7 @@
 const days = [
     {
         day: 0,
-        day_name: "Briefing Day",
+        dayName: ["Briefing", "Day"],
         date: "Senin, 19 Agustus 2024",
         time: "12:45 WIB",
         location: "Online Zoom",
@@ -29,7 +29,7 @@ const days = [
     },
     {
         day: 1,
-        day_name: "D-DAY PPIF",
+        dayName: ["D-Day", "PPIF"],
         date: "Selasa, 20 Agustus 2024",
         time: "10:00 WIB",
         location: "Lecture Theatre Gedung D UMN",
@@ -62,7 +62,7 @@ const days = [
     },
     {
         day: 2,
-        day_name: "HMIF EXECUTION TIME",
+        dayName: ["HMIF", "Execution Time"],
         date: "Sabtu, 24 Agustus 2024",
         time: "07:25 WIB",
         location: "Lecture Theatre Gedung D UMN",

@@ -10,6 +10,7 @@ import "./Timeline.css";
 // POPUP COMPONENT
 function Popup({
     day,
+    dayName,
     date,
     time,
     location,
@@ -21,9 +22,16 @@ function Popup({
         <div className="glow-orange no-scroll flex max-h-[85%] w-[1000px] max-w-[90%] flex-col overflow-y-auto rounded-3xl bg-[rgba(var(--ppif-orange-rgb),0.5)] px-6 py-12 backdrop-blur-md min-[420px]:px-8 sm:px-16">
             <div className="flex w-full items-start justify-between">
                 {/* DAY TITLE */}
-                <div className="glow-white mb-4 flex flex-col -space-y-1 text-4xl font-extrabold tracking-tighter sm:text-5xl">
-                    <span>{day === 0 ? "BRIEFING" : "DAY"}</span>
-                    <span>{day === 0 ? "DAY" : day === 1 ? "ONE" : "TWO"}</span>
+                <div className="glow-white mb-4 flex flex-col -space-y-1 text-4xl font-extrabold uppercase tracking-tighter sm:text-5xl">
+                    <span>{dayName[0]}</span>
+                    <span
+                        className={
+                            day === 2 &&
+                            "text-lg tracking-normal min-[300px]:text-xl sm:text-2xl"
+                        }
+                    >
+                        {dayName[1]}
+                    </span>
                 </div>
 
                 {/* CLOSE BUTTON */}

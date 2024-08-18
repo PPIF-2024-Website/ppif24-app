@@ -29,9 +29,13 @@ export default function Timeline({ id }) {
             {/* DAYS */}
             <div className="flex w-full flex-col items-center space-y-8 px-8 sm:px-16 xl:flex-row xl:space-x-8 xl:space-y-0">
                 {days.map(
-                    ({ day, date, time, location, description }, index) => (
+                    (
+                        { day, dayName, date, time, location, description },
+                        index,
+                    ) => (
                         <DayBox
                             day={day}
+                            dayName={dayName}
                             date={date}
                             time={time}
                             location={location}
@@ -49,7 +53,15 @@ export default function Timeline({ id }) {
             >
                 {days.map(
                     (
-                        { day, date, time, location, description, necessities },
+                        {
+                            day,
+                            dayName,
+                            date,
+                            time,
+                            location,
+                            description,
+                            necessities,
+                        },
                         index,
                     ) => (
                         <CSSTransition
@@ -61,6 +73,7 @@ export default function Timeline({ id }) {
                         >
                             <Popup
                                 day={day}
+                                dayName={dayName}
                                 date={date}
                                 time={time}
                                 location={location}
