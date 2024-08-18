@@ -127,7 +127,7 @@ export default function Contact({ id }) {
         },
         {
             Logo: WhatsAppLogo,
-            link: "https://www.whatsapp.com/",
+            link: "https://chat.whatsapp.com/IsEg6vPTR5m0nJAccBzkRF",
             bgColor:
                 "from-[#25D366] group-hover:drop-shadow-[0_0_15px_#25D366]",
             Text: () => (
