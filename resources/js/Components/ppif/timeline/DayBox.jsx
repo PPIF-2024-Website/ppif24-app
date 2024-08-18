@@ -25,7 +25,7 @@ export default function DayBox({
             </div>
 
             {/* DESCRIPTION */}
-            <div className="text-body mb-8 hidden xl:block">{description}</div>
+            {/* <div className="text-body mb-8 hidden xl:block">{description}</div> */}
 
             {/* VIEW MORE */}
             <div

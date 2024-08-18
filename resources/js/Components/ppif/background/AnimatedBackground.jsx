@@ -5,7 +5,7 @@ import "./AnimatedBackground.css";
 
 export default function AnimatedBackground() {
     return (
-        <div className="main-background absolute -z-10 w-full select-none overflow-hidden">
+        <div className="main-background absolute -z-10 h-fit w-full select-none overflow-hidden">
             {/* HOME */}
             <div className="relative h-screen">
                 <div className="bg-ball left-1/2 top-0 bg-[var(--ppif-orange)] [transform:translate(-50%,0)]"></div>
@@ -43,6 +43,7 @@ export default function AnimatedBackground() {
                 <div className="bg-ball -top-[20%] right-[10%] origin-left bg-[var(--ppif-orange)]"></div>
                 <div className="bg-ball bottom-0 right-0 origin-top-left bg-[var(--ppif-blue)] opacity-40"></div>
             </div>
+            <div className="relative h-screen"></div>
         </div>
     );
 }

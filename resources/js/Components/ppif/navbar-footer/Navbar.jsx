@@ -20,6 +20,10 @@ export default function Navbar() {
         };
     }, []);
 
+    useEffect(() => {
+        document.body.style.overflowY = isBurgerActive ? "hidden" : "scroll";
+    }, [isBurgerActive]);
+
     const handleBurger = () => {
         if (window.innerWidth <= 768) {
             setIsBurgerActive(!isBurgerActive);
