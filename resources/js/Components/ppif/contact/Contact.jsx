@@ -117,7 +117,7 @@ export default function Contact({ id }) {
             Logo: DiscordLogo,
             bgColor:
                 "from-[#5865F2] group-hover:drop-shadow-[0_0_15px_#5865F2]",
-            link: "https://discord.gg/64tWMU6w",
+            link: "https://discord.gg/YrEcdQau7w",
             Text: () => (
                 <span>
                     Join our Discord Server{" "}

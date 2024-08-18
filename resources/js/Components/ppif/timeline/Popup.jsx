@@ -50,11 +50,16 @@ export default function Popup({
                         Necessities
                     </span>
                     <div className="thin-scroll flex w-full space-x-6 overflow-x-auto overflow-y-hidden py-3">
-                        {necessities.map(({ name, imgSrc }, index) => (
+                        {necessities.map(({ name, imageSrc }, index) => (
                             <div
                                 className="size-[75px] shrink-0 rounded-xl bg-white/10"
                                 key={index}
-                            ></div>
+                            >
+                                <div className="flex flex-col">
+                                    <img src={`${imageSrc}`} alt={name} />
+                                    <p>name</p>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>
