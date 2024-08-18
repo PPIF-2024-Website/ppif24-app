@@ -13,7 +13,7 @@ import Footer from "@/Components/ppif/navbar-footer/Footer";
 function Page() {
     return (
         <>
-            <div className="relative max-h-fit w-screen overflow-hidden">
+            <div className="relative h-fit w-screen overflow-clip">
                 <Head title="Home" />
                 <AnimatedBackground />
                 {/* <Background /> */}
