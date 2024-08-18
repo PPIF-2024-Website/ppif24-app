@@ -90,7 +90,7 @@ function AboutIF({ id }) {
                         </div>
                     </div>
 
-                    <div
+                    {/* <div
                         className="relative block w-full lg:hidden"
                         id="parentofsquare2"
                     >
@@ -105,7 +105,7 @@ function AboutIF({ id }) {
                                 INFORMATIKA
                             </h1>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div
                         className="container mx-auto hidden h-[550px] rounded-sm p-8 lg:block"
