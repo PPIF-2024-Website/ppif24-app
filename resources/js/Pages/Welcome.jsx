@@ -21,7 +21,7 @@ function Page() {
                 <Landing id={"home"} />
                 <AboutIF id={"about-if"} />
                 <AboutPPIF id={"about-ppif"} />
-                {/* <Timeline id={"timeline"} /> */}
+                <Timeline id={"timeline"} />
                 <Contact id={"contact"} />
                 <Footer />
                 <div className="absolute bottom-0 -z-10 w-screen">
