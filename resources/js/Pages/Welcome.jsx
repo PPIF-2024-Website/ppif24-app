@@ -7,7 +7,6 @@ import AboutPPIF from "@/Components/ppif/about-ppif/AboutPPIF";
 import Timeline from "@/Components/ppif/timeline/Timeline";
 import Contact from "@/Components/ppif/contact/Contact";
 import TransitionedPage from "@/Components/ppif/TransitionedPage";
-import Background from "@/Components/ppif/background/Background";
 import Footer from "@/Components/ppif/navbar-footer/Footer";
 
 function Page() {
@@ -16,7 +15,6 @@ function Page() {
             <div className="relative h-fit w-screen overflow-clip">
                 <Head title="Home" />
                 <AnimatedBackground />
-                {/* <Background /> */}
                 <Navbar />
                 <Landing id={"home"} />
                 <AboutIF id={"about-if"} />
