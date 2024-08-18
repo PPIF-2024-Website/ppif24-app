@@ -3,6 +3,7 @@ import DayBox from "./DayBox";
 import Popup from "./Popup";
 import days from "./data";
 import "./Timeline.css";
+import { CSSTransition } from "react-transition-group";
 
 // MAIN TIMELINE COMPONENT
 export default function Timeline({ id }) {
@@ -43,24 +44,34 @@ export default function Timeline({ id }) {
             </div>
 
             {/* POPUPS */}
-            {days.map(
-                (
-                    { day, date, time, location, description, necessities },
-                    index,
-                ) => (
-                    <Popup
-                        day={day}
-                        date={date}
-                        time={time}
-                        location={location}
-                        description={description}
-                        necessities={necessities}
-                        active={active === day}
-                        onClick={() => setActive(-1)}
-                        key={index}
-                    />
-                ),
-            )}
+            <div
+                className={`smooth fixed left-0 top-0 z-20 m-0 flex h-screen w-screen items-center justify-center bg-black/40 ${active !== -1 ? "opacity-100 backdrop-blur-[8px]" : "pointer-events-none opacity-0"}`}
+            >
+                {days.map(
+                    (
+                        { day, date, time, location, description, necessities },
+                        index,
+                    ) => (
+                        <CSSTransition
+                            in={active === index}
+                            timeout={300}
+                            unmountOnExit
+                            classNames="popup"
+                            key={index}
+                        >
+                            <Popup
+                                day={day}
+                                date={date}
+                                time={time}
+                                location={location}
+                                description={description}
+                                necessities={necessities}
+                                onClick={() => setActive(-1)}
+                            />
+                        </CSSTransition>
+                    ),
+                )}
+            </div>
         </div>
     );
 }
