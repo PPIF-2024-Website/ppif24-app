@@ -20,7 +20,7 @@ const days = [
             },
             {
                 name: "Device",
-                imageSrc: "/ppif/images/timeline/polo_putih.webp",
+                imageSrc: "/ppif/images/timeline/device.webp",
             },
             { name: "Zoom", imageSrc: "/ppif/images/timeline/zoom.webp" },
             { name: "Buku", imageSrc: "/ppif/images/timeline/buku_tulis.webp" },
