@@ -105,7 +105,7 @@ export default function Contact({ id }) {
             Logo: LineLogo,
             bgColor:
                 "from-[#06C755] group-hover:drop-shadow-[0_0_15px_#06C755]",
-            link: "https://line.me/ti/g2/...",
+            link: "https://line.me/ti/p/7tG9zAtxrU",
             Text: () => (
                 <span>
                     Join our LINE Group{" "}
