@@ -31,7 +31,7 @@ const days = [
         day: 1,
         day_name: "D-DAY PPIF",
         date: "Selasa, 20 Agustus 2024",
-        time: "12:30 WIB",
+        time: "10:00 WIB",
         location: "Lecture Theatre Gedung D UMN",
         description: `
             D Day PPIF 2024 adalah hari yang sangat dinantikan oleh teman-teman Informatika, 
@@ -64,7 +64,7 @@ const days = [
         day: 2,
         day_name: "HMIF EXECUTION TIME",
         date: "Sabtu, 24 Agustus 2024",
-        time: "12:30 WIB",
+        time: "07:25 WIB",
         location: "Lecture Theatre Gedung D UMN",
         description: `
             HMIF Execution Time adalah momen di mana teman-teman Informatika dapat mengaplikasikan secara langsung 
