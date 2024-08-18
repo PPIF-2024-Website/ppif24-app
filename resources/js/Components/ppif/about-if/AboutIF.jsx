@@ -25,18 +25,24 @@ const ImageContainer = ({ srcIndex, fullWidth }) => (
 );
 
 function AboutIF({ id }) {
-    const textContent = `
-        Informatika adalah bidang ilmu yang menggabungkan teknologi dan pemrograman untuk 
-        memecahkan masalah melalui pengolahan informasi dan data. Di jurusan ini, kamu akan 
-        belajar bagaimana mengembangkan perangkat lunak, memahami algoritma, dan merancang 
-        sistem yang inovatif untuk kebutuhan di berbagai sektor, mulai dari bisnis hingga kesehatan. 
-        Di era digital ini, informatika menjadi semakin penting karena hampir setiap aspek kehidupan 
-        kita terhubung dengan teknologi. Di Universitas Multimedia Nusantara, kamu akan mendapatkan 
-        banyak dukungan untuk belajar informatika, termasuk fasilitas modern dan acara seperti codeXpo, 
-        yang memberikan pengalaman langsung dan memperluas wawasan dalam dunia teknologi. 
-        Bagi kamu yang tertarik dengan dunia teknologi, kreativitas, dan ingin menjadi bagian dari revolusi 
-        digital, jurusan informatika di UMN adalah pilihan yang tepat.
-    `;
+    const TextContent = () => (
+        <span>
+            <strong className="font-bold">Informatika</strong> adalah bidang
+            ilmu yang menggabungkan teknologi dan pemrograman untuk memecahkan
+            masalah melalui pengolahan informasi dan data. Di jurusan ini, kamu
+            akan belajar bagaimana mengembangkan perangkat lunak, memahami
+            algoritma, dan merancang sistem yang inovatif untuk kebutuhan di
+            berbagai sektor, mulai dari bisnis hingga kesehatan. Di era digital
+            ini, Informatika menjadi semakin penting karena hampir setiap aspek
+            kehidupan kita terhubung dengan teknologi. Di Universitas Multimedia
+            Nusantara, kamu akan mendapatkan banyak dukungan untuk belajar
+            informatika, termasuk fasilitas modern dan acara seperti codeXpo,
+            yang memberikan pengalaman langsung dan memperluas wawasan dalam
+            dunia teknologi. Bagi kamu yang tertarik dengan dunia teknologi,
+            kreativitas, dan ingin menjadi bagian dari revolusi digital, jurusan
+            informatika di UMN adalah pilihan yang tepat.
+        </span>
+    );
 
     useEffect(() => {
         const updateViewBox = () => {
@@ -156,7 +162,7 @@ function AboutIF({ id }) {
                                     className="mb-4 font-light text-white"
                                     id="text"
                                 >
-                                    {textContent}
+                                    <TextContent />
                                 </p>
                             </div>
                             <div
@@ -233,7 +239,7 @@ function AboutIF({ id }) {
                                     className="text-body font-light text-white"
                                     id="text"
                                 >
-                                    {textContent}
+                                    <TextContent />
                                 </p>
                             </div>
                             <div
