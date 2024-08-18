@@ -51,10 +51,9 @@ function AboutIF({ id }) {
                 if (window.innerWidth >= 1536) {
                     mySVG.setAttribute("viewBox", "0 0 1500 620");
                 } else if (window.innerWidth >= 1280) {
-                    mySVG.setAttribute("viewBox", "0 0 1500 750");
+                    mySVG.setAttribute("viewBox", "0 0 1500 800");
                 } else if (window.innerWidth >= 1024) {
-                    mySVG.setAttribute("viewBox", "0 0 1500 1000");
-                } else {
+                    mySVG.setAttribute("viewBox", "0 0 1500 1250");
                 }
             }
         };
