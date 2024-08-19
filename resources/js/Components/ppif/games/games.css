@@ -14,6 +14,10 @@
     );
 }
 
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
 .glowing-border {
     position: relative;
     border-radius: 1.5rem;
