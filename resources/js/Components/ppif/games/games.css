@@ -18,6 +18,43 @@
     display: none;
 }
 
+.special-text {
+    background: conic-gradient(
+        from var(--gradient-angle),
+        var(--ppif-blue),
+        var(--ppif-pink),
+        var(--ppif-orange),
+        var(--ppif-pink),
+        var(--ppif-blue)
+    );
+    animation: gradient-rotation 20s linear infinite;
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.special-text::after {
+    content: attr(data-content);
+    background: conic-gradient(
+        from var(--gradient-angle),
+        var(--ppif-blue),
+        var(--ppif-pink),
+        var(--ppif-orange),
+        var(--ppif-pink),
+        var(--ppif-blue)
+    );
+    animation: gradient-rotation 20s linear infinite;
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(20px);
+    position: absolute;
+    inset: 0;
+}
+
 .glowing-border {
     position: relative;
     border-radius: 1.5rem;

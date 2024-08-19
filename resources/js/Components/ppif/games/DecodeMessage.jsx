@@ -3,8 +3,9 @@ import axios from "axios";
 import Modal from "./CustomModal";
 import { Link } from "@inertiajs/react";
 import { ToastContainer, toast, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ConfettiExplosion from "react-confetti-explosion";
+import "react-toastify/dist/ReactToastify.css";
+import "@/Components/ppif/games/games.css";
 
 const getRandomColorClass = () => {
     const colors = ["blue", "orange", "pink"];
@@ -33,9 +34,7 @@ function DecodeMessage({ groupToken, children: button }) {
                         .replace(/\s+/g, ""),
                 },
             });
-            setResponse(
-                `<span>Your group name is <span class="${randomColorClass}">${res.data}</span></span>`,
-            );
+            setResponse(res.data);
             setModalIsOpen(true);
         } catch (error) {
             setResponse("Incorrect decryption.");
@@ -85,10 +84,17 @@ function DecodeMessage({ groupToken, children: button }) {
             </div>
             {response != "Incorrect decryption." ? (
                 <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
-                    <h1
-                        className="flex h-3/4 items-center justify-center text-center text-3xl font-semibold leading-normal tracking-wide text-white md:text-6xl"
-                        dangerouslySetInnerHTML={{ __html: response }}
-                    />
+                    <div className="mb-10 text-center font-semibold leading-normal tracking-wide text-white min-[300px]:flex min-[300px]:flex-col min-[300px]:-space-y-1">
+                        <span className="glow-white text-lg font-light min-[300px]:text-xl min-[360px]:text-2xl min-[450px]:text-3xl min-[500px]:text-4xl">
+                            Your group name is
+                        </span>{" "}
+                        <span
+                            className="special-text text-2xl font-black min-[300px]:text-4xl min-[360px]:text-5xl min-[450px]:text-6xl min-[500px]:text-7xl"
+                            data-content={response}
+                        >
+                            {response}
+                        </span>
+                    </div>
                     <div className="flex w-full items-center justify-center">
                         <ConfettiExplosion
                             zIndex={20}
