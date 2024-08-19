@@ -4,6 +4,7 @@ import Modal from "./CustomModal";
 import { Link } from "@inertiajs/react";
 import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ConfettiExplosion from "react-confetti-explosion";
 
 const getRandomColorClass = () => {
     const colors = ["blue", "orange", "pink"];
@@ -88,11 +89,25 @@ function DecodeMessage({ groupToken, children: button }) {
                         className="flex h-3/4 items-center justify-center text-center text-3xl font-semibold leading-normal tracking-wide text-white md:text-6xl"
                         dangerouslySetInnerHTML={{ __html: response }}
                     />
-                    <div className="flex w-full justify-center">
+                    <div className="flex w-full items-center justify-center">
+                        <ConfettiExplosion
+                            zIndex={20}
+                            force={1}
+                            duration={10000}
+                            particleCount={250}
+                            width={1600}
+                            colors={[
+                                "var(--ppif-orange)",
+                                "var(--ppif-blue)",
+                                "var(--ppif-pink)",
+                            ]}
+                            height="160vh"
+                            className="absolute left-1/2 top-1/2 [transform:translate(-50%,-50%)]"
+                        />
                         <Link
                             href="/"
                             onClick={removeToken}
-                            className="rounded-xl bg-[#3d3c3c] px-8 py-3 text-2xl text-white shadow-[0px_6px_4px_rgba(255,255,255,0.15)] transition-all duration-100 hover:translate-y-[6px] hover:shadow-[0px_0px_4px_rgba(255,255,255,0.15)] active:scale-95 md:px-20 md:py-6"
+                            className="text-subheading smooth hover:glow-white md:rounded-2xlro w-full rounded-xl bg-white/10 py-3 text-center uppercase tracking-widest text-white md:py-6"
                         >
                             Continue
                         </Link>

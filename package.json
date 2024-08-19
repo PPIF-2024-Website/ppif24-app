@@ -26,6 +26,7 @@
         "@react-three/drei": "^9.109.5",
         "@react-three/fiber": "^8.17.5",
         "@react-three/postprocessing": "^2.16.2",
+        "react-confetti-explosion": "^2.1.2",
         "react-device-detect": "^2.2.3",
         "react-lazy-load-image-component": "^1.6.2",
         "react-powerglitch": "^1.0.3",
