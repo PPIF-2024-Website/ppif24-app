@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Head } from "@inertiajs/react";
 import ArchivesBackground from "@/Components/ppif/background/archives-background/ArchivesBackground";
 import TransitionedPage from "@/Components/ppif/TransitionedPage";
-import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
-import "@/Components/ppif/games/games.css";
+import {
+    ArrowLeftCircleIcon,
+    ArrowRightCircleIcon,
+} from "@heroicons/react/24/outline";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
+import "@/Components/ppif/games/games.css";
 
 function Page() {
-    const story = `
-        Oblivion telah mengambil alih peran manusia di Cyber City akibat kecerdasan buatan yang melebihi kecerdasan manusia. Oblivion merupakan AI yang dibuat oleh salah satu ilmuan di Cyber City. Namun, ketergantungan manusia terhadap Oblivion membuat Oblivion menyalahgunakan kecerdasannya sehingga Oblivion memberontak terhadap manusia dan mulai mengacaukan Cyber City.
-        Kalian, sebagai tim penerus Cyber City, diberi tugas untuk menghentikan Oblivion. Banyak tim yang sudah diutus oleh pemerintah Cyber City, namun hanya sedikit yang berhasil melewati semua tantangan. Oleh karena itu, kalian harus menyelesaikan misi pertama kalian dengan memecahkan teka-teki yang nantinya akan menjadi nama kelompok kalian.
-        Selamat berjuang, Cyber Team!
-    `;
+    const [part, setPart] = useState(0);
+
+    const storyParts = [
+        ` Oblivion telah mengambil alih peran manusia di Cyber City akibat kecerdasan buatan yang melebihi kecerdasan manusia. Oblivion merupakan AI yang dibuat oleh salah satu ilmuan di Cyber City.`,
+        ` Namun, ketergantungan manusia terhadap Oblivion membuat Oblivion menyalahgunakan kecerdasannya sehingga Oblivion memberontak terhadap manusia dan mulai mengacaukan Cyber City.`,
+        ` Kalian, sebagai tim penerus Cyber City, diberi tugas untuk menghentikan Oblivion. Banyak tim yang sudah diutus oleh pemerintah Cyber City, namun hanya sedikit yang berhasil melewati semua tantangan.`,
+        `Oleh karena itu, kalian harus menyelesaikan misi pertama kalian dengan memecahkan teka-teki yang nantinya akan menjadi nama kelompok kalian. Selamat berjuang, Cyber Team!`,
+    ];
+
+    // const story = `
+    //     Oblivion telah mengambil alih peran manusia di Cyber City akibat kecerdasan buatan yang melebihi kecerdasan manusia. Oblivion merupakan AI yang dibuat oleh salah satu ilmuan di Cyber City. Namun, ketergantungan manusia terhadap Oblivion membuat Oblivion menyalahgunakan kecerdasannya sehingga Oblivion memberontak terhadap manusia dan mulai mengacaukan Cyber City.
+    //     Kalian, sebagai tim penerus Cyber City, diberi tugas untuk menghentikan Oblivion. Banyak tim yang sudah diutus oleh pemerintah Cyber City, namun hanya sedikit yang berhasil melewati semua tantangan. Oleh karena itu, kalian harus menyelesaikan misi pertama kalian dengan memecahkan teka-teki yang nantinya akan menjadi nama kelompok kalian.
+    //     Selamat berjuang, Cyber Team!
+    // `;
 
     return (
         <>
@@ -42,18 +54,32 @@ function Page() {
                         <Link
                             as="button"
                             href="/game/archives"
-                            className="glow-white group absolute right-0 top-1/2 flex cursor-pointer items-center space-x-2 rounded-l-2xl bg-gradient-to-r from-white/10 to-transparent px-2 py-1 backdrop-blur-md [transform:translate(0,-50%)] sm:px-4 sm:py-2"
+                            className={`glow-white smooth group absolute right-0 top-1/2 flex cursor-pointer items-center space-x-2 rounded-l-2xl bg-gradient-to-r from-white/10 to-transparent px-2 py-1 backdrop-blur-md [transform:translate(0,-50%)] sm:px-4 sm:py-2 ${part === storyParts.length - 1 ? "opacity-100" : "opacity-0"}`}
                         >
                             <ArrowRightCircleIcon className="smooth w-6 opacity-60 group-hover:-rotate-90 group-hover:opacity-100 min-[400px]:w-8 sm:w-12 [&>path]:stroke-[0.8]" />
                             <div className="smooth text-body uppercase tracking-wide opacity-60 group-hover:tracking-[0.25em] group-hover:opacity-100">
                                 Continue
                             </div>
                         </Link>
+
+                        {/* CONTROLS */}
+                        <ArrowLeftCircleIcon
+                            className={`smooth absolute left-[5px] top-[43.5%] w-6 cursor-pointer text-white min-[400px]:w-8 sm:w-12 [&>path]:stroke-[0.8] ${part === 0 ? "opacity-0" : "opacity-70 hover:opacity-100"}`}
+                            onClick={() => setPart(Math.max(0, part - 1))}
+                        />
+                        <ArrowRightCircleIcon
+                            className={`smooth absolute right-[5px] top-[43.5%] w-6 cursor-pointer text-white min-[400px]:w-8 sm:w-12 [&>path]:stroke-[0.8] ${part === storyParts.length - 1 ? "opacity-0" : "opacity-70 hover:opacity-100"}`}
+                            onClick={() =>
+                                setPart(
+                                    Math.min(storyParts.length - 1, part + 1),
+                                )
+                            }
+                        />
                     </div>
 
                     {/* STORY TEXT */}
                     <div className="text-body glow-white w-full bg-gradient-to-bl from-white to-white/40 bg-clip-text text-justify font-bold text-transparent md:text-center lg:w-3/4 xl:w-1/2">
-                        {story}
+                        {storyParts[part]}
                     </div>
                 </div>
             </main>

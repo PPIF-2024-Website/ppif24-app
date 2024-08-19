@@ -14,6 +14,10 @@
     );
 }
 
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
 .glowing-border {
     position: relative;
     border-radius: 1.5rem;
@@ -40,6 +44,30 @@
 
 .glowing-border::after {
     filter: blur(24px);
+}
+
+.continue-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.continue-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+        opacity 300ms,
+        transform 300ms;
+}
+
+.continue-exit {
+    opacity: 1;
+}
+
+.continue-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition:
+        opacity 300ms,
+        transform 300ms;
 }
 
 @keyframes gradient-rotation {

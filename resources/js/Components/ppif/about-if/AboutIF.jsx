@@ -99,7 +99,7 @@ function AboutIF({ id }) {
                         >
                             <h1
                                 id="informatika"
-                                className="text-center text-5xl font-semibold text-white md:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
+                                className="text-center text-xl font-semibold text-white md:text-6xl lg:text-4xl xl:text-5xl 2xl:text-6xl"
                             >
                                 INFORMATIKA
                             </h1>

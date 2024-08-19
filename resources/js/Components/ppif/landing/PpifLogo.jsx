@@ -72,7 +72,6 @@ export default function PpifLogo(props) {
                 rotation={[1.571, 0, 0]}
                 scale={13.986}
             >
-                {" "}
                 <meshStandardMaterial
                     attach="material"
                     color={materials["SVGMat.008"].color}
